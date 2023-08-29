@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script defer="" src="/js/storeInfo.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/add-space.css" rel="stylesheet" />
+    <link href="/css/add-info.css" rel="stylesheet" />
+    <link href="/css/add-info-queries.css" rel="stylesheet" />
+
+    <title>Festlokaler.se - Lägg till din lokal</title>
+    <link rel="icon" href="img/favicon.png" />
+    <meta
+      name="description"
+      content="Lägg till din egen lokal och nå tusentals användare som letar efter den perfekta platsen att fira. Registrera dig nu och börja få bokningar."
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header header-black section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="index.html"
+          >FestlokalerStockholm.se</a
+        >
+      </div>
+      <div class="brand-box-small">
+        <img
+          class="brand-box-small-image"
+          src="/img/logo.svg"
+          alt="Brand logo"
+        />
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <p class="category-link">Lokalinfo</p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="add-info-section">
+        <div class="add-info-box">
+          <h3>Ge din lokal ett namn<span class="mandatory">*</span></h3>
+
+          <p>
+            Här anger du ett namn för din lokal som beskriver den så bra som
+            möjligt.
+          </p>
+          <p class="strong">Försök få med något följande:</p>
+          <ul>
+            <li>Plats - centralt, sjöutsikt etc.</li>
+            <li>Typ av lokal - teater, studio, våning, källare</li>
+            <li>Unikt beskrivande ord - industriell, rustic, art-deco</li>
+          </ul>
+          <p class="example">Exempelvis:</p>
+          <ul class="no-bullets">
+            <li>"Skyddsrummet - Rymlig industriell lokal på Södermalm"</li>
+            <li>"Matron at Cow Pow - Gömd pärla i Vasastan"</li>
+          </ul>
+          <input id="name" type="text" placeholder="Lokalens namn" />
+        </div>
+
+        <div class="add-info-box">
+          <h3>Beskriv lokalen<span class="mandatory">*</span></h3>
+
+          <p>
+            Beskriv din lokal så detaljerat som möjligt, så dina gäster vet vad
+            de kan förvänta sig.
+          </p>
+          <p class="strong">Tänk på att försöka få med:</p>
+          <ul>
+            <li>Vilka typer av event som lokalen lämpar sig väl för</li>
+            <li>
+              Hur planlösningen ser ut och om det är vissa delar som är extra
+              väl lämpade för olika aktiviteter, exempelvis dansgolv, DJ-bås,
+              kök.
+            </li>
+            <li>
+              Stick ut! Vi har många listningar och våga framhäva det som gör
+              just din lokal unik.
+            </li>
+          </ul>
+
+          <textarea
+            id="description"
+            placeholder="Beskrivning av lokalen"
+          ></textarea>
+        </div>
+
+        <div class="add-info-box">
+          <h3>Plats och adress<span class="mandatory">*</span></h3>
+          <p>Ange adressen för din lokal så att bokare kan hitta den enkelt.</p>
+          <input
+            id="address"
+            type="text"
+            placeholder="Almlöfsgatan 1, 11451, Stockholm"
+          />
+        </div>
+
+        <div class="add-info-box">
+          <h3>Hur stor är lokalen? (m&sup2)<span class="mandatory">*</span></h3>
+          <input id="size" type="number" placeholder="120" />
+        </div>
+
+        <div class="add-info-box">
+          <h3>Hur många ryms?<span class="mandatory">*</span></h3>
+          <p class="input-header">Sittande:</p>
+          <input id="seated" type="number" placeholder="60" />
+          <p class="input-header">Stående:</p>
+          <input id="standing" type="number" placeholder="150" />
+        </div>
+
+        <div class="add-info-box">
+          <h3>Hur länge får gästerna stanna?</h3>
+          <input id="checkout" type="text" placeholder="01:00" />
+        </div>
+
+        <div class="add-info-box">
+          <h3>Får man ha med egen mat och dryck?</h3>
+          <label>
+            <span>Egen mat</span><input id="ownFoodF" type="checkbox"
+          /></label>
+          <label>
+            <span>Egen dryck</span><input id="ownDrinkF" type="checkbox"
+          /></label>
+        </div>
+
+        <div class="add-info-box">
+          <h3>Något annat som ingår?</h3>
+          <div class="add-info-box">
+            <label>
+              <span>Ljudsystem</span><input id="soundF" type="checkbox"
+            /></label>
+            <label>
+              <span>Mikrofoner</span><input id="micsF" type="checkbox"
+            /></label>
+            <label>
+              <span>Projektor</span><input id="projectorF" type="checkbox"
+            /></label>
+            <label>
+              <span>Diskoljus</span><input id="discoLightsF" type="checkbox"
+            /></label>
+          </div>
+        </div>
+        <div class="add-info-box">
+          <h3>Uppgifter till kontaktperson:<span class="mandatory">*</span></h3>
+          <p class="input-header">Namn:</p>
+          <input
+            id="contactName"
+            type="text"
+            placeholder="Kontaktpersonens namn"
+          />
+          <p class="input-header">Telefon:</p>
+          <input
+            id="contactPhone"
+            type="tel"
+            placeholder="Kontaktpersonens telefonnummer"
+          />
+          <p class="input-header">Mail:</p>
+          <input
+            id="contactMail"
+            type="email"
+            placeholder="Kontaktpersonens e-postadress"
+          />
+        </div>
+        <div class="add-info-box">
+          <h3>Ungefärligt från pris<span class="mandatory">*</span></h3>
+          <input
+            id="startingPrice"
+            type="number"
+            placeholder="Pris (SEK / dygn)"
+          />
+        </div>
+        <div class="split-buttons">
+          <a href="/add-space/add-start.html" class="back-button search-button">
+            Tillbaka
+          </a>
+          <a
+            id="continueButton"
+            href="/add-space/add-pictures.html"
+            class="continue-button search-button"
+          >
+            Vidare
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

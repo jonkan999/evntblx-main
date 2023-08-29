@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script defer="" src="/js/retrieveInfoImages.js"></script>
+    <script src="/js/renderVenuePage.js"></script>
+    <script type="module" defer="" src="/js/firebase.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/add-space.css" rel="stylesheet" />
+    <link href="/css/add-info.css" rel="stylesheet" />
+    <link href="/css/add-submission.css" rel="stylesheet" />
+
+    <title>festlokalerstockholm.se - Lägg till din lokal</title>
+    <link rel="icon" href="/img/favicon.png" />
+    <meta
+      name="description"
+      content="Lägg till din egen lokal och nå tusentals användare som letar efter den perfekta platsen att fira. Registrera dig nu och börja få bokningar."
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header header-black section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="../index.html"
+          >FestlokalerStockholm.se</a
+        >
+      </div>
+      <div class="brand-box-small">
+        <img
+          class="brand-box-small-image"
+          src="/img/logo.svg"
+          alt="Brand logo"
+        />
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <p class="category-link">Genererar din lokalsida</p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="venue-page" id="venuePage">
+        <!-- Content will be dynamically generated and populated here -->
+      </section>
+      <section class="color-selection">
+        <h2>Slutligen, låt oss välja ett färgtema till din nya lokalsida</h2>
+        <div class="color-options">
+          <div class="color-box" id="color1"></div>
+          <div class="color-box" id="color2"></div>
+          <div class="color-box" id="color3"></div>
+        </div>
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Förbereder din sida...</p>
+        </div>
+      </section>
+      <button id="submit" class="submit-button search-button continue-button">
+        Skicka in
+      </button>
+      <div id="popup" class="popup">Lokal med det namnet finns redan</div>
+      <div id="popupAdded" class="added-popup">
+        Hurra, lokalen är nu aktiv i vår databas!
+      </div>
+      <div id="popupFailed" class="failed-popup">
+        Lyckades int lägga till lokalen, försök igen eller kontakta,
+        info@festlokaler.se om problemet kvarstår
+      </div>
+    </main>
+  </body>
+</html>

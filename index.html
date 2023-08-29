@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script defer="" src="/js/menu.js"></script>
+    <script defer="" src="/js/backgroudCarousel.js"></script>
+    <script defer="" src="/js/eventDate.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/hero-queries.css" rel="stylesheet" />
+
+    <title>
+      Boka Festlokaler i Stockholm - Bröllop, Födelsedag & Företagsevent
+    </title>
+    <link rel="icon" href="img/favicon.png" />
+    <meta
+      name="description"
+      content="Letar du efter festlokaler i Stockholm? Vi hjälper dig hitta den perfekta platsen för ditt bröllop, födelsedagsfest, företagsevent eller andra speciella tillfällen. Upptäck unika och eleganta festlokaler som passar din feststil. Boka nu för minnesvärda evenemang i Stockholm."
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="index.html"
+          >FeZtlokalerStockholm.se</a
+        >
+      </div>
+      <div class="brand-box-small">
+        <img
+          class="brand-box-small-image"
+          src="img/logo.svg"
+          alt="Brand logo"
+        />
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a class="category-link" href="#">Hitta Lokal</a>
+          </li>
+          <li>
+            <a class="category-link" href="#">Logga In</a>
+          </li>
+          <li>
+            <a class="category-link cta" href="/add-space/add-start.html"
+              >Lägg till Din Lokal</a
+            >
+          </li>
+          <li>
+            <div class="menu-box">
+              <div class="icon-box">
+                <ion-icon
+                  class="ion-icon menu-icon"
+                  name="menu-outline"
+                ></ion-icon>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="section-hero" id="hero">
+        <div class="carousel-container">
+          <div class="carousel-gradient-overlay"></div>
+          <img
+            src="img/hero-carousel/img-1.webp"
+            alt="Venue carousel Image 1"
+            class="carousel-image"
+          />
+          <img
+            src="img/hero-carousel/img-2.webp"
+            alt="Venue carousel Image 2"
+            class="carousel-image"
+          />
+          <img
+            src="img/hero-carousel/img-3.webp"
+            alt="Venue carousel Image 3"
+            class="carousel-image"
+          />
+        </div>
+        <h1 class="main-heading">Hitta Festlokal Till Ditt Nästa Event</h1>
+        <div class="search-box">
+          <div class="input-group">
+            <label for="eventType">Typ av fest?</label>
+            <select id="eventType" name="eventType">
+              <option value="Födelsedagsfest">Visa alla lokaltyper</option>
+              <option value="Födelsedagsfest">Födelsedagsfest</option>
+              <option value="Bröllop">Bröllop</option>
+              <option value="Bröllop">Företags Kick-off</option>
+              <option value="Bröllop">Julfest</option>
+              <option value="Bröllop">Halloweenfest</option>
+              <option value="Bröllop">Babyshower</option>
+              <option value="Bröllop">Möhippa</option>
+              <option value="Bröllop">Dopfest</option>
+              <!-- Add other options here -->
+            </select>
+          </div>
+          <div class="border-div"></div>
+          <div class="input-group">
+            <label for="numberOfPeople">Antal personer</label>
+            <select id="numberOfPeople" name="numberOfPeople">
+              <option value="na">Visa alla storlekar</option>
+              <option value="0-20">0-20</option>
+              <option value="20-60">20-60</option>
+              <option value="20-60">60-120</option>
+              <option value="20-60">120-250</option>
+              <option value="20-60">250-500</option>
+              <option value="20-60">500+</option>
+              <!-- Add other options here -->
+            </select>
+          </div>
+          <div class="border-div"></div>
+          <div class="input-group">
+            <label for="eventDate">När?</label>
+            <input
+              type="date"
+              id="eventDate"
+              name="eventDate"
+              placeholder="När som helst"
+            />
+          </div>
+
+          <button class="search-button">
+            Hitta lokal
+            <ion-icon
+              class="arrow-icon"
+              name="arrow-forward-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

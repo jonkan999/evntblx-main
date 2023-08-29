@@ -1,0 +1,77 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/**************************/
+/* BELOW 1720px (category grid breaks) */
+/**************************/
+@media (max-width: 108em) {
+}
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .category-link,
+  .cta {
+    display: none;
+  }
+  .cta {
+    display: block;
+  }
+  .menu-box {
+    display: block;
+  }
+  .brand-box {
+    display: none;
+  }
+  .brand-box-small {
+    display: flex;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  .category-link,
+  .cta {
+    display: none;
+  }
+  .menu-box {
+    display: block;
+  }
+}
+
+/**************************/
+/* BELOW 430px ( new Phones) */
+/**************************/
+@media (max-width: 27em) {
+}
