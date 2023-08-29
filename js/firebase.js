@@ -27,10 +27,12 @@ async function handleSubmit() {
   // Get venue data from localStorage
   const venueInfoJSON = localStorage.getItem("venueInfo");
   const venueImagesJSON = localStorage.getItem("venueImages");
+  const mapboxCenterJSON = localStorage.getItem("mapboxCenter");
 
   // Convert JSON strings to objects
   const venueInfo = JSON.parse(venueInfoJSON);
   const venueImages = JSON.parse(venueImagesJSON);
+  const mapboxCenter = JSON.parse(mapboxCenterJSON);
 
   // Reference to the "venues" collection
   const venuesCollection = collection(db, "venues");
@@ -60,6 +62,7 @@ async function handleSubmit() {
     await addDoc(venuesCollection, {
       venueInfo,
       venueImages,
+      mapboxCenter,
       timestamp: serverTimestamp(),
       // ... Other data ...
     });

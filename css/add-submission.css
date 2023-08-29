@@ -397,3 +397,9 @@
   z-index: 1000;
   display: none;
 }
+
+.event-space-title,
+.adress-div,
+.highlights-container {
+  width: 100%;
+}

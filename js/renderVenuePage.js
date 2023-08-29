@@ -291,6 +291,17 @@ window.addEventListener("load", function () {
       .then((data) => {
         const features = data.features;
         if (features.length > 0) {
+          // Check if mapboxFeatures is already in local storage and remove it
+          if (localStorage.getItem("mapboxCenter")) {
+            localStorage.removeItem("mapboxCenter");
+          }
+
+          // Store the new mapbox features in local storage
+          localStorage.setItem(
+            "mapboxCenter",
+            JSON.stringify(features[0].center)
+          );
+
           const center = features[0].center;
 
           // Create the map and center it on the obtained coordinates
