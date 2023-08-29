@@ -43,16 +43,16 @@
 
 @media (max-width: 44em) {
   .search-box {
-    top: 20rem;
+    top: 30rem;
 
     flex-direction: column;
     width: 95%;
     align-items: flex-start;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
   }
 
   .main-heading {
-    font-size: 2.5rem;
+    font-size: 3.75rem;
     line-height: 1.1;
   }
 

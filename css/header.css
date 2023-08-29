@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5.7rem;
+  height: 8.55rem; /* Increased from 5.7rem */
   width: 100%;
   z-index: 4;
   display: flex;
@@ -16,16 +16,16 @@
 
 .brand-box {
   height: 100%;
-  width: 30rem;
+  width: 45rem; /* Increased from 30rem */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 2.5rem;
+  margin-left: 3.75rem; /* Increased from 2.5rem */
 }
 .brand-box-small {
   height: 100%;
-  width: 20rem;
-  padding: 0.5rem 0;
+  width: 30rem; /* Increased from 20rem */
+  padding: 0.75rem 0; /* Increased from 0.5rem */
 }
 .brand-box-small-image {
   height: 100%;
@@ -34,14 +34,14 @@
 }
 
 .header-brand-name {
-  font-size: 2.7rem;
+  font-size: 4.05rem; /* Increased from 2.7rem */
   font-weight: 600;
   color: var(--white-text-color);
   text-decoration: none;
 }
 
 .menu {
-  width: 40rem;
+  width: 60rem; /* Increased from 40rem */
   height: 100%;
 }
 
@@ -51,14 +51,14 @@
   align-items: center;
   justify-content: flex-end;
   list-style-type: none;
-  margin-right: 2.5rem;
+  margin-right: 3.75rem; /* Increased from 2.5rem */
 }
 
 .category-link {
   height: 100%;
   width: 100%;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 1.5rem 3rem; /* Increased from 1rem 2rem */
+  font-size: 1.8rem; /* Increased from 1.2rem */
   font-weight: 600;
   color: var(--white-text-color);
   text-decoration: none;
@@ -71,7 +71,7 @@
 .category-link.cta {
   color: var(--black-text-color);
   background-color: var(--white-background-color);
-  border-radius: 3px;
+  border-radius: 4.5px; /* Increased from 3px */
   transition: all 0.2s;
 }
 
@@ -81,8 +81,8 @@
 
 .menu-box {
   height: 100%;
-  width: 5rem;
-  margin: 1rem 0 1rem 2rem;
+  width: 7.5rem; /* Increased from 5rem */
+  margin: 1.5rem 0 1.5rem 3.75rem; /* Increased from 1rem 0 1rem 2rem */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +98,7 @@
   align-items: center;
 }
 .ion-icon {
-  font-size: 3.4rem;
+  font-size: 5.1rem; /* Increased from 3.4rem */
 }
 
 .menu-box {

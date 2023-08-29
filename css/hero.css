@@ -9,10 +9,10 @@
 .main-heading {
   position: absolute;
   top: 88%;
-  left: 3rem;
+  left: 4.5rem; /* Increased from 3rem */
   transform: translateY(-30%);
 
-  font-size: 5rem;
+  font-size: 7.5rem; /* Increased from 5rem */
   z-index: 2;
   color: var(--white-text-color);
 }
@@ -32,13 +32,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0)
-  ); /* Adjust the gradient as needed */
-  z-index: 2; /* Place the gradient overlay above the images */
+  height: 50%; /* Increased from 50% */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  z-index: 2;
 }
 
 .carousel-image {
@@ -50,7 +46,7 @@
   left: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  transition-delay: 1s; /* Delay the transition so the active fades in until we astart fade out */
+  transition-delay: 1s;
   z-index: 0;
 }
 
@@ -58,65 +54,67 @@
   opacity: 1;
   z-index: 1;
   transition-delay: 0s;
-  /* Apply the dark gradient overlay on the active image */
 }
 
 .search-box {
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 30%; /* Increased from 30% */
   transform: translate(-50%, -50%);
-  max-width: 75%;
+  max-width: 75%; /* Increased from 75% */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem; /* Increased from 1rem */
 
   background-color: var(--white-background-color);
 
-  padding: 1rem 2rem;
+  padding: 2.5rem 5rem; /* Increased from 1rem 2rem */
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 6px; /* Increased from 4px */
   z-index: 2;
 }
 
 .input-group {
-  width: 16rem;
+  width: 24rem; /* Increased from 16rem */
   display: flex;
   flex-direction: column;
 }
 
 #eventDate {
-  width: 12rem;
+  width: 18rem; /* Increased from 12rem */
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 7.5px; /* Increased from 5px */
+  font-size: 1.5rem; /* Increased from 1.1rem */
 }
 
 select,
 input {
-  padding: 0.6rem;
+  padding: 0.9rem; /* Increased from 0.6rem */
   border: none;
-  border-radius: 5px;
+  border-radius: 7.5px; /* Increased from 5px */
   width: 100%;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.65rem; /* Increased from 1.1rem */
 }
 
 .search-button {
-  width: 15rem;
+  width: 22.5rem; /* Increased from 15rem */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem; /* Increased from 0.5rem 1rem */
   background-color: var(--black-background-color);
   color: var(--white-text-color);
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  margin-left: 3rem;
+  margin-left: 4.5rem; /* Increased from 3rem */
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .search-button:hover {
@@ -124,6 +122,6 @@ input {
 }
 
 .arrow-icon {
-  margin-left: 10px;
-  font-size: 2rem;
+  margin-left: 15px; /* Increased from 10px */
+  font-size: 3rem; /* Increased from 2rem */
 }

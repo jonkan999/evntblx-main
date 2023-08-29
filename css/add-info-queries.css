@@ -50,13 +50,13 @@
 
 @media (max-width: 34em) {
   .add-info-box {
-    width: 30em;
+    width: 45em;
   }
   .split-buttons {
-    width: 30em;
+    width: 45em;
   }
   .search-button {
-    width: 8em;
+    width: 12em;
   }
 }
 
@@ -65,9 +65,9 @@
 /**************************/
 @media (max-width: 27em) {
   .add-info-box {
-    width: 25em;
+    width: 37.5em;
   }
   .split-buttons {
-    width: 25em;
+    width: 37.5em;
   }
 }
