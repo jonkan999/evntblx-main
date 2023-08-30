@@ -80,6 +80,14 @@
   font-family: "Inter", sans-serif;
 }
 
+.add-info-box input[type="text"]:hover,
+.add-info-box textarea:hover,
+.add-info-box input[type="number"]:hover,
+.add-info-box input[type="tel"]:hover,
+.add-info-box input[type="email"]:hover {
+  cursor: text;
+}
+
 .add-info-box textarea {
   width: 100%; /* Adjust the width to your preference */
   height: 25rem; /* Increased from 20rem */
@@ -137,7 +145,8 @@
 }
 
 /* Style the label to make it look like a button */
-label[for="imageUpload"] {
+label[for="imageUpload"],
+#clearImagesButton {
   display: inline-block;
   padding: 1.5rem 3rem; /* Increased from 1rem 2rem */
   background-color: #eee;
@@ -147,8 +156,21 @@ label[for="imageUpload"] {
   color: #000;
 }
 
+#clearImagesButton {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+
+  padding: 1.4rem 3rem;
+  background-color: rgb(243, 201, 201);
+}
+
 label[for="imageUpload"]:hover {
   background-color: #ddd;
+}
+
+#clearImagesButton:hover {
+  background-color: rgb(228, 182, 182);
 }
 
 /* Customize the appearance of the file input label when files are chosen */

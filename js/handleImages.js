@@ -1,21 +1,46 @@
-/* HANDLE LABELS */
 const venueInfoJSON = localStorage.getItem("venueInfo");
-
 console.log(JSON.parse(venueInfoJSON));
+const test = localStorage.getItem("venueImages");
+console.log(JSON.parse(test));
 const imageUpload = document.getElementById("imageUpload");
 const fileUploadStatus = document.getElementById("fileUploadStatus");
 
+/* HANDLE CLEAR IMAGES BUTTON */
+const clearImagesButton = document.getElementById("clearImagesButton");
+clearImagesButton.addEventListener("click", function () {
+  // Clear images from local storage
+  localStorage.removeItem("venueImages");
+  // Clear the image display on the page
+  refreshImageDisplay();
+
+  // Reset file upload status
+  fileUploadStatus.textContent = "Inga bilder valda";
+  location.reload();
+});
+
+/* HANDLE LABELS */
 imageUpload.addEventListener("change", function () {
   if (imageUpload.files.length > 0) {
-    if (imageUpload.files.length === 1) {
-      fileUploadStatus.textContent = "1 bild vald";
-    } else {
-      fileUploadStatus.textContent = imageUpload.files.length + " bilder valda";
+    const fileNames = [];
+    for (const file of imageUpload.files) {
+      fileNames.push(`${file.name} (${formatFileSize(file.size)})`);
     }
+    fileUploadStatus.textContent = fileNames.join(", ");
   } else {
     fileUploadStatus.textContent = "Inga bilder valda";
   }
 });
+
+// Function to format file size
+function formatFileSize(size) {
+  if (size < 1024) {
+    return `${size} bytes`;
+  } else if (size < 1024 * 1024) {
+    return `${(size / 1024).toFixed(2)} KB`;
+  } else {
+    return `${(size / (1024 * 1024)).toFixed(2)} MB`;
+  }
+}
 
 /* HANDLE UPLOAD BUTTON */
 

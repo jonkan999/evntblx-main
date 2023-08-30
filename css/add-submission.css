@@ -404,3 +404,10 @@
 .highlights-container {
   width: 100%;
 }
+
+.venue-description {
+  margin-bottom: 3rem;
+}
+h3 {
+  margin-bottom: 1rem;
+}
