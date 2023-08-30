@@ -120,6 +120,7 @@
   height: 20rem;
   margin-bottom: 1rem;
   background-size: cover;
+  background-position: center 40%;
 }
 
 .venue-box-price {

@@ -59,7 +59,7 @@
 
 .venue-page {
   width: 70vw;
-  margin: 8.55rem auto 0 auto; /* Increased from 5.7rem */
+  margin: var(--header-size) auto 0 auto; /* Increased from 5.7rem */
   display: flex;
   flex-direction: column;
   align-items: center;
