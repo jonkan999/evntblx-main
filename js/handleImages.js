@@ -1,5 +1,7 @@
 /* HANDLE LABELS */
+const venueInfoJSON = localStorage.getItem("venueInfo");
 
+console.log(JSON.parse(venueInfoJSON));
 const imageUpload = document.getElementById("imageUpload");
 const fileUploadStatus = document.getElementById("fileUploadStatus");
 

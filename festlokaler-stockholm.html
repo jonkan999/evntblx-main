@@ -28,6 +28,7 @@
     <script defer="" src="/js/menu.js"></script>
     <script defer="" src="/js/backgroudCarousel.js"></script>
     <script defer="" src="/js/eventDate.js"></script>
+    <script defer="" src="/js/toggleButton.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -51,7 +52,7 @@
 
   <body>
     <div class="menu-overlay"></div>
-    <header class="header section">
+    <header class="header section header-black">
       <div class="brand-box">
         <a class="header-brand-name" href="index.html">evntBlx.se</a>
       </div>
@@ -89,8 +90,367 @@
       </div>
     </header>
     <main>
-      <section class="section-venues" id="venuesSection">
-        <div class="filters-section"></div>
+      <section class="section-container" id="venuesContainer">
+        <div class="filters-section">
+          <div class="filter-box">
+            <p>Pris</p>
+          </div>
+          <div class="filter-box">
+            <p>Deltagare</p>
+          </div>
+          <div class="filter-box">
+            <p>När?</p>
+          </div>
+          <div class="filter-box">
+            <ion-icon name="options-outline"></ion-icon>
+            <p>Fler filter</p>
+          </div>
+          <div class="toggle-button" id="toggleButton">
+            <button>
+              <ion-icon name="radio-button-off-outline" id="offIcon"></ion-icon>
+              <ion-icon name="radio-button-on-outline" id="onIcon"></ion-icon>
+              Karta
+            </button>
+          </div>
+        </div>
+        <div class="venue-selector">
+          <div class="venues-section">
+            <div class="venue-box">
+              <div class="venue-box-image">
+                <img
+                  src="img/hero-carousel/img-1.webp"
+                  alt="Venue Image"
+                  class="venue-image"
+                />
+                <div class="venue-box-price">
+                  <div class="from">fr.</div>
+                  <div>1000 kr/tim</div>
+                </div>
+              </div>
+              <div class="venue-box-info">
+                <div class="venue-box-info-header">
+                  <h3 class="venue-box-info-header-title">
+                    Villa Godthem - Djurgården
+                  </h3>
+                </div>
+                <div class="venue-box-info-body">
+                  <p class="venue-box-info-short-text">
+                    Villa Godthem är en av Stockholms vackraste festlokaler på
+                    anrika Djurgården. Här kan du arrangera bröllop, fest,
+                    event.
+                  </p>
+                </div>
+                <div class="venue-box-info-footer">
+                  <div class="venue-box-info-footer-capacity">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <p class="venue-box-info-footer-location-text">
+                      80 sittandes, 120 mingel
+                    </p>
+                  </div>
+                  <div class="highlight-stars">
+                    <ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star-half-outline"
+                      role="img"
+                      aria-label="star half outline"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="venue-box">
+              <div class="venue-box-image">
+                <img
+                  src="img/hero-carousel/img-1.webp"
+                  alt="Venue Image"
+                  class="venue-image"
+                />
+                <div class="venue-box-price">
+                  <div class="from">fr.</div>
+                  <div>1000 kr/tim</div>
+                </div>
+              </div>
+              <div class="venue-box-info">
+                <div class="venue-box-info-header">
+                  <h3 class="venue-box-info-header-title">
+                    Villa Godthem - Djurgården
+                  </h3>
+                </div>
+                <div class="venue-box-info-body">
+                  <p class="venue-box-info-short-text">
+                    Villa Godthem är en av Stockholms vackraste festlokaler på
+                    anrika Djurgården. Här kan du arrangera bröllop, fest,
+                    event.
+                  </p>
+                </div>
+                <div class="venue-box-info-footer">
+                  <div class="venue-box-info-footer-capacity">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <p class="venue-box-info-footer-location-text">
+                      80 sittandes, 120 mingel
+                    </p>
+                  </div>
+                  <div class="highlight-stars">
+                    <ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star-half-outline"
+                      role="img"
+                      aria-label="star half outline"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="venue-box">
+              <div class="venue-box-image">
+                <img
+                  src="img/hero-carousel/img-1.webp"
+                  alt="Venue Image"
+                  class="venue-image"
+                />
+                <div class="venue-box-price">
+                  <div class="from">fr.</div>
+                  <div>1000 kr/tim</div>
+                </div>
+              </div>
+              <div class="venue-box-info">
+                <div class="venue-box-info-header">
+                  <h3 class="venue-box-info-header-title">
+                    Villa Godthem - Djurgården
+                  </h3>
+                </div>
+                <div class="venue-box-info-body">
+                  <p class="venue-box-info-short-text">
+                    Villa Godthem är en av Stockholms vackraste festlokaler på
+                    anrika Djurgården. Här kan du arrangera bröllop, fest,
+                    event.
+                  </p>
+                </div>
+                <div class="venue-box-info-footer">
+                  <div class="venue-box-info-footer-capacity">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <p class="venue-box-info-footer-location-text">
+                      80 sittandes, 120 mingel
+                    </p>
+                  </div>
+                  <div class="highlight-stars">
+                    <ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star-half-outline"
+                      role="img"
+                      aria-label="star half outline"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="venue-box">
+              <div class="venue-box-image">
+                <img
+                  src="img/hero-carousel/img-1.webp"
+                  alt="Venue Image"
+                  class="venue-image"
+                />
+                <div class="venue-box-price">
+                  <div class="from">fr.</div>
+                  <div>1000 kr/tim</div>
+                </div>
+              </div>
+              <div class="venue-box-info">
+                <div class="venue-box-info-header">
+                  <h3 class="venue-box-info-header-title">
+                    Villa Godthem - Djurgården
+                  </h3>
+                </div>
+                <div class="venue-box-info-body">
+                  <p class="venue-box-info-short-text">
+                    Villa Godthem är en av Stockholms vackraste
+                  </p>
+                </div>
+                <div class="venue-box-info-footer">
+                  <div class="venue-box-info-footer-capacity">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <p class="venue-box-info-footer-location-text">
+                      80 sittandes, 120 mingel
+                    </p>
+                  </div>
+                  <div class="highlight-stars">
+                    <ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star-half-outline"
+                      role="img"
+                      aria-label="star half outline"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="venue-box">
+              <div class="venue-box-image">
+                <img
+                  src="img/hero-carousel/img-1.webp"
+                  alt="Venue Image"
+                  class="venue-image"
+                />
+                <div class="venue-box-price">
+                  <div class="from">fr.</div>
+                  <div>1000 kr/tim</div>
+                </div>
+              </div>
+              <div class="venue-box-info">
+                <div class="venue-box-info-header">
+                  <h3 class="venue-box-info-header-title">
+                    Villa Godthem - Djurgården
+                  </h3>
+                </div>
+                <div class="venue-box-info-body">
+                  <p class="venue-box-info-short-text">
+                    Villa Godthem är en av Stockholms vackraste festlokaler på
+                    anrika Djurgården. Här kan du arrangera bröllop, fest,
+                    event.
+                  </p>
+                </div>
+                <div class="venue-box-info-footer">
+                  <div class="venue-box-info-footer-capacity">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <p class="venue-box-info-footer-location-text">
+                      80 sittandes, 120 mingel
+                    </p>
+                  </div>
+                  <div class="highlight-stars">
+                    <ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star"
+                      role="img"
+                      aria-label="star"
+                    ></ion-icon
+                    ><ion-icon
+                      class="star-icon ion-ios-star-outline md hydrated"
+                      name="star-half-outline"
+                      role="img"
+                      aria-label="star half outline"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-section"></div>
+        </div>
       </section>
     </main>
   </body>
