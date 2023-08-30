@@ -67,3 +67,6 @@ main {
   margin-bottom: 2rem;
   font-size: 3.6rem;
 }
+.highlight {
+  color: var(--highlight-color);
+}

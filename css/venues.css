@@ -86,7 +86,6 @@
   height: calc(100vh - (2 * var(--header-size)));
   width: 100%;
   max-width: 50vw;
-  background-color: red;
 }
 
 /* VENUE BOXES */
