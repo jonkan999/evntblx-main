@@ -18,7 +18,7 @@ venues = read_all_from_venues()
 rendered_html = main_template.render(venues=venues)
 
 # Write the rendered HTML content to a new file
-output_path = os.path.join("C:/Users/engjoe/festlokalerstockholm/", "festlokaler-stockholm-updated.html")
+output_path = os.path.join("C:/Users/engjoe/festlokalerstockholm/", "festlokaler-stockholm.html")
 with open(output_path, "w", encoding="utf-8") as output_file:
     output_file.write(rendered_html)
 
