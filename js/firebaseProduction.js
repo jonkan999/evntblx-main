@@ -15,6 +15,7 @@ import {
 fetch("/.netlify/functions/getFirebaseConfig")
   .then((response) => response.json())
   .then((firebaseConfigJSON) => {
+    console.log("Firebase config:", firebaseConfigJSON);
     const firebaseConfig = JSON.parse(firebaseConfigJSON);
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
