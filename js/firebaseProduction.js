@@ -12,7 +12,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
-import firebaseConfig from "./config.js";
+/* import firebaseConfig from "./config.js"; */
 
 // Fetch the Firebase config from the serverless function
 fetch("/.netlify/functions/getFirebaseConfig")
