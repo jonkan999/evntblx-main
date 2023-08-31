@@ -1,21 +1,3 @@
-/* import firebase from "firebase/compat/app";
-// Required for side-effects
-import "firebase/firestore";
- */
-/* import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; */
-/* import firebase from "firebase/app";
-import "firebase/firestore";
- */
-/* import firebaseConfig from "./config.js"; // Update the path to match your directory structure
- */
-
-/* firebase.initializeApp(firebaseConfig);
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app); */
-
 // Wait for the page to load
 window.addEventListener("load", function () {
   const colorSelection = document.querySelector(".color-selection");

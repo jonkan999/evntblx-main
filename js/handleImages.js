@@ -1,7 +1,7 @@
 const venueInfoJSON = localStorage.getItem("venueInfo");
-console.log(JSON.parse(venueInfoJSON));
+
 const test = localStorage.getItem("venueImages");
-console.log(JSON.parse(test));
+
 const imageUpload = document.getElementById("imageUpload");
 const fileUploadStatus = document.getElementById("fileUploadStatus");
 
@@ -50,20 +50,200 @@ const venueImagesData = venueImagesJSON
   ? JSON.parse(venueImagesJSON)
   : { images: [] };
 
-// Function to handle image uploads
-function handleImageUpload(event) {
+// Function to handle image uploads with iterative compression
+
+/* async function handleImageUpload(event) {
+  showLoadingSpinner();
   const files = event.target.files;
-  for (const file of files) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      venueImagesData.images.push(e.target.result); // Store data URI
-      // Update local storage with the new images
-      localStorage.setItem("venueImages", JSON.stringify(venueImagesData));
-      // Update the page to show the uploaded image
-      displayImage(e.target.result);
-    };
-    reader.readAsDataURL(file);
+  const promises = []; // Create an array to store the promises
+  const numImagesInStorage = venueImagesData.images.length; // Get the number of images already in storage
+  const maxNumImages = 10 - numImagesInStorage; // Calculate the maximum number of images that can be uploaded
+  const targetSize = 500000; // 500 kB
+  for (let i = 0; i < files.length && i < maxNumImages; i++) {
+    const file = files[i];
+    const promise = new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const imageData = e.target.result;
+
+        // Create an image element to load the image
+        const image = new Image();
+        image.src = imageData;
+
+        image.onload = async () => {
+          // Create a canvas to draw the compressed image
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          // Set the initial canvas dimensions
+          let newWidth = image.width;
+          let newHeight = image.height;
+
+          // Calculate the current image size
+          const currentSize = imageData.length;
+
+          // Use linear regression to estimate the compression quality that results in the target size
+
+          let compressionQuality = 0.9;
+          let newSize = currentSize;
+          while (newSize > targetSize) {
+            // Adjust the compression quality
+            const stepSize = newSize > targetSize * 1.5 ? 0.2 : 0.1;
+            compressionQuality -= stepSize;
+
+            // Set the canvas dimensions for compression
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+
+            // Draw the image on the canvas with the compressed dimensions
+            ctx.drawImage(image, 0, 0, newWidth, newHeight);
+
+            // Convert the canvas data to a compressed JPEG image
+            const compressedImageData = canvas.toDataURL(
+              "image/jpeg",
+              compressionQuality
+            );
+
+            // Calculate the new image size
+            newSize = compressedImageData.length;
+          }
+
+          // Compress the image using the estimated compression quality
+          canvas.width = newWidth;
+          canvas.height = newHeight;
+          ctx.drawImage(image, 0, 0, newWidth, newHeight);
+          const compressedImageData = canvas.toDataURL(
+            "image/jpeg",
+            compressionQuality
+          );
+
+          // Store the compressed image data
+          venueImagesData.images.push(compressedImageData);
+
+          // Update local storage with the new images
+          localStorage.setItem("venueImages", JSON.stringify(venueImagesData));
+
+          // Update the page to show the uploaded image
+          displayImage(compressedImageData);
+
+          resolve(); // Resolve the promise when the image processing is complete
+        };
+      };
+      reader.readAsDataURL(file);
+    });
+    promises.push(promise); // Push the promise into the array
   }
+
+  // Wait for all promises to resolve
+  await Promise.all(promises);
+
+  hideLoadingSpinner(); // Execute the hide loading spinner function after the for loop is complete
+} */
+
+async function handleImageUpload(event) {
+  showLoadingSpinner();
+  const files = event.target.files;
+  const promises = []; // Create an array to store the promises
+  const numImagesInStorage = venueImagesData.images.length; // Get the number of images already in storage
+  const allowedImages = 10;
+  const maxFileSize = 1048576 / allowedImages; // Calculate the maximum file size for each image
+  const maxNumImages = allowedImages - numImagesInStorage; // Calculate the maximum number of images that can be uploaded
+  console.log(files.maxNumImages);
+  console.log(files.length);
+
+  if (files.length > maxNumImages) {
+    alert(
+      `Du kan bara ladda upp fler bilder då vår nuvarande gräns är ${allowedImages} bilder per lokal.`
+    );
+    hideLoadingSpinner();
+    return;
+  }
+  for (let i = 0; i < files.length && i < maxNumImages; i++) {
+    const file = files[i];
+    const promise = new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const imageData = e.target.result;
+
+        // Create an image element to load the image
+        const image = new Image();
+        image.src = imageData;
+
+        image.onload = async () => {
+          // Create a canvas to draw the compressed image
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          // Set the initial canvas dimensions
+          let newWidth = image.width;
+          let newHeight = image.height;
+          // Calculate the current image size
+          const currentSize = imageData.length;
+          // Iteratively compress the image until the size is within the threshold
+          let compressionQuality = 0.9; // Start with a high quality
+          let compressedImageData = "";
+          let newSize = maxFileSize;
+          while (
+            compressedImageData.length > maxFileSize ||
+            compressedImageData.length === 0
+          ) {
+            // Adjust the compression quality
+            const stepSize = newSize > maxFileSize * 1.5 ? 0.2 : 0.1;
+            compressionQuality -= stepSize;
+
+            // Set the canvas dimensions for compression
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+
+            // Draw the image on the canvas with the compressed dimensions
+            ctx.drawImage(image, 0, 0, newWidth, newHeight);
+
+            // Convert the canvas data to a compressed WebP image
+            compressedImageData = canvas.toDataURL(
+              "image/webp",
+              compressionQuality
+            );
+
+            // Update the dimensions for the next iteration
+            newWidth *= 0.9; // Reducing width
+            newHeight *= 0.9; // Reducing height
+            // Calculate the new image size
+            newSize = compressedImageData.length;
+          }
+
+          // Store the compressed image data
+          venueImagesData.images.push(compressedImageData);
+
+          // Update local storage with the new images
+          localStorage.setItem("venueImages", JSON.stringify(venueImagesData));
+
+          // Update the page to show the uploaded image
+          displayImage(compressedImageData);
+
+          resolve(); // Resolve the promise when the image processing is complete
+        };
+      };
+      reader.readAsDataURL(file);
+    });
+    promises.push(promise); // Push the promise into the array
+  }
+
+  // Wait for all promises to resolve
+  await Promise.all(promises);
+
+  hideLoadingSpinner(); // Execute the hide loading spinner function after the for loop is complete
+}
+// Function to show the loading spinner
+function showLoadingSpinner() {
+  const loadingOverlay = document.getElementById("loadingOverlay");
+
+  loadingOverlay.style.display = "flex";
+}
+
+// Function to hide the loading spinner
+function hideLoadingSpinner() {
+  const loadingOverlay = document.getElementById("loadingOverlay");
+  loadingOverlay.style.display = "none";
 }
 
 /* HANDLE DRAG AND DROP AREA */
@@ -131,7 +311,6 @@ function displayImage(imageData) {
 
 // Function to remove an image from the list
 function removeImage(imageData) {
-  console.log(imageData);
   venueImagesData.images = venueImagesData.images.filter(
     (image) => image !== imageData
   );
