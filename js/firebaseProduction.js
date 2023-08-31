@@ -14,7 +14,8 @@ import {
 // Fetch the Firebase config from the serverless function
 fetch("/.netlify/functions/getFirebaseConfig")
   .then((response) => response.json())
-  .then((firebaseConfig) => {
+  .then((firebaseConfigJSON) => {
+    const firebaseConfig = JSON.parse(firebaseConfigJSON);
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
