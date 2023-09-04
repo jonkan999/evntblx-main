@@ -16,7 +16,7 @@ venues = read_all_from_venues()
 
 # Function to clean and format the venue name for the output filename
 def clean_filename(name):
-    name = name.replace('-', ' ').replace('å', 'a').replace('ä', 'a').replace('ö', 'o')
+    name = name.replace('-', ' ').replace('å', 'a').replace('ä', 'a').replace('ö', 'o').lower()
     return '-'.join(name.split())
 
 # Generate HTML files for each venue
