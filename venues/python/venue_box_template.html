@@ -121,9 +121,9 @@
         </div>
         <div class="venue-selector">
           <div class="venues-section">
-            {% for venue in venues %} {% set cleaned_name =
-            venue['venueInfo']['name']|replace('-', ' ')|replace(' ',
-            '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö', 'o') %}
+            {% set cleaned_name = venue['venueInfo']['name']|replace('-', '
+            ')|replace(' ', '-')|lower|replace('å', 'a')|replace('ä',
+            'a')|replace('ö', 'o')|replace('--', '-')|replace('---', '-') %}
             <a
               target="_blank"
               href="{{ '/venues/' + cleaned_name + '.html' }}"
