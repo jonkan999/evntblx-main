@@ -78,8 +78,13 @@
 }
 .venues-section {
   max-width: 100%;
+  /* .05 is enough to make x-scroll idssappear */
+  min-width: calc(3.05 * var(--venue-box-width));
+  height: calc(100vh - (2 * var(--header-size)));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  overflow-x: visible;
+  overflow-y: scroll;
   grid-gap: 0;
 }
 .map-section {
@@ -99,7 +104,7 @@
 
 /* Style for the venue box container */
 .venue-box {
-  width: 35rem;
+  width: var(--venue-box-width);
   height: 34rem;
   display: flex;
   flex-direction: column;
@@ -110,7 +115,7 @@
 
 .venue-box:hover {
   cursor: pointer;
-  color: #555;
+  color: var(--box-hover-color);
 }
 
 /* Style for the venue image */
@@ -202,4 +207,24 @@
   align-items: center;
   gap: 0.2rem;
   font-size: 1.6rem;
+}
+.mapboxgl-popup-content {
+  width: 25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: var(--black-text-color);
+}
+.popup-container:hover {
+  color: var(--box-hover-color);
+}
+.popup-image {
+  width: 100%;
+  height: 10rem;
 }

@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 # Set up Jinja2 environment
 def extract_first_ten_words(description):
     words = description.split()
-    return_string=' '.join(words[:24])
+    return_string=' '.join(words[:14])
     return_string+='...'
     return return_string
 

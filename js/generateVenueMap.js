@@ -176,6 +176,22 @@ document.addEventListener("DOMContentLoaded", () => {
     zoom: 11,
   });
 
+  map.on("load", () => {
+    // Remove the Mapbox logo element
+    const mapboxLogo = document.querySelector(".mapboxgl-ctrl-logo");
+    if (mapboxLogo) {
+      mapboxLogo.parentNode.removeChild(mapboxLogo);
+    }
+
+    // Remove the "Improve this map" link element
+    const improveMapLink = document.querySelector(
+      ".mapboxgl-ctrl-attrib-inner"
+    );
+    if (improveMapLink) {
+      improveMapLink.parentNode.removeChild(improveMapLink);
+    }
+  });
+
   // Create a function to add a marker for a venue
   function addMarker(venue) {
     const marker = new mapboxgl.Marker({ color: "#9c51b6" })
@@ -222,6 +238,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     venueBox.addEventListener("click", () => {
       setMarkerSvg(marker, hoverMarkerSVG);
+    });
+  });
+
+  // Create a function to handle marker click events
+  function handleMarkerClick(marker) {
+    const coordinates = marker.getLngLat(); // Get marker coordinates
+    console.log("Marker Clicked. Coordinates:", coordinates);
+    /* setMarkerSvg(marker, hoverMarkerSVG); */
+
+    // Find the corresponding venue-box
+    const matchingVenue = venues.find((venue) => {
+      return (
+        venue.mapboxCenter[0] === coordinates.lng &&
+        venue.mapboxCenter[1] === coordinates.lat
+      );
+    });
+
+    if (matchingVenue) {
+      // Find the corresponding .venue-box element
+      const venueBox = venueBoxes[venues.indexOf(matchingVenue)];
+      const venueLink = venueBox ? venueBox.getAttribute("href") : ""; // Get the href attribute of the venue box element
+      // Extract information from .venue-box
+      const imageElement = venueBox.querySelector(".venue-box-image");
+      const imageStyle = imageElement ? imageElement.getAttribute("style") : ""; // Get the style attribute of the image element
+
+      const header = venueBox.querySelector(
+        ".venue-box-info-header"
+      ).textContent;
+      const footer = venueBox.querySelector(
+        ".venue-box-info-footer"
+      ).textContent;
+      // Update the marker's SVG to hoverMarkerSVG
+      /* marker.getElement().innerHTML = hoverMarkerSVG; */
+      // Create and open a popup
+      const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+        `
+
+        <a target=blank href=${venueLink} class="popup-container">
+          <div class="popup-image" style="${imageStyle}">
+          </div>
+          <h3>${header}</h3>
+          <p>${footer}</p>
+        </a>
+
+`
+      );
+
+      marker
+        .setPopup(popup) // sets a popup on this marker
+        .addTo(map);
+    }
+  }
+
+  // Add click event listener to each marker
+  markers.forEach((marker) => {
+    marker.getElement().addEventListener("click", () => {
+      handleMarkerClick(marker);
     });
   });
 });

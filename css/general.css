@@ -28,6 +28,7 @@ select:focus {
   --white-background-color: #fff;
   --white-text-color: #fff;
   --hover-white: #ccc;
+  --box-hover-color: #555;
   --black-background-color: #000;
   --highlight-color: #9c51b6;
   --granite-background-color: #111;
@@ -39,6 +40,7 @@ select:focus {
   --color3: #f39c12;
 
   --header-size: 7rem;
+  --venue-box-width: 35rem;
 }
 
 /***************************** */
