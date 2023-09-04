@@ -21,7 +21,7 @@ for venue in venues:
     html_content = template.render(venue=venue)
 
     # Create a new HTML file
-    output_path = f"C:/Users/engjoe/festlokalerstockholm/venues/{venue['venueInfo']['name'].replace(' ', '-').lower().replace('å', 'a').replace('ä', 'a').replace('ö', 'o')}.html"
+    output_path = f"C:/Users/engjoe/festlokalerstockholm/venues/{venue['venueInfo']['name'].replace('-', ' ').replace(' ', '-').lower().replace('å', 'a').replace('ä', 'a').replace('ö', 'o')}.html"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as output_file:
         output_file.write(html_content)

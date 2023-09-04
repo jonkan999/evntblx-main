@@ -124,7 +124,7 @@
             {% for venue in venues %}
             <a
               target="_blank"
-              href="{{ '/venues/' + venue['venueInfo']['name']|replace(' ', '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö', 'o') + '.html' }}"
+              href="{{ '/venues/' + venue['venueInfo']['name']|replace('-', ' ')|replace(' ', '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö', 'o') + '.html' }}"
               class="venue-box"
               data-geocenter="{{ venue.mapboxCenter }}"
             >

@@ -145,7 +145,7 @@ async function handleImageUpload(event) {
   const files = event.target.files;
   const promises = []; // Create an array to store the promises
   const numImagesInStorage = venueImagesData.images.length; // Get the number of images already in storage
-  const allowedImages = 10;
+  const allowedImages = 8;
   const maxFileSize = 1048576 / allowedImages; // Calculate the maximum file size for each image
   const maxNumImages = allowedImages - numImagesInStorage; // Calculate the maximum number of images that can be uploaded
   console.log(files.maxNumImages);
