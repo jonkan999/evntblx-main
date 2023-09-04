@@ -5,7 +5,9 @@ from jinja2 import Environment, FileSystemLoader
 # Set up Jinja2 environment
 def extract_first_ten_words(description):
     words = description.split()
-    return ' '.join(words[:10])
+    return_string=' '.join(words[:15])
+    return_string+='...'
+    return ' '.join(words[:15])
 
 env = Environment(loader=FileSystemLoader(searchpath="C:/Users/engjoe/festlokalerstockholm/venues/python"))
 env.filters['extract_first_ten_words'] = extract_first_ten_words
