@@ -114,10 +114,10 @@
     width: 100%;
   }
   .top-right-image {
-    width: calc(65% - 0.5rem);
+    width: calc(60% - 0.5rem);
   }
   .bottom-right-images {
-    width: calc(35% - 0.25rem);
+    width: calc(40% - 0.25rem);
     flex-direction: column;
   }
   .square-icon-container .icon {
@@ -134,7 +134,7 @@
   }
   .second-col {
     justify-self: flex-end;
-    margin-right: 5rem;
+    margin-right: 2rem;
   }
   .second-col p {
     width: 10rem;

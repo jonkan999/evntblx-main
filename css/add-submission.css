@@ -460,6 +460,8 @@ h3 {
   top: calc(var(--header-size) + 2rem);
   right: 10rem;
   z-index: 6;
+  align-items: center;
+  justify-content: center;
 }
 #hideGrid:hover {
   cursor: pointer;
