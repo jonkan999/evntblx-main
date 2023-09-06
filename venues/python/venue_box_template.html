@@ -138,8 +138,8 @@
                 <div class="venue-box-price">
                   <div class="from">fr.</div>
                   <div>
-                    fr. {{ venue.venueInfo.startingPrice .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') }} kr/dygn
+                    fr. {{ venue.venueInfo.startingPrice|format_thousands }}
+                    kr/dygn
                   </div>
                 </div>
               </div>

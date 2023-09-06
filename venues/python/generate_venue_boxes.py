@@ -8,9 +8,16 @@ def extract_first_ten_words(description):
     return_string=' '.join(words[:14])
     return_string+='...'
     return return_string
+def format_thousands(value):
+    try:
+        numeric_value = float(value)
+        return "{:,.0f}".format(numeric_value)
+    except (ValueError, TypeError):
+        return value
 
 env = Environment(loader=FileSystemLoader(searchpath="C:/Users/engjoe/festlokalerstockholm/venues/python"))
 env.filters['extract_first_ten_words'] = extract_first_ten_words
+env.filters['format_thousands'] = format_thousands
 main_template = env.get_template("venue_box_template.html")
 
 # Get venues data from Firebase (you should replace this with your actual method)

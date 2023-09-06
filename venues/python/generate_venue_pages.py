@@ -6,9 +6,18 @@ from jinja2 import Environment, FileSystemLoader
 # Get the directory path of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
+def format_thousands(value):
+    try:
+        numeric_value = float(value)
+        return "{:,.0f}".format(numeric_value)
+    except (ValueError, TypeError):
+        return value
+
 # Set up Jinja2 environment
 template_path = os.path.join(script_dir, "venue_template.html")
 env = Environment(loader=FileSystemLoader(searchpath=script_dir))
+# Register the filter function with the Jinja2 environment
+env.filters['format_thousands'] = format_thousands
 template = env.get_template("venue_template.html")
 
 venues = read_all_from_venues()
@@ -18,6 +27,9 @@ venues = read_all_from_venues()
 def clean_filename(name):
     name = name.replace('-', ' ').replace('å', 'a').replace('ä', 'a').replace('ö', 'o').lower()
     return '-'.join(name.split())
+
+
+
 
 # Generate HTML files for each venue
 for venue in venues:

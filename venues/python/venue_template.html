@@ -282,8 +282,7 @@
             <p class="venue-description">{{ venue.venueInfo.description }}</p>
             <h3>Lokalhyra:</h3>
             <p class="venue-price">
-              fr. {{ venue.venueInfo.startingPrice .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') }} kr/dygn
+              {{ venue.venueInfo.startingPrice|format_thousands }} kr/dygn
             </p>
           </div>
 
