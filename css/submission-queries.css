@@ -23,6 +23,9 @@
   #showAllGrid {
     grid-template-columns: 1fr 1fr;
   }
+  .images-section {
+    height: 30rem;
+  }
 }
 
 /**************************/
@@ -93,6 +96,27 @@
   .desktop {
     display: none;
   }
+  .images-section {
+    flex-direction: column;
+    height: 50rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .left-image {
+    width: 100%;
+  }
+
+  .right-images-section {
+    flex-direction: row;
+    width: 100%;
+  }
+  .top-right-image {
+    width: calc(65% - 0.5rem);
+  }
+  .bottom-right-images {
+    width: calc(35% - 0.25rem);
+    flex-direction: column;
+  }
   .square-icon-container .icon {
     font-size: 1.8rem;
     color: #fff;
@@ -147,7 +171,6 @@
     margin-right: auto;
   }
   #showAllGrid {
-    display: grid;
     grid-template-columns: repeat(
       auto-fill,
       minmax(100%, 1fr)
@@ -162,6 +185,10 @@
     width: 100%; /* Make each item as wide as the screen */
     text-align: center; /* Center the content inside the items */
     scroll-snap-align: center; /* Center alignment for scroll snapping */
+  }
+
+  .description-container .venue-price {
+    margin-left: 5%;
   }
 }
 

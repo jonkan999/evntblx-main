@@ -189,6 +189,13 @@
   pointer-events: none; /* Allow interactions with the image behind the overlay */
   z-index: 3;
 }
+
+.square-icon-container-container {
+  z-index: 4;
+}
+.show-all-images-text {
+  z-index: 4;
+}
 .gallery-overlay {
   position: absolute;
   top: 0;
