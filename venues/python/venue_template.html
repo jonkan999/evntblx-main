@@ -33,6 +33,7 @@
 
     <script defer="" src="/js/venueScriptMapbox.js"></script>
     <script defer="" src="/js/venueScriptCalendar.js"></script>
+    <script defer="" src="/js/showAllImages.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -49,6 +50,10 @@
   </head>
 
   <body>
+    <div class="show-all-overlay" id="showAllOverlay"></div>
+    <button class="hide-grid" id="hideGrid">
+      <ion-icon name="close-outline" class="close-icon"></ion-icon>
+    </button>
     <header class="header header-black section">
       <div class="brand-box">
         <a class="header-brand-name" href="/index.html"
@@ -74,7 +79,17 @@
     </header>
     <main>
       <section class="venue-page" id="venuePage">
-        <div class="images-section section airy-margin">
+        <div class="show-all-grid" id="showAllGrid">
+          {% for i in range(0, venue.venueImages.images|length) %}
+          <div
+            class="gallery-image"
+            style="background-image: url('{{ venue.venueImages.images[i] }}');"
+          >
+            <div class="gallery-overlay"></div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="images-section section airy-margin" id="imageSection">
           <div
             class="left-image"
             style="background-image: url('{{ venue.venueImages.images[0] }}')"
@@ -99,44 +114,44 @@
                 class="bottom-right-image"
                 style="background-image: url('{{ venue.venueImages.images[3] }}')"
               >
-                <div class="image-overlay"></div>
-              </div>
-              <div class="show-all-container">
-                <div class="square-icon-container-container">
-                  <div class="square-icon-container">
-                    <ion-icon
-                      class="icon ion-ios-square-outline md hydrated"
-                      name="square-outline"
-                      role="img"
-                      aria-label="square outline"
-                    ></ion-icon>
+                <div class="show-all-container" id="showAll">
+                  <div class="square-icon-container-container">
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
                   </div>
-                  <div class="square-icon-container">
-                    <ion-icon
-                      class="icon ion-ios-square-outline md hydrated"
-                      name="square-outline"
-                      role="img"
-                      aria-label="square outline"
-                    ></ion-icon>
-                  </div>
-                  <div class="square-icon-container">
-                    <ion-icon
-                      class="icon ion-ios-square-outline md hydrated"
-                      name="square-outline"
-                      role="img"
-                      aria-label="square outline"
-                    ></ion-icon>
-                  </div>
-                  <div class="square-icon-container">
-                    <ion-icon
-                      class="icon ion-ios-square-outline md hydrated"
-                      name="square-outline"
-                      role="img"
-                      aria-label="square outline"
-                    ></ion-icon>
-                  </div>
+                  <div class="show-all-images-text">Visa alla</div>
+                  <div class="image-overlay"></div>
                 </div>
-                <div class="show-all-images-text">Visa alla</div>
               </div>
             </div>
           </div>
@@ -189,7 +204,15 @@
               aria-label="star half outline"
             ></ion-icon>
           </div>
-
+          <div class="highlight-star-mobile">
+            <ion-icon
+              class="star-icon ion-ios-star-outline md hydrated"
+              name="star"
+              role="img"
+              aria-label="star"
+            ></ion-icon>
+            <p>4.85</p>
+          </div>
           <!-- Guests and Size Info -->
           <li class="highlight-info">
             <ion-icon
@@ -201,7 +224,7 @@
               venue.venueInfo.standing }} minglandes
             </p>
           </li>
-          <li class="highlight-info">
+          <li class="highlight-info desktop">
             <ion-icon
               class="highlight-icon ion-ios-crop-outline"
               name="crop-outline"
@@ -220,6 +243,16 @@
               "Matservering tillhandahållen av lokalen" }}
             </p>
           </li>
+          <li class="highlight-info second-col mobile">
+            <ion-icon
+              class="highlight-icon ion-ios-people-outline"
+              name="people-outline"
+            ></ion-icon>
+            <p>
+              {{ venue.venueInfo.seated }} sittandes, {{
+              venue.venueInfo.standing }} minglandes
+            </p>
+          </li>
           <li class="highlight-info">
             <ion-icon
               class="highlight-icon ion-ios-wine-outline"
@@ -230,6 +263,15 @@
               tillhandahållen av lokalen" }}
             </p>
           </li>
+          <div class="highlight-star-mobile second-col">
+            <ion-icon
+              class="star-icon ion-ios-star-outline md hydrated"
+              name="star"
+              role="img"
+              aria-label="star"
+            ></ion-icon>
+            <p>4.85</p>
+          </div>
         </ul>
 
         <!-- Calendar and Mail Template Containers -->

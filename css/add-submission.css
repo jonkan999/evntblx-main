@@ -117,10 +117,11 @@
 
 .show-all-container {
   position: absolute;
+  width: 100%;
+  height: 100%;
   z-index: 5;
-  left: 75%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -188,6 +189,18 @@
   pointer-events: none; /* Allow interactions with the image behind the overlay */
   z-index: 3;
 }
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); /* Transparent grey overlay */
+  opacity: 0; /* Initially transparent */
+  /*  transition: opacity 0.3s ease; */ /* Add transition for smooth effect */
+  pointer-events: none; /* Allow interactions with the image behind the overlay */
+  z-index: 3;
+}
 
 /* Apply styles to the overlay on hover */
 .bottom-right-image:hover .image-overlay,
@@ -196,11 +209,16 @@
 .show-all-container:hover + .image-overlay verkar inte funka */ {
   opacity: 1; /* Show the overlay on hover */
 }
+.gallery-image:hover .gallery-overlay/* ,
+.show-all-container:hover + .image-overlay verkar inte funka */ {
+  opacity: 1; /* Show the overlay on hover */
+}
 
 /* Apply styles to the overlay on hover */
 .bottom-right-image:hover,
 .top-right-image:hover,
-.left-image:hover {
+.left-image:hover,
+.gallery-image:hover {
   cursor: pointer; /* Show the overlay on hover */
 }
 
@@ -412,4 +430,74 @@
 }
 h3 {
   margin-bottom: 1rem;
+}
+
+#showAllOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-background-color);
+  z-index: 3;
+}
+
+#hideGrid {
+  background-color: var(--white-background-color);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  position: fixed;
+  top: calc(var(--header-size) + 2rem);
+  right: 10rem;
+  z-index: 6;
+}
+#hideGrid:hover {
+  cursor: pointer;
+}
+#hideGrid .close-icon {
+  font-size: 3rem;
+  color: var(--black-background-color);
+}
+
+#showAllGrid {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: var(--white-background-color);
+  border: none;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center; /* Center the items horizontally */
+  gap: 2rem;
+
+  right: 10rem;
+  z-index: 5;
+}
+
+.gallery-image {
+  position: relative;
+  width: 45rem;
+  height: 35rem;
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+
+/* MOBILE OBJECTS */
+.mobile {
+  display: none;
+}
+.highlight-star-mobile {
+  display: none;
+  font-size: 1.65rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+.highlight-star-mobile p {
+  line-height: 2.5rem;
+}
+.highlight-star-mobile ion-icon {
+  font-size: 2.5rem;
 }
