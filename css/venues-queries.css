@@ -57,13 +57,13 @@
     --venue-box-height: 40rem;
     --venue-box-image-height: 29rem;
   }
-  .mobile {
+  /*   .mobile {
     display: flex;
   }
 
   .desktop {
     display: none;
-  }
+  } */
 
   .venues-section {
     grid-template-columns: 1fr;
@@ -72,7 +72,7 @@
   }
   .venue-box-container {
     width: calc(100% - 2rem);
-    margin: 0 1rem;
+    margin: 1rem 1rem;
   }
   .venue-box {
     width: 100%;
@@ -112,8 +112,18 @@
   }
   .map-section {
     height: calc(100vh - (2 * var(--header-size)));
-    width: 100%;
+    width: 0;
     max-width: none;
+  }
+  .mapboxgl-popup-content {
+    width: 28rem;
+  }
+  .popup-image {
+    height: 16rem;
+  }
+  .venue-box-info-footer {
+    margin: auto 0 1rem 0;
+    display: flex;
   }
 }
 
