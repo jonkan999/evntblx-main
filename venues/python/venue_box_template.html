@@ -33,6 +33,7 @@
 
     <script defer="" src="/js/toggleButton.js"></script>
     <script defer="" src="/js/generateVenueMap.js"></script>
+    <script defer="" src="/js/venueImageCarousel.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -125,78 +126,108 @@
             venue['venueInfo']['name']|replace('-', ' ')|replace(' ',
             '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö',
             'o')|replace('---', '-')|replace('--', '-') %}
-            <a
-              target="_blank"
-              href="{{ '/venues/' + cleaned_name + '.html' }}"
-              class="venue-box"
-              data-geocenter="{{ venue.mapboxCenter }}"
-            >
-              <div
-                class="venue-box-image"
-                style="background-image: url('{{ venue.venueImages.images[1] }}')"
+            <div class="venue-box-container">
+              <a
+                target="_blank"
+                href="{{ '/venues/' + cleaned_name + '.html' }}"
+                class="venue-box"
+                data-geocenter="{{ venue.mapboxCenter }}"
               >
-                <div class="venue-box-price">
-                  <div class="from">fr.</div>
-                  <div>
-                    fr. {{ venue.venueInfo.startingPrice|format_thousands }}
-                    kr/dygn
+                <!-- HTML structure for the carousel -->
+                <div class="image-carousel">
+                  <div class="image-carousel-container">
+                    {% for image in venue.venueImages.images %}
+                    <div
+                      class="image-carousel-item"
+                      style="background-image: url('{{ image }}')"
+                    ></div>
+                    {% endfor %}
+
+                    <div class="venue-box-price">
+                      <div class="from">fr.</div>
+                      <div>
+                        {{ venue.venueInfo.startingPrice|format_thousands }}
+                        kr/dygn
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-navigation">
+                    <span id="counter"
+                      >1/{{ venue.venueImages.images|length }}</span
+                    >
                   </div>
                 </div>
-              </div>
-              <div class="venue-box-info">
-                <div class="venue-box-info-header">
-                  <h3 class="venue-box-info-header-title">
-                    {{ venue.venueInfo.name }}
-                  </h3>
-                </div>
-                <div class="venue-box-info-body">
-                  <p class="venue-box-info-short-text">
-                    {{ venue.venueInfo.description | extract_first_ten_words }}
-                  </p>
-                </div>
-                <div class="venue-box-info-footer">
-                  <div class="venue-box-info-footer-capacity">
-                    <ion-icon name="people-outline"></ion-icon>
-                    <p class="venue-box-info-footer-location-text">
-                      {{ venue.venueInfo.seated }} sittandes, {{
-                      venue.venueInfo.standing }} mingel
+
+                <div class="venue-box-info">
+                  <div class="venue-box-info-header">
+                    <h3 class="venue-box-info-header-title">
+                      {{ venue.venueInfo.name }}
+                    </h3>
+                  </div>
+                  <div class="venue-box-info-body">
+                    <p class="venue-box-info-short-text">
+                      {{ venue.venueInfo.description | extract_first_ten_words
+                      }}
                     </p>
                   </div>
-                  <div class="highlight-stars">
-                    <ion-icon
-                      class="star-icon ion-ios-star-outline md hydrated"
-                      name="star"
-                      role="img"
-                      aria-label="star"
-                    ></ion-icon
-                    ><ion-icon
-                      class="star-icon ion-ios-star-outline md hydrated"
-                      name="star"
-                      role="img"
-                      aria-label="star"
-                    ></ion-icon
-                    ><ion-icon
-                      class="star-icon ion-ios-star-outline md hydrated"
-                      name="star"
-                      role="img"
-                      aria-label="star"
-                    ></ion-icon
-                    ><ion-icon
-                      class="star-icon ion-ios-star-outline md hydrated"
-                      name="star"
-                      role="img"
-                      aria-label="star"
-                    ></ion-icon
-                    ><ion-icon
-                      class="star-icon ion-ios-star-outline md hydrated"
-                      name="star-half-outline"
-                      role="img"
-                      aria-label="star half outline"
-                    ></ion-icon>
+                  <div class="venue-box-info-footer">
+                    <div class="venue-box-info-footer-capacity">
+                      <ion-icon name="people-outline"></ion-icon>
+                      <p class="venue-box-info-footer-location-text">
+                        {{ venue.venueInfo.seated }} sittandes, {{
+                        venue.venueInfo.standing }} mingel
+                      </p>
+                    </div>
+                    <div class="highlight-stars">
+                      <ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star-half-outline"
+                        role="img"
+                        aria-label="star half outline"
+                      ></ion-icon>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+              <button
+                id="nextButton"
+                onclick="nextSlide()"
+                class="carousel-nav-icon next"
+              >
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+              <button
+                id="prevButton"
+                onclick="prevSlide()"
+                class="carousel-nav-icon prev"
+              >
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
+            </div>
             {% endfor %}
           </div>
           <div class="map-section" id="mapSection"></div>

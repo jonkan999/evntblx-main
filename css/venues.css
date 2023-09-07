@@ -79,13 +79,14 @@
 .venues-section {
   max-width: 100%;
   /* .05 is enough to make x-scroll idssappear */
-  min-width: calc(3.05 * var(--venue-box-width));
+  min-width: calc(3.17 * var(--venue-box-width));
   height: calc(100vh - (2 * var(--header-size)));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow-x: visible;
   overflow-y: scroll;
-  grid-gap: 0;
+  grid-gap: 1rem;
+  padding: 1rem;
 }
 .map-section {
   height: calc(100vh - (2 * var(--header-size)));
@@ -103,12 +104,16 @@
 }
 
 /* Style for the venue box container */
+.venue-box-container {
+  position: relative;
+  width: var(--venue-box-width);
+  height: var(--venue-box-height);
+}
 .venue-box {
   width: var(--venue-box-width);
-  height: 34rem;
+  height: var(--venue-box-height);
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   text-decoration: none;
   color: #000;
 }
@@ -119,13 +124,85 @@
 }
 
 /* Style for the venue image */
-.venue-box-image {
+/* .venue-box-image {
   width: 100%;
   position: relative;
   height: 32rem;
   margin-bottom: 1rem;
   background-size: cover;
   background-position: center 40%;
+} */
+/* Style for the venue image */
+/* CSS for the carousel */
+.image-carousel {
+  position: relative;
+}
+
+.image-carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.image-carousel-item {
+  width: 100%;
+  height: var(--venue-box-image-height); /* Adjust the height as needed */
+  /*   background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #333; */
+  background-size: cover;
+  background-position: center 60%;
+  display: none;
+}
+
+.image-carousel-item:first-child {
+  display: block; /* Initially show the first slide */
+}
+
+/* CSS for the navigation buttons and counter */
+.carousel-navigation {
+  position: absolute;
+  top: 17rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem; /* Adjust the margin as needed */
+  padding: 0.45rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-nav-icon {
+  height: 2.8rem;
+  width: 2.8rem;
+  font-size: 2.5rem;
+  border-radius: 50rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.575);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 9rem;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.carousel-nav-icon.prev {
+  right: 1.2rem;
+}
+.carousel-nav-icon.prev {
+  left: 1.2rem;
+}
+
+#counter {
+  font-size: 1.2rem; /* Adjust font size as needed */
+  font-weight: bold;
+}
+/* Show navigation buttons on parent hover */
+.venue-box-container:hover .carousel-nav-icon {
+  opacity: 1;
 }
 
 .venue-box-price {
@@ -150,7 +227,7 @@
 }
 /* Style for the venue information section */
 .venue-box-info {
-  height: 18rem;
+  height: 13.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -162,6 +239,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 .venue-box-info-header-title {
