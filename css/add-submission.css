@@ -510,3 +510,6 @@ h3 {
 .highlight-star-mobile ion-icon {
   font-size: 2.5rem;
 }
+#infoContainer {
+  display: none;
+}

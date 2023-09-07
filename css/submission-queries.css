@@ -99,11 +99,19 @@
   .desktop {
     display: none;
   }
+  #venuePage {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #infoContainer {
+    display: block;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .images-section {
     flex-direction: column;
     height: 50rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
   }
   .left-image {
     width: 100%;
@@ -158,18 +166,18 @@
   .map-container {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    width: 80%;
+    width: 90%;
     height: 30rem;
     margin-left: auto;
     margin-right: auto;
   }
   .calendar {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
   .mail-template-container {
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }

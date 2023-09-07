@@ -178,221 +178,222 @@
             </div>
           </div>
         </div>
+        <div class="info-container" id="infoContainer">
+          <!-- Venue Name -->
+          <h1 class="event-space-title">Enchanted Elegance Gala</h1>
 
-        <!-- Venue Name -->
-        <h1 class="event-space-title">Enchanted Elegance Gala</h1>
-
-        <!-- Venue Address -->
-        <div class="adress-div">
-          <ion-icon
-            class="icon ion-ios-location-outline"
-            name="location-outline"
-          ></ion-icon>
-          <p class="event-space-address">S. Blasieholmshamnen 8, Box 16424 </p>
-        </div>
-
-        <!-- Highlights Container -->
-        <ul class="highlights-container">
-          <!-- Star Rating -->
-          <div class="highlight-stars">
+          <!-- Venue Address -->
+          <div class="adress-div">
             <ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star"
-              role="img"
-              aria-label="star"
-            ></ion-icon
-            ><ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star"
-              role="img"
-              aria-label="star"
-            ></ion-icon
-            ><ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star"
-              role="img"
-              aria-label="star"
-            ></ion-icon
-            ><ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star"
-              role="img"
-              aria-label="star"
-            ></ion-icon
-            ><ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star-half-outline"
-              role="img"
-              aria-label="star half outline"
+              class="icon ion-ios-location-outline"
+              name="location-outline"
             ></ion-icon>
+            <p class="event-space-address">S. Blasieholmshamnen 8, Box 16424 </p>
           </div>
 
-          <!-- Guests and Size Info -->
-          <li class="highlight-info desktop">
-            <ion-icon
-              class="highlight-icon ion-ios-people-outline"
-              name="people-outline"
-            ></ion-icon>
-            <p>
-              150 sittandes, 250 minglandes
-            </p>
-          </li>
-          <li class="highlight-info mobile full-row">
-            <ion-icon
-              class="highlight-icon ion-ios-people-outline"
-              name="people-outline"
-            ></ion-icon>
-            <p>
-              150 sittandes, 250 minglandes
-            </p>
-          </li>
-          <li class="highlight-info desktop">
-            <ion-icon
-              class="highlight-icon ion-ios-crop-outline"
-              name="crop-outline"
-            ></ion-icon>
-            <p>500 m²</p>
-          </li>
-
-          <!-- Food and Drink Info -->
-          <li class="highlight-info">
-            <ion-icon
-              class="highlight-icon ion-ios-restaurant-outline"
-              name="restaurant-outline"
-            ></ion-icon>
-            <p>
-              Egen mat tillåten
-            </p>
-          </li>
-          <li class="highlight-info second-col mobile">
-            <ion-icon
-              class="highlight-icon ion-ios-crop-outline"
-              name="crop-outline"
-            ></ion-icon>
-            <p>500 m²</p>
-          </li>
-          <li class="highlight-info">
-            <ion-icon
-              class="highlight-icon ion-ios-wine-outline"
-              name="wine-outline"
-            ></ion-icon>
-            <p>
-              Egen dryck tillåten
-            </p>
-          </li>
-          <div class="highlight-star-mobile second-col">
-            <ion-icon
-              class="star-icon ion-ios-star-outline md hydrated"
-              name="star"
-              role="img"
-              aria-label="star"
-            ></ion-icon>
-            <p>4.85</p>
-          </div>
-        </ul>
-
-        <!-- Calendar and Mail Template Containers -->
-        <div class="subsection-split-container">
-          <!-- Description Container -->
-          <div class="description-container">
-            <h2>Om lokalen</h2>
-            <p class="venue-description">Step into a world of enchantment at our elegant gala event. The Royal Avenue venue sets the stage for a night of glamour and sophistication, featuring exquisite decor, live entertainment, and gourmet cuisine.</p>
-            <h3>Lokalhyra:</h3>
-            <p class="venue-price">
-              35,000 kr/dygn
-            </p>
-          </div>
-
-          <div class="subsection-right-split-container">
-            <div
-              data-mapboxCenter="[6.947034, 50.933726]"
-              class="map-container mapboxgl-map"
-              id="mapboxContainer"
-            ></div>
-            <div class="calendar-container">
-              <div class="calendar">
-                <div class="calendar-header">
-                  <button id="prevMonth">&lt;</button>
-                  <h2 id="currentMonth">augusti 2023</h2>
-                  <button id="nextMonth">&gt;</button>
-                </div>
-                <div class="calendar-days">
-                  <div class="day">Mån</div>
-                  <div class="day">Tis</div>
-                  <div class="day">Ons</div>
-                  <div class="day">Tor</div>
-                  <div class="day">Fre</div>
-                  <div class="day">Lör</div>
-                  <div class="day">Sön</div>
-                </div>
-                <div class="calendar-grid" id="calendarGrid">
-                  <div></div>
-                  <div></div>
-                  <div class="day-cell">1</div>
-                  <div class="day-cell">2</div>
-                  <div class="day-cell">3</div>
-                  <div class="day-cell">4</div>
-                  <div class="day-cell">5</div>
-                  <div class="day-cell">6</div>
-                  <div class="day-cell">7</div>
-                  <div class="day-cell">8</div>
-                  <div class="day-cell">9</div>
-                  <div class="day-cell">10</div>
-                  <div class="day-cell">11</div>
-                  <div class="day-cell">12</div>
-                  <div class="day-cell">13</div>
-                  <div class="day-cell">14</div>
-                  <div class="day-cell">15</div>
-                  <div class="day-cell">16</div>
-                  <div class="day-cell">17</div>
-                  <div class="day-cell">18</div>
-                  <div class="day-cell">19</div>
-                  <div class="day-cell">20</div>
-                  <div class="day-cell">21</div>
-                  <div class="day-cell">22</div>
-                  <div class="day-cell">23</div>
-                  <div class="day-cell">24</div>
-                  <div class="day-cell">25</div>
-                  <div class="day-cell">26</div>
-                  <div class="day-cell">27</div>
-                  <div class="day-cell">28</div>
-                  <div class="day-cell">29</div>
-                  <div class="day-cell">30</div>
-                  <div class="day-cell">31</div>
-                </div>
-                <input
-                  type="text"
-                  id="selectedDate"
-                  placeholder="Selected Date"
-                  readonly=""
-                />
-              </div>
+          <!-- Highlights Container -->
+          <ul class="highlights-container">
+            <!-- Star Rating -->
+            <div class="highlight-stars">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star-half-outline"
+                role="img"
+                aria-label="star half outline"
+              ></ion-icon>
             </div>
-            <div class="mail-template-container">
-              <textarea placeholder="Meddelande till lokalvärd"></textarea>
-              <div class="add-info-box">
-                <p class="input-header">Namn:</p>
-                <input
-                  id="contactName"
-                  type="text"
-                  placeholder="Kontaktpersonens namn"
-                />
-                <p class="input-header">Telefon:</p>
-                <input
-                  id="contactPhone"
-                  type="tel"
-                  placeholder="Kontaktpersonens telefonnummer"
-                />
-                <p class="input-header">Mail:</p>
-                <input
-                  id="contactMail"
-                  type="email"
-                  placeholder="Kontaktpersonens e-postadress"
-                />
+
+            <!-- Guests and Size Info -->
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                150 sittandes, 250 minglandes
+              </p>
+            </li>
+            <li class="highlight-info mobile full-row">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                150 sittandes, 250 minglandes
+              </p>
+            </li>
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>500 m²</p>
+            </li>
+
+            <!-- Food and Drink Info -->
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-restaurant-outline"
+                name="restaurant-outline"
+              ></ion-icon>
+              <p>
+                Egen mat tillåten
+              </p>
+            </li>
+            <li class="highlight-info second-col mobile">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>500 m²</p>
+            </li>
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-wine-outline"
+                name="wine-outline"
+              ></ion-icon>
+              <p>
+                Egen dryck tillåten
+              </p>
+            </li>
+            <div class="highlight-star-mobile second-col">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon>
+              <p>4.85</p>
+            </div>
+          </ul>
+
+          <!-- Calendar and Mail Template Containers -->
+          <div class="subsection-split-container">
+            <!-- Description Container -->
+            <div class="description-container">
+              <h2>Om lokalen</h2>
+              <p class="venue-description">Step into a world of enchantment at our elegant gala event. The Royal Avenue venue sets the stage for a night of glamour and sophistication, featuring exquisite decor, live entertainment, and gourmet cuisine.</p>
+              <h3>Lokalhyra:</h3>
+              <p class="venue-price">
+                35,000 kr/dygn
+              </p>
+            </div>
+
+            <div class="subsection-right-split-container">
+              <div
+                data-mapboxCenter="[6.947034, 50.933726]"
+                class="map-container mapboxgl-map"
+                id="mapboxContainer"
+              ></div>
+              <div class="calendar-container">
+                <div class="calendar">
+                  <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth">augusti 2023</h2>
+                    <button id="nextMonth">&gt;</button>
+                  </div>
+                  <div class="calendar-days">
+                    <div class="day">Mån</div>
+                    <div class="day">Tis</div>
+                    <div class="day">Ons</div>
+                    <div class="day">Tor</div>
+                    <div class="day">Fre</div>
+                    <div class="day">Lör</div>
+                    <div class="day">Sön</div>
+                  </div>
+                  <div class="calendar-grid" id="calendarGrid">
+                    <div></div>
+                    <div></div>
+                    <div class="day-cell">1</div>
+                    <div class="day-cell">2</div>
+                    <div class="day-cell">3</div>
+                    <div class="day-cell">4</div>
+                    <div class="day-cell">5</div>
+                    <div class="day-cell">6</div>
+                    <div class="day-cell">7</div>
+                    <div class="day-cell">8</div>
+                    <div class="day-cell">9</div>
+                    <div class="day-cell">10</div>
+                    <div class="day-cell">11</div>
+                    <div class="day-cell">12</div>
+                    <div class="day-cell">13</div>
+                    <div class="day-cell">14</div>
+                    <div class="day-cell">15</div>
+                    <div class="day-cell">16</div>
+                    <div class="day-cell">17</div>
+                    <div class="day-cell">18</div>
+                    <div class="day-cell">19</div>
+                    <div class="day-cell">20</div>
+                    <div class="day-cell">21</div>
+                    <div class="day-cell">22</div>
+                    <div class="day-cell">23</div>
+                    <div class="day-cell">24</div>
+                    <div class="day-cell">25</div>
+                    <div class="day-cell">26</div>
+                    <div class="day-cell">27</div>
+                    <div class="day-cell">28</div>
+                    <div class="day-cell">29</div>
+                    <div class="day-cell">30</div>
+                    <div class="day-cell">31</div>
+                  </div>
+                  <input
+                    type="text"
+                    id="selectedDate"
+                    placeholder="Selected Date"
+                    readonly=""
+                  />
+                </div>
               </div>
-              <button class="search-button continue-button">
-                Skicka förfrågan
-              </button>
+              <div class="mail-template-container">
+                <textarea placeholder="Meddelande till lokalvärd"></textarea>
+                <div class="add-info-box">
+                  <p class="input-header">Namn:</p>
+                  <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Kontaktpersonens namn"
+                  />
+                  <p class="input-header">Telefon:</p>
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    placeholder="Kontaktpersonens telefonnummer"
+                  />
+                  <p class="input-header">Mail:</p>
+                  <input
+                    id="contactMail"
+                    type="email"
+                    placeholder="Kontaktpersonens e-postadress"
+                  />
+                </div>
+                <button class="search-button continue-button">
+                  Skicka förfrågan
+                </button>
+              </div>
             </div>
           </div>
         </div>
