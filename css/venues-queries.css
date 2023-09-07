@@ -100,7 +100,7 @@
   }
   .toggle-button.mobile {
     position: fixed;
-    bottom: 3rem;
+    bottom: 2.5rem;
     left: 50%;
     transform: translate(-50%, 0);
     background-color: black;
