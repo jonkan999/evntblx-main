@@ -163,6 +163,8 @@
 .carousel-navigation {
   position: absolute;
   top: 17rem;
+  width: 3.2rem;
+  text-align: right;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,7 +191,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.carousel-nav-icon.prev {
+.carousel-nav-icon.next {
   right: 1.2rem;
 }
 .carousel-nav-icon.prev {

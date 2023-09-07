@@ -1,4 +1,3 @@
-// JavaScript for the carousel functionality
 document.addEventListener("DOMContentLoaded", function () {
   const venues = document.querySelectorAll(".venue-box-container");
 
@@ -25,11 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function prevSlide() {
-      showSlide(currentSlide - 1);
+      showSlide(
+        (currentSlide - 1 + carouselItems.length) % carouselItems.length
+      );
     }
 
     function nextSlide() {
-      showSlide(currentSlide + 1);
+      showSlide((currentSlide + 1) % carouselItems.length);
     }
 
     // Initially show the first slide and update the counter

@@ -8,6 +8,12 @@ document.getElementById("showAll").addEventListener("click", function () {
 
   // Show 'showAllGrid'
   document.getElementById("showAllGrid").style.display = "grid";
+
+  // Smooth scroll to the top
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
 document.getElementById("hideGrid").addEventListener("click", function () {
