@@ -73,9 +73,23 @@
   .venue-box-container {
     width: calc(100% - 2rem);
     margin: 1rem 1rem;
+    height: auto;
   }
   .venue-box {
     width: 100%;
+  }
+  .venue-box-info {
+    margin-top: 0.75rem;
+    height: auto;
+  }
+  .venue-box-info p {
+    font-size: 1.6rem;
+  }
+  .venue-box-info-footer-capacity ion-icon {
+    font-size: 2rem;
+  }
+  .venue-box-info-footer-capacity {
+    line-height: 2rem;
   }
   .carousel-navigation {
     top: 26rem;
