@@ -12,6 +12,7 @@
 @media (max-width: 84em) {
   .venues-section {
     grid-template-columns: 1fr 1fr;
+    min-width: calc(2.14 * var(--venue-box-width));
   }
 }
 
@@ -33,6 +34,10 @@
   html {
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
+  }
+  .venues-section {
+    grid-template-columns: 1fr;
+    min-width: calc(1.14 * var(--venue-box-width));
   }
 }
 
