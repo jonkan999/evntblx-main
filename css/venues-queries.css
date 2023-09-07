@@ -53,12 +53,67 @@
 /**************************/
 
 @media (max-width: 34em) {
+  :root {
+    --venue-box-height: 40rem;
+    --venue-box-image-height: 29rem;
+  }
   .mobile {
     display: flex;
   }
 
   .desktop {
     display: none;
+  }
+
+  .venues-section {
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow: auto;
+  }
+  .venue-box-container {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
+  .venue-box {
+    width: 100%;
+  }
+  .carousel-navigation {
+    top: 26rem;
+  }
+  .toggle-button.mobile {
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    z-index: 6;
+  }
+  .toggle-button.mobile p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-transform: capitalize;
+  }
+
+  .icon-container {
+    margin-right: 10px;
+    font-size: 2rem;
+  }
+
+  .toggle-button.mobile:hover {
+    background-color: var(--box-hover-color);
+  }
+  .map-section {
+    height: calc(100vh - (2 * var(--header-size)));
+    width: 100%;
+    max-width: none;
   }
 }
 

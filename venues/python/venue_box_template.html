@@ -34,6 +34,7 @@
     <script defer="" src="/js/toggleButton.js"></script>
     <script defer="" src="/js/generateVenueMap.js"></script>
     <script defer="" src="/js/venueImageCarousel.js"></script>
+    <script defer="" src="/js/venueToggleMap.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -113,13 +114,19 @@
             <ion-icon name="options-outline"></ion-icon>
             <p>Fler filter</p>
           </div>
-          <div class="toggle-button" id="toggleButton">
+          <div class="toggle-button desktop" id="toggleMapButton">
             <button>
               <ion-icon name="radio-button-off-outline" id="offIcon"></ion-icon>
               <ion-icon name="radio-button-on-outline" id="onIcon"></ion-icon>
               Karta
             </button>
           </div>
+          <button class="toggle-button mobile" id="toggleMapButtonMobile">
+            <div class="icon-container">
+              <ion-icon name="map-outline"></ion-icon>
+            </div>
+            <p>karta</p>
+          </button>
         </div>
         <div class="venue-selector">
           <div class="venues-section">
@@ -219,14 +226,18 @@
                 onclick="nextSlide()"
                 class="carousel-nav-icon next"
               >
-                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
               </button>
               <button
                 id="prevButton"
                 onclick="prevSlide()"
                 class="carousel-nav-icon prev"
               >
-                <ion-icon name="chevron-back-outline"></ion-icon>
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
               </button>
             </div>
             {% endfor %}
