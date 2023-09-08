@@ -105,10 +105,10 @@ select,
 input {
   appearance: none; /* Remove default iOS styles */
   -webkit-appearance: none; /* Remove default iOS styles for older versions */
-  background-color: none;
+  background-color: #fff;
   color: var(--black-text-color);
   padding: 0.9rem; /* Increased from 0.6rem */
-  border: none;
+  border: 1px solid #ccc; /* Add a border style */
   border-radius: 7.5px; /* Increased from 5px */
   width: 100%;
   cursor: pointer;
@@ -125,7 +125,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .select-box ion-icon {
   font-size: 2rem;
-  transform: translate(-100%);
+  transform: translate(-200%);
 }
 
 .search-button {
