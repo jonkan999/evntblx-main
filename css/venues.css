@@ -108,6 +108,7 @@
   position: relative;
   width: var(--venue-box-width);
   height: var(--venue-box-height);
+  margin-bottom: 1rem;
 }
 .venue-box {
   width: var(--venue-box-width);
