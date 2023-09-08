@@ -92,7 +92,7 @@
 }
 
 #eventDate {
-  width: 18rem; /* Increased from 12rem */
+  width: 100%; /* Increased from 12rem */
 }
 
 label {
@@ -108,9 +108,10 @@ input {
   background-color: #fff;
   color: var(--black-text-color);
   padding: 0.9rem; /* Increased from 0.6rem */
-  border: 1px solid #ccc; /* Add a border style */
-  border-radius: 7.5px; /* Increased from 5px */
+  border: none; /* Add a border style */
+  border-radius: 0; /* Increased from 5px */
   width: 100%;
+  height: 4rem;
   cursor: pointer;
   font-size: 1.65rem; /* Increased from 1.1rem */
 }
