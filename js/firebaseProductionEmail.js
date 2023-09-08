@@ -68,7 +68,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
 
       // Reference to the "venue_request_emails" collection
       const requestEmailsCollection = collection(db, "venue_request_emails");
-
+      console.log("Trying to add request email to Firestore");
       try {
         // Add a new document to the "venue_request_emails" collection
         await addDoc(requestEmailsCollection, {
