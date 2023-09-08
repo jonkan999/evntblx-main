@@ -42,14 +42,14 @@ fetch("/.netlify/functions/getFirebaseConfig")
         errorMessage.style.opacity = "1";
         // Hide the error message after 7 seconds
         setTimeout(() => {
-          errorMessage.style.opacity = "1";
+          errorMessage.style.opacity = "0";
         }, 6000); // 7000 milliseconds = 7 seconds
 
         return;
       }
       // Clear any existing error message if all fields are filled
       errorMessage.textContent = "";
-      errorMessage.style.opacity = "1";
+      errorMessage.style.opacity = "0";
 
       // Get data for the request email
       const timestamp = serverTimestamp();
