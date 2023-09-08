@@ -152,13 +152,6 @@ Tack på förhand!`;
         addInfoBox.appendChild(mailInput);
         mailTemplateContainer.appendChild(addInfoBox);
 
-        // Create the "Skicka förfrågan" (Send Inquiry) button
-        const sendButton = document.createElement("button");
-        sendButton.textContent = "Skicka förfrågan";
-        sendButton.classList.add("search-button");
-        sendButton.classList.add("continue-button");
-        mailTemplateContainer.appendChild(sendButton);
-
         // Append the mail template container to the right split
         rightSplit.appendChild(mailTemplateContainer);
       });
