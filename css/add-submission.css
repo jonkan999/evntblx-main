@@ -531,4 +531,6 @@ h3 {
   background-color: #f7f7f7;
   font-weight: 500;
   color: #000;
+  padding: 2rem 3rem;
+  border: 1px solid #000;
 }
