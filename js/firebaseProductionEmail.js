@@ -77,26 +77,28 @@ fetch("/.netlify/functions/getFirebaseConfig")
           timestamp,
         });
         console.log("Request email added to Firestore");
-        // You can perform further actions or show a success message here
-        // Show the popup
-        const popup = document.getElementById("popupRequestAdded");
-        popup.style.display = "block";
+        // Reuse the errorMessage element for success message
+        errorMessage.textContent =
+          "Meddelandet har nu skickats till lokalvärden som återkommer till dig snarast, tack!";
+        errorMessage.style.opacity = "1";
 
-        // Hide the popup after a certain time (e.g., 3 seconds)
+        // Hide the success message after 7 seconds
         setTimeout(() => {
-          popup.style.display = "none";
-        }, 3000); // 3000 milliseconds = 3 seconds
+          errorMessage.style.opacity = "0";
+        }, 7000); // 7000 milliseconds = 7 seconds
       } catch (error) {
         console.error("Error adding request email: ", error);
         // Handle the error or show an error message
         // Show the popup
-        const popup = document.getElementById("popupRequestFailed");
-        popup.style.display = "block";
+        // Reuse the errorMessage element for success message
+        errorMessage.textContent =
+          "Kunde tyvärr inte skicka meddelandet, försök igen senare!";
+        errorMessage.style.opacity = "1";
 
-        // Hide the popup after a certain time (e.g., 3 seconds)
+        // Hide the success message after 7 seconds
         setTimeout(() => {
-          popup.style.display = "none";
-        }, 3000); // 3000 milliseconds = 3 seconds
+          errorMessage.style.opacity = "0";
+        }, 7000); // 7000 milliseconds = 7 seconds
       }
     }
     // Attach the handleRequestEmail function to the "Skicka förfrågan" button's click event
