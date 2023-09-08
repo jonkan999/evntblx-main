@@ -79,6 +79,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
         });
         console.log("Request email added to Firestore");
         // Reuse the errorMessage element for success message
+        console.log(errorMessage);
         errorMessage.textContent =
           "Meddelandet har nu skickats till lokalvärden som återkommer till dig snarast, tack!";
         errorMessage.style.opacity = "1";
