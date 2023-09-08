@@ -21,7 +21,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
     const app = initializeApp(config);
     const analytics = getAnalytics(app);
     const db = getFirestore(app);
-
+    console.log("fetching config");
     // Rest of your code...
     // Function to handle submission for request emails
     async function handleRequestEmail() {
@@ -31,7 +31,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
       const contactPhoneInput = document.querySelector("#contactPhone");
       const contactMailInput = document.querySelector("#contactMail");
       const errorMessage = document.getElementById("errorMessage");
-
+      console.log("inside handleRequestEmail");
       if (
         messageTextarea.value.trim() === "" ||
         contactNameInput.value.trim() === "" ||
@@ -72,11 +72,11 @@ fetch("/.netlify/functions/getFirebaseConfig")
       try {
         // Add a new document to the "venue_request_emails" collection
         await addDoc(requestEmailsCollection, {
-          timestamp,
           name,
           hostEmail,
           requesterInfo,
           message,
+          timestamp,
         });
         console.log("Request email added to Firestore");
         // You can perform further actions or show a success message here
