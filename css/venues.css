@@ -378,8 +378,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   text-align: center;
   background-color: #f7f7f7;
+  font-weight: 500;
   color: #000;
 }
