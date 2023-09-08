@@ -326,7 +326,12 @@
 
                 <li>Kontaktperson: {{ venue.venueInfo.contactName }}</li>
                 <li>Kontakttelefon: {{ venue.venueInfo.contactPhone }}</li>
-                <li>Kontaktmail: {{ venue.venueInfo.contactMail }}</li>
+                <li
+                  data-contact-mail="{{ venue.venueInfo.contactMail }}"
+                  class="contact-mail"
+                >
+                  Kontaktmail: {{ venue.venueInfo.contactMail }}
+                </li>
               </ul>
               <h3>Lokalhyra:</h3>
               <p class="venue-price">
