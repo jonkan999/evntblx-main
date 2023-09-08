@@ -55,10 +55,8 @@ fetch("/.netlify/functions/getFirebaseConfig")
       // Get data for the request email
       const timestamp = serverTimestamp();
       const name = document.querySelector(".event-space-title").textContent;
-      const hostEmail = document
-        .querySelector('li:contains("Kontaktmail:")')
-        .textContent.split(":")[1]
-        .trim();
+      const hostEmailElement = document.querySelector("li.contact-mail");
+      const hostEmail = hostEmailElement.getAttribute("data-contact-mail");
       const requesterInfo = {
         name: contactNameInput.value.trim(),
         phone: contactPhoneInput.value.trim(),
