@@ -38,7 +38,8 @@ fetch("/.netlify/functions/getFirebaseConfig")
         contactPhoneInput.value.trim() === "" ||
         contactMailInput.value.trim() === ""
       ) {
-        errorMessage.textContent = "Fyll i alla kontaktuppgifter, tack!";
+        errorMessage.textContent =
+          "Fyll i meddelandet och alla kontaktuppgifter, tack!";
         errorMessage.style.opacity = "1";
         // Hide the error message after 7 seconds
         setTimeout(() => {
