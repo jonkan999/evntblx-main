@@ -292,7 +292,6 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 3rem;
-  margin-bottom: 3rem;
 }
 
 .subsection-right-split-container {
@@ -517,7 +516,9 @@ h3 {
   font-size: 2.5rem;
 }
 #infoContainer {
+  position: relative;
   /* display: none; */
+  margin-bottom: 10rem;
 }
 
 .error-message {
@@ -535,4 +536,12 @@ h3 {
   padding: 2rem 3rem;
   border: 1px solid #000;
   transition: all 0.1s ease-in-out;
+}
+
+.search-button.continue-button {
+  right: 50%;
+  bottom: -10rem;
+  transform: translate(calc(100% + 1.5rem), 0);
+  position: absolute;
+  margin-bottom: 5rem;
 }

@@ -85,6 +85,9 @@
     margin: 0 auto;
     width: 100%;
   }
+  .search-button.continue-button {
+    width: 28rem;
+  }
 }
 
 /**************************/
@@ -202,6 +205,11 @@
 
   .description-container .venue-price {
     margin-left: 5%;
+  }
+  .search-button.continue-button {
+    left: 15%;
+    width: 70%;
+    transform: none;
   }
 }
 
