@@ -371,3 +371,15 @@
 .toggle-button.mobile {
   display: none;
 }
+
+.error-message {
+  position: fixed;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.65rem;
+  text-align: center;
+  background-color: #f7f7f7;
+  color: #000;
+}
