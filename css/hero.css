@@ -105,13 +105,17 @@ select,
 input {
   appearance: none; /* Remove default iOS styles */
   -webkit-appearance: none; /* Remove default iOS styles for older versions */
-
+  background-color: none;
+  color: var(--black-text-color);
   padding: 0.9rem; /* Increased from 0.6rem */
   border: none;
   border-radius: 7.5px; /* Increased from 5px */
   width: 100%;
   cursor: pointer;
   font-size: 1.65rem; /* Increased from 1.1rem */
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 .select-box {
