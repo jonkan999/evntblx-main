@@ -65,6 +65,12 @@
   .desktop {
     display: none;
   } */
+  .filters-section {
+    padding-right: 1rem;
+  }
+  .toggle-button.desktop {
+    display: none;
+  }
 
   .venues-section {
     grid-template-columns: 1fr;
