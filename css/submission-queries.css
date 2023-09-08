@@ -127,6 +127,7 @@
   .bottom-right-images {
     width: calc(40% - 0.25rem);
     flex-direction: column;
+    height: 100%;
   }
   .square-icon-container .icon {
     font-size: 1.8rem;
@@ -155,6 +156,7 @@
   }
   .subsection-split-container {
     flex-direction: column;
+    gap: 1rem;
   }
   .description-container {
     width: 100%;
