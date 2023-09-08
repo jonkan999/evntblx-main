@@ -280,6 +280,49 @@
             <div class="description-container">
               <h2>Om lokalen</h2>
               <p class="venue-description">{{ venue.venueInfo.description }}</p>
+              <h3>Detaljerad information:</h3>
+              <ul>
+                <li>Lokalens storlek: {{ venue.venueInfo.size }} m²</li>
+                <li>Antal sittande: {{ venue.venueInfo.seated }}</li>
+                <li>Antal stående: {{ venue.venueInfo.standing }}</li>
+                <li>
+                  Utcheckningstid senast: {% if venue.venueInfo.checkout %}{{
+                  venue.venueInfo.checkout }}{% else %}Ej angivet{% endif %}
+                </li>
+                <li>
+                  Egen mat tillåten: {% if venue.venueInfo.ownFoodF %}Ja{% else
+                  %}Tillhandahålls av lokalen{% endif %}
+                </li>
+
+                <li>
+                  Egen dryck tillåten: {% if venue.venueInfo.ownDrinkF %}Ja{%
+                  else %}Tillhandahålls av lokalen{% endif %}
+                </li>
+
+                <li>
+                  Ljudsystem tillgängligt: {% if venue.venueInfo.soundF %}Ja{%
+                  else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Mickar tillgängliga: {% if venue.venueInfo.micsF %}Ja{% else
+                  %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Projektor tillgänglig: {% if venue.venueInfo.projectorF %}Ja{%
+                  else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Discoljus tillgängligt: {% if venue.venueInfo.discoLightsF
+                  %}Ja{% else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>Kontaktperson: {{ venue.venueInfo.contactName }}</li>
+                <li>Kontakttelefon: {{ venue.venueInfo.contactPhone }}</li>
+                <li>Kontaktmail: {{ venue.venueInfo.contactMail }}</li>
+              </ul>
               <h3>Lokalhyra:</h3>
               <p class="venue-price">
                 {{ venue.venueInfo.startingPrice|format_thousands }} kr/dygn

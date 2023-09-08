@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
   const loading = document.querySelector(".loading");
   const venuePage = document.getElementById("venuePage");
 
-  /*   const colorBoxes = document.querySelectorAll(".color-box");
+  const colorBoxes = document.querySelectorAll(".color-box");
   colorBoxes.forEach((box) => {
     box.addEventListener("click", function () {
       colorBoxes.forEach((box) => {
@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
       venuePage.style.display = "block";
       renderVenuePage();
     });
-  }); */
+  });
 
   function addOverlay(imageElement) {
     const overlay = document.createElement("div");
@@ -254,7 +254,7 @@ window.addEventListener("load", function () {
         ["Lokalens storlek: ", "size"],
         ["Antal sittande: ", "seated"],
         ["Antal stående: ", "standing"],
-        ["Utcheckningstid senast: ", "checkout"],
+        ["Utskänkningstillstånd: ", "checkout"],
         ["Egen mat tillåten: ", "ownFoodF"],
         ["Egen dryck tillåten: ", "ownDrinkF"],
         ["Ljudsystem tillgängligt: ", "soundF"],
@@ -264,32 +264,16 @@ window.addEventListener("load", function () {
         ["Kontaktperson: ", "contactName"],
         ["Kontakttelefon: ", "contactPhone"],
         ["Kontaktmail: ", "contactMail"],
+        ["Startpris: ", "startingPrice"],
       ];
 
-      // Iterate over the properties and add them to the list with custom formatting
+      // Iterate over the properties and add them to the list if they hold a value or are checked
       propertiesToDisplay.forEach(([label, property]) => {
-        let value = venueInfo[property];
-        if (property === "checkout" && value === "") {
-          value = "Ej angivet";
+        if (venueInfo[property] !== "" && venueInfo[property] !== false) {
+          const li = document.createElement("li");
+          li.textContent = `${label}${venueInfo[property]}`;
+          ul.appendChild(li);
         }
-        if (property === "size") {
-          value = venueInfo[property] + " m²";
-        }
-        if (property === "ownFoodF" || property === "ownDrinkF") {
-          value = value ? "Ja" : "Tillhandahålls av lokalen";
-        }
-        if (
-          property === "soundF" ||
-          property === "micsF" ||
-          property === "projectorF" ||
-          property === "discoLightsF"
-        ) {
-          value = value ? "Ja" : "Hyras in på förfrågan";
-        }
-
-        const li = document.createElement("li");
-        li.textContent = `${label}${value}`;
-        ul.appendChild(li);
       });
 
       // Append the list to the element with class 'description-container'
@@ -297,15 +281,6 @@ window.addEventListener("load", function () {
       descriptionHeader.textContent = "Detaljerad information";
       descriptionContainer.appendChild(descriptionHeader);
       descriptionContainer.appendChild(ul);
-      // Add the price element after the ul
-      const priceHeader = document.createElement("h3");
-      priceHeader.textContent = "Lokalhyra:";
-      descriptionContainer.appendChild(priceHeader);
-      const priceElement = document.createElement("p");
-      priceElement.classList.add("venue-price");
-      priceElement.textContent = "fr. " + venueInfo.startingPrice + " kr/dygn";
-
-      descriptionContainer.appendChild(priceElement);
     }
 
     // Append the description and map sections to the venuePage subsection split
@@ -688,5 +663,4 @@ Tack på förhand!`;
 
     updateCalendar();
   }
-  renderVenuePage();
 });

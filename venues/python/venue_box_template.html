@@ -134,7 +134,20 @@
             venue['venueInfo']['name']|replace('-', ' ')|replace(' ',
             '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö',
             'o')|replace('---', '-')|replace('--', '-') %}
-            <div class="venue-box-container">
+            <!-- data attributes used for filtering -->
+            <div
+              class="venue-box-container"
+              data-standing="{{ venue.venueInfo.standing }}"
+              data-checkout="{{ venue.venueInfo.checkout }}"
+              data-ownFoodF="{{ venue.venueInfo.ownFoodF }}"
+              data-ownDrinkF="{{ venue.venueInfo.ownDrinkF }}"
+              data-soundF="{{ venue.venueInfo.soundF }}"
+              data-micsF="{{ venue.venueInfo.micsF }}"
+              data-projectorF="{{ venue.venueInfo.projectorF }}"
+              data-discoLightsF="{{ venue.venueInfo.discoLightsF }}"
+              data-startingPrice="{{ venue.venueInfo.startingPrice }}"
+            >
+              >
               <a
                 target="_blank"
                 href="{{ '/venues/' + cleaned_name + '.html' }}"

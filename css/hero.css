@@ -103,12 +103,38 @@ label {
 
 select,
 input {
+  appearance: none; /* Remove default iOS styles */
+  -webkit-appearance: none; /* Remove default iOS styles for older versions */
   padding: 0.9rem; /* Increased from 0.6rem */
   border: none;
   border-radius: 7.5px; /* Increased from 5px */
   width: 100%;
   cursor: pointer;
   font-size: 1.65rem; /* Increased from 1.1rem */
+}
+
+/* Style for the label */
+label {
+  font-size: 1.6rem; /* Font size */
+  margin-bottom: 5px; /* Spacing between label and select */
+}
+
+/* Style for the search button */
+.search-button {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Style for the border dividers */
+.border-div {
+  border-left: 1px solid #ccc;
+  height: 20px; /* Adjust the height to your preference */
+  margin: 0 10px;
 }
 
 .search-button {
@@ -123,7 +149,7 @@ input {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   margin-left: 4.5rem; /* Increased from 3rem */
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   text-decoration: none;
 }
 
