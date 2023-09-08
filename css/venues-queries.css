@@ -5,11 +5,12 @@
 /**************************/
 @media (max-width: 108em) {
 }
+
 /**************************/
-/* BELOW 1344px (Smaller desktops) */
+/* BELOW 1472px (Smaller desktops) */
 /**************************/
 
-@media (max-width: 84em) {
+@media (max-width: 92em) {
   .venues-section {
     grid-template-columns: 1fr 1fr;
     min-width: calc(2.14 * var(--venue-box-width));
