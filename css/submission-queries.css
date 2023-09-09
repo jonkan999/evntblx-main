@@ -118,19 +118,26 @@
   }
   .left-image {
     width: 100%;
+    height: 24.25rem;
   }
 
   .right-images-section {
     flex-direction: row;
     width: 100%;
+    height: 25rem;
   }
   .top-right-image {
     width: calc(60% - 0.5rem);
+    height: 25rem;
   }
   .bottom-right-images {
     width: calc(40% - 0.25rem);
     flex-direction: column;
-    height: 100%;
+    height: 25rem;
+  }
+  .bottom-right-image {
+    width: 100%;
+    height: 12.25rem;
   }
   .square-icon-container .icon {
     font-size: 1.8rem;

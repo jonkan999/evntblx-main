@@ -49,7 +49,7 @@
     <link href="/css/add-submission.css" rel="stylesheet" />
     <link href="/css/submission-queries.css" rel="stylesheet" />
 
-    <title>{{ venue.venueInfo.name }} - listning på evntBlx.se</title>
+    <title>{{ context.venue.venueInfo.name }} - listning på evntBlx.se</title>
     <link rel="icon" href="/img/favicon.png" />
     <meta name="description" content="short_form_description" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -77,7 +77,7 @@
         <ul>
           <li>
             <p class="category-link">
-              Lokalsida för: {{ venue.venueInfo.name }}
+              Lokalsida för: {{ context.venue.venueInfo.name }}
             </p>
           </li>
         </ul>
@@ -86,40 +86,50 @@
     <main>
       <section class="venue-page" id="venuePage">
         <div class="show-all-grid" id="showAllGrid">
-          {% for i in range(0, venue.venueImages.images|length) %}
-          <div
-            class="gallery-image"
-            style="background-image: url('{{ venue.venueImages.images[i] }}');"
-          >
+          {% for i in range(0, context.venue.venueImages.images|length) %}
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="{{ context.image_paths[i] }}"
+              alt="bild {{ i + 1 }} tillhörande: {{ context.venue.venueInfo.name }}"
+            />
             <div class="gallery-overlay"></div>
           </div>
           {% endfor %}
         </div>
         <div class="images-section section airy-margin" id="imageSection">
-          <div
-            class="left-image"
-            style="background-image: url('{{ venue.venueImages.images[0] }}')"
-          >
+          <div class="left-image">
+            <img
+              class="image-inner-img"
+              src="{{ context.image_paths[0] }}"
+              alt="bild {{ 0 + 1 }} tillhörande: {{ context.venue.venueInfo.name }}"
+            />
             <div class="image-overlay"></div>
           </div>
           <div class="right-images-section">
-            <div
-              class="top-right-image"
-              style="background-image: url('{{ venue.venueImages.images[1] }}')"
-            >
+            <div class="top-right-image">
+              <img
+                class="image-inner-img"
+                src="{{ context.image_paths[1] }}"
+                alt="bild {{ 1 + 1 }} tillhörande: {{ context.venue.venueInfo.name }}"
+              />
               <div class="image-overlay"></div>
             </div>
             <div class="bottom-right-images">
-              <div
-                class="bottom-right-image"
-                style="background-image: url('{{ venue.venueImages.images[2] }}')"
-              >
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="{{ context.image_paths[2] }}"
+                  alt="bild {{ 2 + 1 }} tillhörande: {{ context.venue.venueInfo.name }}"
+                />
                 <div class="image-overlay"></div>
               </div>
-              <div
-                class="bottom-right-image"
-                style="background-image: url('{{ venue.venueImages.images[3] }}')"
-              >
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="{{ context.image_paths[3] }}"
+                  alt="bild {{ 3 + 1 }} tillhörande: {{ context.venue.venueInfo.name }}"
+                />
                 <div class="show-all-container" id="showAll">
                   <div class="square-icon-container-container">
                     <div class="square-icon-container">
@@ -164,7 +174,7 @@
         </div>
         <div class="info-container" id="infoContainer">
           <!-- Venue Name -->
-          <h1 class="event-space-title">{{ venue.venueInfo.name }}</h1>
+          <h1 class="event-space-title">{{ context.venue.venueInfo.name }}</h1>
 
           <!-- Venue Address -->
           <div class="adress-div">
@@ -172,7 +182,9 @@
               class="icon ion-ios-location-outline"
               name="location-outline"
             ></ion-icon>
-            <p class="event-space-address">{{ venue.venueInfo.address }}</p>
+            <p class="event-space-address">
+              {{ context.venue.venueInfo.address }}
+            </p>
           </div>
 
           <!-- Highlights Container -->
@@ -218,8 +230,8 @@
                 name="people-outline"
               ></ion-icon>
               <p>
-                {{ venue.venueInfo.seated }} sittandes, {{
-                venue.venueInfo.standing }} minglandes
+                {{ context.venue.venueInfo.seated }} sittandes, {{
+                context.venue.venueInfo.standing }} minglandes
               </p>
             </li>
             <li class="highlight-info mobile full-row">
@@ -228,8 +240,8 @@
                 name="people-outline"
               ></ion-icon>
               <p>
-                {{ venue.venueInfo.seated }} sittandes, {{
-                venue.venueInfo.standing }} minglandes
+                {{ context.venue.venueInfo.seated }} sittandes, {{
+                context.venue.venueInfo.standing }} minglandes
               </p>
             </li>
             <li class="highlight-info desktop">
@@ -237,7 +249,7 @@
                 class="highlight-icon ion-ios-crop-outline"
                 name="crop-outline"
               ></ion-icon>
-              <p>{{ venue.venueInfo.size }} m²</p>
+              <p>{{ context.venue.venueInfo.size }} m²</p>
             </li>
 
             <!-- Food and Drink Info -->
@@ -247,7 +259,7 @@
                 name="restaurant-outline"
               ></ion-icon>
               <p>
-                {{ "Egen mat tillåten" if venue.venueInfo.ownFoodF else
+                {{ "Egen mat tillåten" if context.venue.venueInfo.ownFoodF else
                 "Matservering tillhandahållen av lokalen" }}
               </p>
             </li>
@@ -256,7 +268,7 @@
                 class="highlight-icon ion-ios-crop-outline"
                 name="crop-outline"
               ></ion-icon>
-              <p>{{ venue.venueInfo.size }} m²</p>
+              <p>{{ context.venue.venueInfo.size }} m²</p>
             </li>
             <li class="highlight-info">
               <ion-icon
@@ -264,8 +276,8 @@
                 name="wine-outline"
               ></ion-icon>
               <p>
-                {{ "Egen dryck tillåten" if venue.venueInfo.ownDrinkF else
-                "Dryck tillhandahållen av lokalen" }}
+                {{ "Egen dryck tillåten" if context.venue.venueInfo.ownDrinkF
+                else "Dryck tillhandahållen av lokalen" }}
               </p>
             </li>
             <div class="highlight-star-mobile second-col">
@@ -284,64 +296,74 @@
             <!-- Description Container -->
             <div class="description-container">
               <h2>Om lokalen</h2>
-              <p class="venue-description">{{ venue.venueInfo.description }}</p>
+              <p class="venue-description">
+                {{ context.venue.venueInfo.description }}
+              </p>
               <h3>Detaljerad information:</h3>
               <ul>
-                <li>Lokalens storlek: {{ venue.venueInfo.size }} m²</li>
-                <li>Antal sittande: {{ venue.venueInfo.seated }}</li>
-                <li>Antal stående: {{ venue.venueInfo.standing }}</li>
+                <li>Lokalens storlek: {{ context.venue.venueInfo.size }} m²</li>
+                <li>Antal sittande: {{ context.venue.venueInfo.seated }}</li>
+                <li>Antal stående: {{ context.venue.venueInfo.standing }}</li>
                 <li>
-                  Utcheckningstid senast: {% if venue.venueInfo.checkout %}{{
-                  venue.venueInfo.checkout }}{% else %}Ej angivet{% endif %}
+                  Utcheckningstid senast: {% if context.venue.venueInfo.checkout
+                  %}{{ context.venue.venueInfo.checkout }}{% else %}Ej angivet{%
+                  endif %}
                 </li>
                 <li>
-                  Egen mat tillåten: {% if venue.venueInfo.ownFoodF %}Ja{% else
-                  %}Tillhandahålls av lokalen{% endif %}
-                </li>
-
-                <li>
-                  Egen dryck tillåten: {% if venue.venueInfo.ownDrinkF %}Ja{%
-                  else %}Tillhandahålls av lokalen{% endif %}
+                  Egen mat tillåten: {% if context.venue.venueInfo.ownFoodF
+                  %}Ja{% else %}Tillhandahålls av lokalen{% endif %}
                 </li>
 
                 <li>
-                  Ljudsystem tillgängligt: {% if venue.venueInfo.soundF %}Ja{%
-                  else %}Hyras in på förfrågan{% endif %}
+                  Egen dryck tillåten: {% if context.venue.venueInfo.ownDrinkF
+                  %}Ja{% else %}Tillhandahålls av lokalen{% endif %}
                 </li>
 
                 <li>
-                  Mickar tillgängliga: {% if venue.venueInfo.micsF %}Ja{% else
-                  %}Hyras in på förfrågan{% endif %}
-                </li>
-
-                <li>
-                  Projektor tillgänglig: {% if venue.venueInfo.projectorF %}Ja{%
-                  else %}Hyras in på förfrågan{% endif %}
-                </li>
-
-                <li>
-                  Discoljus tillgängligt: {% if venue.venueInfo.discoLightsF
+                  Ljudsystem tillgängligt: {% if context.venue.venueInfo.soundF
                   %}Ja{% else %}Hyras in på förfrågan{% endif %}
                 </li>
 
-                <li>Kontaktperson: {{ venue.venueInfo.contactName }}</li>
-                <li>Kontakttelefon: {{ venue.venueInfo.contactPhone }}</li>
+                <li>
+                  Mickar tillgängliga: {% if context.venue.venueInfo.micsF
+                  %}Ja{% else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Projektor tillgänglig: {% if
+                  context.venue.venueInfo.projectorF %}Ja{% else %}Hyras in på
+                  förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Discoljus tillgängligt: {% if
+                  context.venue.venueInfo.discoLightsF %}Ja{% else %}Hyras in på
+                  förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Kontaktperson: {{ context.venue.venueInfo.contactName }}
+                </li>
+                <li>
+                  Kontakttelefon: {{ context.venue.venueInfo.contactPhone }}
+                </li>
                 <li
-                  data-contact-mail="{{ venue.venueInfo.contactMail }}"
+                  data-contact-mail="{{ context.venue.venueInfo.contactMail }}"
                   class="contact-mail"
                 >
-                  Kontaktmail: {{ venue.venueInfo.contactMail }}
+                  Kontaktmail: {{ context.venue.venueInfo.contactMail }}
                 </li>
               </ul>
               <h3>Lokalhyra:</h3>
               <p class="venue-price">
-                {{ venue.venueInfo.startingPrice|format_thousands }} kr/dygn
+                {{ context.venue.venueInfo.startingPrice|format_thousands }}
+                kr/dygn
               </p>
             </div>
 
             <div class="subsection-right-split-container">
               <div
-                data-mapboxCenter="{{ venue.mapboxCenter }}"
+                data-mapboxCenter="{{ context.venue.mapboxCenter }}"
                 class="map-container mapboxgl-map"
                 id="mapboxContainer"
               ></div>

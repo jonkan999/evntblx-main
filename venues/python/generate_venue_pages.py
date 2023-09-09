@@ -1,5 +1,6 @@
 import os
 import sys
+from save_images import save_images
 from firebase.firebase_functions import read_all_from_venues
 from jinja2 import Environment, FileSystemLoader
 
@@ -34,12 +35,21 @@ def clean_filename(name):
 # Generate HTML files for each venue
 for venue in venues:
     print("Generates:" + venue["venueInfo"]["name"] + ".html")
+    cleaned_name = clean_filename(venue['venueInfo']['name'])
+
+    # Save images associated with the venue
+    images_folder = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues/img")
+    os.makedirs(images_folder, exist_ok=True)
+    image_paths=save_images(venue['venueImages']['images'], images_folder, cleaned_name)
+    context = {
+        'venue': venue,
+        'image_paths': image_paths  # Pass the filename prefix here
+    }
     
     # Render the Jinja2 template with the data
-    html_content = template.render(venue=venue)
+    html_content = template.render(context=context)
 
     # Create a new HTML file
-    cleaned_name = clean_filename(venue['venueInfo']['name'])
     output_path = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues", f"{cleaned_name}.html")
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

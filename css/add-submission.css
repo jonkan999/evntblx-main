@@ -96,12 +96,14 @@
 }
 
 /* Style for the bottom left image */
-.top-right-image,
-.bottom-right-image {
+.top-right-image {
   width: 100%;
-  height: 100%;
+  height: 60%;
   background-size: cover;
   background-position: center;
+}
+.bottom-right-image {
+  width: 100%;
 }
 
 /* Style for the bottom right images */
@@ -494,9 +496,14 @@ h3 {
   position: relative;
   width: 45rem;
   height: 35rem;
-  background-size: cover;
-  background-position: center;
+
   z-index: 5;
+}
+.image-inner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* MOBILE OBJECTS */

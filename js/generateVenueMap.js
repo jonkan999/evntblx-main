@@ -186,12 +186,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const venueLink = venueBox ? venueBox.getAttribute("href") : ""; // Get the href attribute of the venue box element
       // Extract information from .venue-box
       // Select the first carousel-item within the venueBox
-      const imageElement = venueBox.querySelector(".image-carousel-item");
+      const imageElement = venueBox.querySelector(".image-inner-img");
 
       // Get the URL from the style attribute and replace double quotes with single quotes
-      const imageUrl = imageElement
-        ? imageElement.getAttribute("style").replace(/"/g, "'")
-        : "";
+      const imageUrl = imageElement ? imageElement.getAttribute("src") : "";
+
       const header = venueBox.querySelector(
         ".venue-box-info-header"
       ).textContent;
@@ -206,7 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const popup = new mapboxgl.Popup().setHTML(
         `
         <a target=blank href=${venueLink} class="popup-container">
-        <div class="popup-image" style="${imageUrl}">
+        <div class="popup-image" >
+          <img class="image-inner-img" src=${imageUrl} alt="venue image" />
           </div>
           <h3>${header}</h3>
           <div class="popup-footer">

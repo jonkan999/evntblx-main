@@ -130,10 +130,11 @@
         </div>
         <div class="venue-selector">
           <div class="venues-section">
-            {% for venue in venues %} {% set cleaned_name =
+            {% for venue in context.venues %} {% set cleaned_name =
             venue['venueInfo']['name']|replace('-', ' ')|replace(' ',
             '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö',
-            'o')|replace('---', '-')|replace('--', '-') %}
+            'o')|replace('---', '-')|replace('--', '-') %} {% set index =
+            loop.index %}
             <!-- data attributes used for filtering -->
             <div
               class="venue-box-container"
@@ -157,11 +158,14 @@
                 <!-- HTML structure for the carousel -->
                 <div class="image-carousel">
                   <div class="image-carousel-container">
-                    {% for image in venue.venueImages.images %}
-                    <div
-                      class="image-carousel-item"
-                      style="background-image: url('{{ image }}')"
-                    ></div>
+                    {% for i in range(0, venue.venueImages.images|length) %}
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="{{ context.list_of_filepaths[index-1][i] }}"
+                        alt="bild {{ 0 + 1 }} tillhörande: {{ venue.venueInfo.name }}"
+                      />
+                    </div>
                     {% endfor %}
 
                     <div class="venue-box-price">
