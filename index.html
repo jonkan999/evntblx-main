@@ -28,6 +28,7 @@
     <script defer="" src="/js/menu.js"></script>
     <script defer="" src="/js/backgroudCarousel.js"></script>
     <script defer="" src="/js/eventDate.js"></script>
+    <script defer="" src="/js/heroSetContraints.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -117,15 +118,16 @@
             <label for="eventType">Typ av fest?</label>
             <div class="select-box">
               <select id="eventType" name="eventType">
-                <option value="Födelsedagsfest">Visa alla lokaltyper</option>
-                <option value="Födelsedagsfest">Födelsedagsfest</option>
-                <option value="Bröllop">Bröllop</option>
-                <option value="Bröllop">Företags Kick-off</option>
-                <option value="Bröllop">Julfest</option>
-                <option value="Bröllop">Halloweenfest</option>
-                <option value="Bröllop">Babyshower</option>
-                <option value="Bröllop">Möhippa</option>
-                <option value="Bröllop">Dopfest</option>
+                <option value="na">Visa alla lokaltyper</option>
+                <option value="fest">Fest</option>
+                <option value="fest">Födelsedagsfest</option>
+                <option value="bröllop">Bröllop</option>
+                <option value="kickoff">Företags Kick-off</option>
+                <option value="julfest">Julfest</option>
+                <option value="fest">Halloweenfest</option>
+                <option value="fest">Babyshower</option>
+                <option value="fest">Möhippa</option>
+                <option value="fest">Dopfest</option>
                 <!-- Add other options here -->
               </select>
               <ion-icon name="chevron-down-outline"></ion-icon>
@@ -136,13 +138,13 @@
             <label for="numberOfPeople">Antal personer</label>
             <div class="select-box">
               <select id="numberOfPeople" name="numberOfPeople">
-                <option value="na">Visa alla storlekar</option>
-                <option value="0-20">0-20</option>
-                <option value="20-60">20-60</option>
-                <option value="20-60">60-120</option>
-                <option value="20-60">120-250</option>
-                <option value="20-60">250-500</option>
-                <option value="20-60">500+</option>
+                <option value="-1">Visa alla storlekar</option>
+                <option value="20">0-20</option>
+                <option value="50">20-60</option>
+                <option value="100">60-120</option>
+                <option value="200">120-250</option>
+                <option value="300">250-500</option>
+                <option value="600">500+</option>
                 <!-- Add other options here -->
               </select>
               <ion-icon name="chevron-down-outline"></ion-icon>

@@ -41,7 +41,6 @@ context = {
      'venues': venues,
      'list_of_filepaths': list_of_filepaths  # Pass the filename prefix here
  }
-print(context['venues'][0]['venueInfo'])
 # Render the main template with the venues data
 rendered_html = main_template.render(context=context)
 

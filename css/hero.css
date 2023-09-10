@@ -82,7 +82,7 @@
   padding: 1.5rem 3rem; /* Increased from 1rem 2rem */
   background-color: #fff;
   border-radius: 6px; /* Increased from 4px */
-  z-index: 2;
+  z-index: 4;
 }
 
 .input-group {

@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!isPopupOpen) {
           // On the first popup opening, change the marker's color
           changeMarkerColor(markerElement, "var(--black-background-color)");
+
           isPopupOpen = true; // Set the flag to true when popup is open
         }
       });

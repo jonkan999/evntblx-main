@@ -20,6 +20,10 @@
     /* 9px / 16px  */
     font-size: 56.25%;
   }
+  .search-box {
+    max-width: 90%;
+    gap: 0rem;
+  }
 }
 
 /**************************/
@@ -45,11 +49,21 @@
     width: 95%;
     align-items: flex-start;
     padding: 2.25rem 1.5rem; /* Increased from 1.5rem 1rem */
+    gap: 2rem;
+  }
+  .carousel-container {
+    height: 82%;
   }
 
   .main-heading {
     font-size: 3.75rem; /* Increased from 2.5rem */
     line-height: 1.1;
+    top: 82%;
+  }
+  .main-heading-sub-heading {
+    top: 89%;
+    left: 8rem;
+    font-size: 5rem;
   }
 
   .border-div {
