@@ -40,6 +40,17 @@
     grid-template-columns: 1fr;
     min-width: calc(1.14 * var(--venue-box-width));
   }
+  .filters-section {
+    padding-right: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(2 * 4.5rem + 5rem);
+    gap: 1rem;
+    width: calc(2 * 25rem + 1rem);
+  }
+  .toggle-button.desktop {
+    display: none;
+  }
 }
 
 /**************************/
@@ -65,12 +76,6 @@
   .desktop {
     display: none;
   } */
-  .filters-section {
-    padding-right: 1rem;
-  }
-  .toggle-button.desktop {
-    display: none;
-  }
 
   .venues-section {
     grid-template-columns: 1fr;

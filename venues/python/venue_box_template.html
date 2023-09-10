@@ -104,7 +104,20 @@
       <section class="section-container" id="venuesContainer">
         <div class="filters-section">
           <div class="filter-box">
-            <p>Pris</p>
+            <select id="eventType" name="eventType">
+              <option value="na">Typ av fest</option>
+              <option value="fest">Fest</option>
+              <option value="födelsedagsfest">Födelsedagsfest</option>
+              <option value="bröllop">Bröllop</option>
+              <option value="kickoff">Företags Kick-off</option>
+              <option value="julfest">Julfest</option>
+              <option value="halloweenfest">Halloweenfest</option>
+              <option value="babyshower">Babyshower</option>
+              <option value="möhippa">Möhippa</option>
+              <option value="dopfest">Dopfest</option>
+              <!-- Add other options here -->
+            </select>
+            <ion-icon name="chevron-down-outline"></ion-icon>
           </div>
           <div class="filter-box">
             <select id="numberOfPeople" name="numberOfPeople">
@@ -159,6 +172,7 @@
               data-projectorF="{{ venue.venueInfo.projectorF }}"
               data-discoLightsF="{{ venue.venueInfo.discoLightsF }}"
               data-startingPrice="{{ venue.venueInfo.startingPrice }}"
+              data-name="{{ venue.venueInfo.name }}"
             >
               >
               <a
@@ -166,6 +180,7 @@
                 href="{{ '/venues/' + cleaned_name + '.html' }}"
                 class="venue-box"
                 data-geocenter="{{ venue.mapboxCenter }}"
+                data-name="{{ venue.venueInfo.name }}"
               >
                 <!-- HTML structure for the carousel -->
                 <div class="image-carousel">

@@ -114,22 +114,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Create a function to add a marker for a venue
-  function addMarker(venue) {
-    const marker = new mapboxgl.Marker()
-      .setLngLat(venue.mapboxCenter)
-      .addTo(map);
-    setMarkerSvg(marker, defaultMarkerSVG);
-    // Add the marker to the map
-    marker.addTo(map);
-    // Store marker references in an array
-    markers.push(marker);
+  // Create a function to add a marker for a venue
+  function addMarker(venue, index) {
+    // Check if the corresponding venueBox should be generated
+    const venueBox = venueBoxes[index];
+    if (venueBox) {
+      const marker = new mapboxgl.Marker()
+        .setLngLat(venue.mapboxCenter)
+        .addTo(map);
+      setMarkerSvg(marker, defaultMarkerSVG);
+
+      // Get the value of the data-name attribute from venueBox
+      const dataNameValue = venueBox.getAttribute("data-name");
+
+      // Add a data attribute to the marker with the data-name value
+      marker.getElement().setAttribute("data-name", dataNameValue);
+      // Add the marker to the map
+      marker.addTo(map);
+      // Store marker references in an array
+      markers.push(marker);
+
+      const markerElement = marker.getElement();
+
+      venueBox.addEventListener("mouseenter", () => {
+        changeMarkerColor(markerElement, "var(--black-background-color)");
+      });
+
+      venueBox.addEventListener("mouseleave", () => {
+        changeMarkerColor(markerElement, "var(--highlight-color)");
+      });
+
+      venueBox.addEventListener("click", () => {
+        changeMarkerColor(markerElement, "var(--black-background-color)");
+      });
+
+      // Add an event listener to detect changes in venueBox's display style
+      /*       const observer = new MutationObserver((mutationsList) => {
+        for (const mutation of mutationsList) {
+          if (mutation.attributeName === "style") {
+            const displayStyle = venueBox.style.display;
+            // Update the marker's display style based on venueBox's style
+            markerElement.style.display = displayStyle;
+          }
+        }
+      });
+
+      // Start observing changes in venueBox's style attribute
+      observer.observe(venueBox, { attributes: true }); */
+    }
   }
 
   // Collect venue-box elements and extract mapboxCenter from data-geocenter attribute
   const markers = []; // Array to store marker references
   const venues = [];
   const venueBoxes = document.querySelectorAll(".venues-section .venue-box");
-  venueBoxes.forEach((venueBox) => {
+  venueBoxes.forEach((venueBox, index) => {
     const geocenterAttr = venueBox.getAttribute("data-geocenter");
     if (geocenterAttr) {
       const coordinates = geocenterAttr
@@ -138,28 +177,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .split(",")
         .map((coordinate) => parseFloat(coordinate.trim()));
       venues.push({ mapboxCenter: coordinates });
+      // Call addMarker with the venue and index
+      addMarker({ mapboxCenter: coordinates }, index);
     }
-  });
-
-  // Add markers for each venue and store references
-  venues.forEach(addMarker);
-
-  venueBoxes.forEach((venueBox, index) => {
-    const marker = markers[index];
-    const markerElement = marker.getElement();
-
-    console.log(markerElement);
-    venueBox.addEventListener("mouseenter", () => {
-      changeMarkerColor(markerElement, "var(--black-background-color)");
-    });
-
-    venueBox.addEventListener("mouseleave", () => {
-      changeMarkerColor(markerElement, "var(--highlight-color)");
-    });
-
-    venueBox.addEventListener("click", () => {
-      changeMarkerColor(markerElement, "var(--black-background-color)");
-    });
   });
 
   // Create a function to handle marker click events
