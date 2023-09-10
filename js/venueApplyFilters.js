@@ -48,6 +48,7 @@ function venueApplyFilters() {
     }
   });
 }
+venueApplyFilters();
 function updateContainerDisplayAndMarkerStyle(container, display) {
   const containerName = container.getAttribute("data-name"); // Step 1
 
