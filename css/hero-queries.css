@@ -43,13 +43,17 @@
 
 @media (max-width: 44em) {
   .search-box {
-    top: 30rem; /* Increased from 20rem */
+    top: 75vh; /* Increased from 20rem */
 
     flex-direction: column;
     width: 95%;
     align-items: flex-start;
     padding: 2.25rem 1.5rem; /* Increased from 1.5rem 1rem */
-    gap: 2rem;
+    gap: 1rem;
+  }
+  .search-box select,
+  .search-box input {
+    font-size: 1.8rem;
   }
   .carousel-container {
     height: 82%;
@@ -58,11 +62,11 @@
   .main-heading {
     font-size: 3.75rem; /* Increased from 2.5rem */
     line-height: 1.1;
-    top: 82%;
+    top: 50%;
   }
   .main-heading-sub-heading {
-    top: 89%;
-    left: 8rem;
+    top: 55%;
+    left: 15rem;
     font-size: 5rem;
   }
 
@@ -80,6 +84,7 @@
   .search-button {
     margin: 0 auto;
     width: 100%;
+    font-size: 1.8rem;
   }
 }
 
