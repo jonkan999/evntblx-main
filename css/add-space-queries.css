@@ -34,6 +34,7 @@
   .split-section {
     flex-direction: column-reverse;
     gap: 3rem;
+    padding: 1rem;
   }
 
   .split-image {
@@ -59,6 +60,12 @@
     flex: 0 0 100%; /* 1 image per row on smaller screens */
     margin-right: 0;
   }
+  .split-image {
+    height: 43vh;
+  }
+  .split-text {
+    padding: 0 2rem;
+  }
 }
 
 /**************************/
@@ -66,6 +73,9 @@
 /**************************/
 
 @media (max-width: 34em) {
+  .split-text {
+    padding: 0 0.5rem;
+  }
 }
 
 /**************************/

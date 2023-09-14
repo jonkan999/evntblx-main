@@ -31,6 +31,7 @@
     <script defer="" src="/js/heroSetContraints.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/menu.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
     <link href="/css/header-queries.css" rel="stylesheet" />
     <link href="/css/hero.css" rel="stylesheet" />
@@ -63,6 +64,12 @@
           alt="Brand logo"
         />
       </div>
+      <!-- Sliding menu -->
+      <div class="menu-box">
+        <div class="icon-box">
+          <ion-icon class="ion-icon menu-icon" name="menu-outline"></ion-icon>
+        </div>
+      </div>
       <div class="menu">
         <ul>
           <li>
@@ -78,17 +85,10 @@
               >Lägg till Din Lokal</a
             >
           </li>
-          <li>
-            <div class="menu-box">
-              <div class="icon-box">
-                <ion-icon
-                  class="ion-icon menu-icon"
-                  name="menu-outline"
-                ></ion-icon>
-              </div>
-            </div>
-          </li>
         </ul>
+        <div class="icon-box close-button">
+          <ion-icon class="ion-icon close-icon" name="close-outline"></ion-icon>
+        </div>
       </div>
     </header>
     <main>
@@ -158,7 +158,7 @@
                 type="date"
                 id="eventDate"
                 name="eventDate"
-                placeholder="När som helst"
+                placeholder="yyy-MM-dd"
               />
               <ion-icon name="calendar-clear-outline"></ion-icon>
             </div>

@@ -49,7 +49,11 @@
   align-items: center;
   justify-content: flex-end;
   list-style-type: none;
-  margin-right: 3.75rem; /* Increased from 2.5rem */
+  margin-right: 3rem; /* Increased from 2.5rem */
+}
+.icon-box.close-button {
+  display: none;
+  color: var(--white-text-color);
 }
 
 .category-link {
@@ -80,7 +84,7 @@
 .menu-box {
   height: 100%;
   width: 7.5rem; /* Increased from 5rem */
-  margin: 1.5rem 0 1.5rem 3.75rem; /* Increased from 1rem 0 1rem 2rem */
+  margin: 1.5rem 1.75rem 1.5rem 3.75rem; /* Increased from 1rem 0 1rem 2rem */
   display: flex;
   justify-content: center;
   align-items: center;
