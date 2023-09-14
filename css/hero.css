@@ -6,27 +6,6 @@
   background-color: var(--granite-background-color);
 }
 
-.main-heading {
-  position: absolute;
-  top: 88%;
-  left: 4.5rem; /* Increased from 3rem */
-  transform: translateY(-30%);
-
-  font-size: 7.5rem; /* Increased from 5rem */
-  z-index: 2;
-  color: var(--white-text-color);
-}
-.main-heading-sub-heading {
-  position: absolute;
-  top: 92%;
-  left: 84.5rem; /* Increased from 3rem */
-  transform: translateY(-30%);
-
-  font-size: 10rem; /* Increased from 5rem */
-  z-index: 3;
-  color: var(--highlight-color);
-}
-
 .carousel-container {
   position: absolute;
   top: 0;
@@ -69,7 +48,7 @@
 .search-box {
   position: absolute;
   left: 50%;
-  top: 30%; /* Increased from 30% */
+  top: 30vh; /* Increased from 30% */
   transform: translate(-50%, -50%);
   max-width: 75%; /* Increased from 75% */
   display: flex;
@@ -83,6 +62,27 @@
   background-color: #fff;
   border-radius: 2px; /* Increased from 4px */
   z-index: 4;
+}
+
+.main-heading {
+  position: absolute;
+  top: 62vh;
+  left: -8%; /* Increased from 3rem */
+  transform: translateY(-30%);
+
+  font-size: 7.5rem; /* Increased from 5rem */
+  z-index: 2;
+  color: var(--white-text-color);
+}
+.main-heading-sub-heading {
+  position: absolute;
+  top: 67vh;
+  left: 41%; /* Increased from 3rem */
+  transform: translateY(-30%);
+
+  font-size: 10rem; /* Increased from 5rem */
+  z-index: 3;
+  color: var(--highlight-color);
 }
 
 .input-group {

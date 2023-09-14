@@ -10,6 +10,16 @@
 /**************************/
 
 @media (max-width: 84em) {
+  .main-heading {
+    left: 3%; /* Increased from 3rem */
+
+    font-size: 5.5rem; /* Increased from 5rem */
+  }
+  .main-heading-sub-heading {
+    left: 52%; /* Increased from 3rem */
+
+    font-size: 7rem; /* Increased from 5rem */
+  }
 }
 
 /**************************/
@@ -62,11 +72,15 @@
   .main-heading {
     font-size: 3.75rem; /* Increased from 2.5rem */
     line-height: 1.1;
-    top: 50%;
+    top: -9vh;
+    z-index: 1;
+    left: 2%;
+    width: 45rem;
   }
   .main-heading-sub-heading {
-    top: 55%;
-    left: 15rem;
+    top: -3vh;
+    z-index: 2;
+    left: 9rem;
     font-size: 5rem;
   }
 
