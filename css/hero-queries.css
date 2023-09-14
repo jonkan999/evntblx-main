@@ -53,7 +53,7 @@
 
 @media (max-width: 44em) {
   .search-box {
-    top: 72vh; /* Increased from 20rem */
+    top: 70.5vh; /* Increased from 20rem */
 
     flex-direction: column;
     width: 95%;
