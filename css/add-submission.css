@@ -258,6 +258,9 @@
   gap: 3rem;
   margin-bottom: 4rem;
 }
+.highlights-container .highlight-stars {
+  margin: 0 1rem 0.2rem 0;
+}
 
 .star-icon {
   font-size: 1.65rem;
