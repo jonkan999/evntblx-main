@@ -479,13 +479,12 @@ Tack på förhand!`;
         sendButton.textContent = "Skicka förfrågan";
         sendButton.classList.add("search-button");
         sendButton.classList.add("continue-button");
-        mailTemplateContainer.appendChild(sendButton);
 
         // Append the elements to the calendar and mail template containers
         calendarContainer.appendChild(prevMonthButton);
         calendarContainer.appendChild(nextMonthButton);
 
-        mailTemplateContainer.appendChild(sendButton);
+        venuePage.appendChild(sendButton);
 
         rightSplit.appendChild(calendarContainer);
         rightSplit.appendChild(mailTemplateContainer);
@@ -659,7 +658,7 @@ Tack på förhand!`;
           sendButton.textContent = "Skicka förfrågan";
           sendButton.classList.add("search-button");
           sendButton.classList.add("continue-button");
-          mailTemplateContainer.appendChild(sendButton);
+          venuePage.appendChild(sendButton);
 
           // Append the mail template container to the right split
           rightSplit.appendChild(mailTemplateContainer);

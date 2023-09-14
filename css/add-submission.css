@@ -64,6 +64,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 /* Style for the images section */
@@ -394,8 +395,8 @@
   border: none;
 }
 
-.submit-button {
-  width: auto;
+#submit {
+  width: 22.5rem;
   height: auto;
   position: fixed;
   bottom: 30px;
@@ -409,9 +410,6 @@
   cursor: pointer;
 }
 
-#submit {
-  display: none;
-}
 .popup,
 .added-popup,
 .failed-popup {
