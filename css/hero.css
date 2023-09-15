@@ -38,6 +38,9 @@
   transition-delay: 1s;
   z-index: 0;
 }
+.carousel-image.position-down {
+  object-position: 50% 70%;
+}
 
 .carousel-image.active {
   opacity: 1;

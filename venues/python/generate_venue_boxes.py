@@ -25,7 +25,7 @@ main_template = env.get_template("venue_box_template.html")
 venues = read_all_from_venues()
 # Function to clean and format the venue name for the output filename
 def clean_filename(name):
-    name = name.replace('-', ' ').replace('å', 'a').replace('ä', 'a').replace('ö', 'o').lower()
+    name = name.replace('-', ' ').replace('/', '').replace('å', 'a').replace('ä', 'a').replace('ö', 'o').lower()
     return '-'.join(name.split())
 
 list_of_filepaths=[]

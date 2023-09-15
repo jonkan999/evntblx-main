@@ -156,10 +156,10 @@
         <div class="venue-selector">
           <div class="venues-section">
             {% for venue in context.venues %} {% set cleaned_name =
-            venue['venueInfo']['name']|replace('-', ' ')|replace(' ',
-            '-')|lower|replace('å', 'a')|replace('ä', 'a')|replace('ö',
-            'o')|replace('---', '-')|replace('--', '-') %} {% set index =
-            loop.index %}
+            venue['venueInfo']['name']|replace('-', ' ')|replace('/',
+            '')|replace(' ', '-')|lower|replace('å', 'a')|replace('ä',
+            'a')|replace('ö', 'o')|replace('---', '-')|replace('--', '-') %} {%
+            set index = loop.index %}
             <!-- data attributes used for filtering -->
             <div
               class="venue-box-container"

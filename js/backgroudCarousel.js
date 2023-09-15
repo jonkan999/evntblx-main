@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startCarousel() {
     showImage(currentIndex);
-    setInterval(nextImage, 7000); // 7 seconds
+    setInterval(nextImage, 5500); // 7 seconds
   }
 
   startCarousel();
