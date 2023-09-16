@@ -41,6 +41,9 @@
     min-width: calc(1.14 * var(--venue-box-width));
   }
   .filters-section {
+    height: calc(1 * (4.5rem + 2.5rem) + 0.5rem + var(--header-size));
+  }
+  .upper-filters {
     padding-right: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,6 +52,15 @@
     width: calc(2 * 25rem + 1rem);
     max-width: 100%;
   }
+  .lower-filters {
+    grid-template-columns: repeat(2, 1fr);
+    width: calc(2 * 20rem + 1rem);
+    max-width: 100%;
+    column-gap: 5rem;
+  }
+  .filter-checkbox {
+  }
+
   .toggle-button.desktop {
     display: none;
   }
