@@ -301,6 +301,7 @@
 .venue-box-info-header-title {
   font-size: 1.8rem;
   font-weight: bold;
+  line-height: 1.15;
 }
 
 .venue-box-info-body {
