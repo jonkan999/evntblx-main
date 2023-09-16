@@ -5,6 +5,7 @@ function venueApplyFilters() {
   // Selectors for the different filters
   const eventTypeSelect = document.getElementById("eventType");
   const numberOfPeopleSelect = document.getElementById("numberOfPeople");
+  const eventDateInput = document.getElementById("eventDate");
 
   venueContainers.forEach((container) => {
     const eventType = container.getAttribute("data-event-type");
@@ -21,6 +22,7 @@ function venueApplyFilters() {
     // Update the selected options for the filters based on constraints
     eventTypeSelect.value = constraints.eventType || "na";
     numberOfPeopleSelect.value = constraints.standing || "-1";
+    eventDateInput.value = constraints.eventDate || "YYYY-MM-DD";
 
     if (
       (!constraints.eventType ||

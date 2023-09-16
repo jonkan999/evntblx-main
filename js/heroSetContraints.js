@@ -10,10 +10,14 @@ searchButton.addEventListener("click", function () {
   const eventTypeSelect = document.getElementById("eventType");
   const selectedEventType = eventTypeSelect.value;
 
+  const eventDateInput = document.getElementById("eventDate");
+  const selectedEventDate = eventDateInput.value;
+
   // Create the constraints object with both values
   const constraints = {
     standing: selectedNumberOfPeople,
     eventType: selectedEventType,
+    eventDate: selectedEventDate,
   };
 
   // Store the constraints in local storage
