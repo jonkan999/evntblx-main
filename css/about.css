@@ -1,0 +1,115 @@
+.section-about {
+  min-height: 100vh;
+  width: 100%;
+  background-color: none;
+  overflow: hidden;
+}
+
+.about-container {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10rem;
+}
+
+.about-split {
+  margin-top: 8rem;
+  padding-top: 10rem;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-find-venue {
+  margin-bottom: 10rem;
+}
+
+.about-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.about-text {
+  padding-top: 5rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.about-button {
+  margin: auto 0 0 0;
+  line-height: 1.2;
+  max-width: 50%;
+}
+
+.circle {
+  position: absolute;
+  animation: float 40s infinite;
+  z-index: -1;
+}
+.circle1 {
+  animation-delay: 0s;
+}
+.circle2 {
+  animation-delay: 0s;
+}
+.circle1 {
+  animation-name: float1;
+}
+
+.circle2 {
+  animation-name: float2;
+}
+.circle3 {
+  animation-name: float3;
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(-100px, 0);
+  }
+  25% {
+    transform: translate(150px, 150px);
+  }
+  50% {
+    transform: translate(300px, 0);
+  }
+  75% {
+    transform: translate(0, 300px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(-100px, 0);
+  }
+  25% {
+    transform: translate(150px, -150px);
+  }
+  50% {
+    transform: translate(0, 300px);
+  }
+  75% {
+    transform: translate(300px, 0);
+  }
+}
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translate(-100px, -1000);
+  }
+  25% {
+    transform: translate(-150px, +150px);
+  }
+  50% {
+    transform: translate(0, -300px);
+  }
+  75% {
+    transform: translate(-300px, 0);
+  }
+}
