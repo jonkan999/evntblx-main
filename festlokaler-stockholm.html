@@ -37,6 +37,7 @@
     <script defer="" src="/js/venueToggleMap.js"></script>
     <script defer="" src="/js/venueApplyFilters.js"></script>
     <script defer="" src="/js/venuesSetConstraints.js"></script>
+    <script defer="" src="/js/venuesToggleMoreFilter.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -103,61 +104,96 @@
     <main>
       <section class="section-container" id="venuesContainer">
         <div class="filters-section">
-          <div class="filter-box">
-            <select id="eventType" name="eventType">
-              <option value="na">Typ av fest</option>
-              <option value="fest">Fest</option>
-              <option value="födelsedagsfest">Födelsedagsfest</option>
-              <option value="bröllop">Bröllop</option>
-              <option value="kickoff">Företags Kick-off</option>
-              <option value="julfest">Julfest</option>
-              <option value="halloweenfest">Halloweenfest</option>
-              <option value="babyshower">Babyshower</option>
-              <option value="möhippa">Möhippa</option>
-              <option value="dopfest">Dopfest</option>
-              <!-- Add other options here -->
-            </select>
-            <ion-icon name="chevron-down-outline"></ion-icon>
-          </div>
-          <div class="filter-box">
-            <select id="numberOfPeople" name="numberOfPeople">
-              <option value="-1">Deltagare</option>
-              <option value="20">0-20</option>
-              <option value="50">20-60</option>
-              <option value="100">60-120</option>
-              <option value="200">120-250</option>
-              <option value="300">250-500</option>
-              <option value="600">500+</option>
-              <!-- Add other options here -->
-            </select>
-            <ion-icon name="chevron-down-outline"></ion-icon>
-          </div>
-          <div class="filter-box">
-            <input
-              type="date"
-              id="eventDate"
-              name="eventDate"
-              placeholder="yyyy-MM-dd"
-            />
-            <ion-icon name="calendar-clear-outline"></ion-icon>
-          </div>
-          <div class="filter-box">
-            <ion-icon name="options-outline"></ion-icon>
-            <p>Fler filter</p>
-          </div>
-          <div class="toggle-button desktop" id="toggleMapButton">
-            <button>
-              <ion-icon name="radio-button-off-outline" id="offIcon"></ion-icon>
-              <ion-icon name="radio-button-on-outline" id="onIcon"></ion-icon>
-              Karta
+          <div class="upper-filters">
+            <div class="filter-box">
+              <select id="eventType" name="eventType">
+                <option value="na">Typ av fest</option>
+                <option value="fest">Fest</option>
+                <option value="födelsedagsfest">Födelsedagsfest</option>
+                <option value="bröllop">Bröllop</option>
+                <option value="kickoff">Företags Kick-off</option>
+                <option value="julfest">Julfest</option>
+                <option value="halloweenfest">Halloweenfest</option>
+                <option value="babyshower">Babyshower</option>
+                <option value="möhippa">Möhippa</option>
+                <option value="dopfest">Dopfest</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <div class="filter-box">
+              <select id="numberOfPeople" name="numberOfPeople">
+                <option value="-1">Deltagare</option>
+                <option value="20">0-20</option>
+                <option value="50">20-60</option>
+                <option value="100">60-120</option>
+                <option value="200">120-250</option>
+                <option value="300">250-500</option>
+                <option value="600">500+</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <div class="filter-box">
+              <input
+                type="date"
+                id="eventDate"
+                name="eventDate"
+                placeholder="yyyy-MM-dd"
+              />
+              <ion-icon name="calendar-clear-outline"></ion-icon>
+            </div>
+            <div class="filter-box" id="moreFilter">
+              <ion-icon name="options-outline"></ion-icon>
+              <p>Fler filter</p>
+            </div>
+            <div class="toggle-button desktop" id="toggleMapButton">
+              <button>
+                <ion-icon
+                  name="radio-button-off-outline"
+                  id="offIcon"
+                ></ion-icon>
+                <ion-icon name="radio-button-on-outline" id="onIcon"></ion-icon>
+                Karta
+              </button>
+            </div>
+            <button class="toggle-button mobile" id="toggleMapButtonMobile">
+              <div class="icon-container">
+                <ion-icon name="map-outline"></ion-icon>
+              </div>
+              <p>karta</p>
             </button>
           </div>
-          <button class="toggle-button mobile" id="toggleMapButtonMobile">
-            <div class="icon-container">
-              <ion-icon name="map-outline"></ion-icon>
-            </div>
-            <p>karta</p>
-          </button>
+          <div class="lower-filters">
+            <label class="filter-checkbox">
+              <input id="ownFoodF" type="checkbox" />
+              <span>Egen mat</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="ownDrinkF" type="checkbox" />
+              <span>Egen dryck</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="soundF" type="checkbox" />
+              <span>Ljudutrustning</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="micsF" type="checkbox" />
+              <span>Mikrofoner</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="projectorF" type="checkbox" />
+              <span>Projektor</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="discolightsF" type="checkbox" />
+              <span>Discoljus</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="checkout" type="checkbox" />
+              <span>Sen utcheckning</span>
+            </label>
+          </div>
         </div>
         <div class="venue-selector">
           <div class="venues-section">
