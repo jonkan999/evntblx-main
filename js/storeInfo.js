@@ -3,7 +3,7 @@ continueButton.addEventListener("click", function () {
   localStorage.removeItem("venueInfo");
   const venueInfo = {
     name: document.querySelector("#name").value,
-    description: document.querySelector("#description").value,
+    description: document.querySelector("#description").textContent,
     address: document.querySelector("#address").value,
     size: document.querySelector("#size").value,
     seated: document.querySelector("#seated").value,
