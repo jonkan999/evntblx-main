@@ -237,7 +237,11 @@ window.addEventListener("load", function () {
     descriptionHeader.textContent = "Om lokalen";
     const description = document.createElement("p");
     description.classList.add("venue-description");
-    description.textContent = venueInfo.description.replace(/\\n/g, "\n"); // Replace "\\n" with actual line breaks
+
+    // Replace "\\n" with actual line breaks
+    const descriptionText = venueInfo.description.replace(/\\n/g, "\n");
+    description.textContent = descriptionText;
+
     descriptionContainer.appendChild(descriptionHeader);
     descriptionContainer.appendChild(description);
 
