@@ -56,7 +56,7 @@
     grid-template-columns: repeat(2, 1fr);
     width: calc(2 * 20rem + 1rem);
     max-width: 100%;
-    column-gap: 5rem;
+    column-gap: 2rem;
   }
   .filter-checkbox {
   }
