@@ -3,7 +3,7 @@ continueButton.addEventListener("click", function () {
   localStorage.removeItem("venueInfo");
   const venueInfo = {
     name: document.querySelector("#name").value,
-    description: document.querySelector("#description").textContent,
+    description: document.querySelector("#description").innerText,
     address: document.querySelector("#address").value,
     size: document.querySelector("#size").value,
     seated: document.querySelector("#seated").value,
@@ -20,10 +20,10 @@ continueButton.addEventListener("click", function () {
     contactMail: document.querySelector("#contactMail").value,
     startingPrice: document.querySelector("#startingPrice").value,
   };
-  console.log(venueInfo);
+
   // Convert venueInfo object to JSON
   const venueInfoJSON = JSON.stringify(venueInfo);
-  console.log(venueInfoJSON);
+
   // Store venueInfoJSON in local storage
   localStorage.setItem("venueInfo", venueInfoJSON);
 });
