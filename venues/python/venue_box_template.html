@@ -155,20 +155,7 @@
         </div>
         <div class="venue-selector">
           <div class="venues-section">
-            <!-- Add this block of code before your venue loop -->
-            {% set seedData = {"priorityVenues": []} %} {% try %} {% set
-            seedData =
-            seedData|merge(context|from_json('venue_priority_seed.json')) %} {%
-            except %}
-            <!-- Handle the case when the seed file does not exist or is invalid JSON -->
-            {% endtry %} {% set prioritizedVenues = [] %} {% for venueName in
-            seedData.priorityVenues %} {% for venue in context.venues %} {% if
-            venue.venueInfo.name == venueName %} {% set prioritizedVenues =
-            prioritizedVenues + [venue] %} {% endif %} {% endfor %} {% endfor %}
-            {% set remainingVenues = context.venues|rejectattr('venueInfo.name',
-            'in', seedData.priorityVenues) %} {% set allVenues =
-            prioritizedVenues + remainingVenues %} {% for venue in
-            context.venues %} {% set cleaned_name =
+            {% for venue in context.venues %} {% set cleaned_name =
             venue['venueInfo']['name']|replace('-', ' ')|replace('/',
             '')|replace(' ', '-')|lower|replace('å', 'a')|replace('ä',
             'a')|replace('ö', 'o')|replace('---', '-')|replace('--', '-') %} {%

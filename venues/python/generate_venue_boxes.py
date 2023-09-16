@@ -1,4 +1,5 @@
 import os
+import json
 from firebase.firebase_functions import read_all_from_venues
 from jinja2 import Environment, FileSystemLoader
 from save_images import save_images
@@ -28,20 +29,46 @@ def clean_filename(name):
     name = name.replace('-', ' ').replace('/', '').replace('å', 'a').replace('ä', 'a').replace('ö', 'o').lower()
     return '-'.join(name.split())
 
-list_of_filepaths=[]
-for venue in venues:
+# Read the seed file and extract priority venues
+seed_file_path = "C:/Users/engjoe/festlokalerstockholm/venues/python/venue_priority_seed.json"  # Update with the actual path
+try:
+    with open(seed_file_path, 'r', encoding="utf-8") as seed_file:
+        seed_data = json.load(seed_file)
+        priority_venue_names = seed_data.get("priorityVenues", [])
+except FileNotFoundError:
+    priority_venue_names = []
+
+# Reorder the venues list based on the priority in the seed file
+ordered_venues = []
+print("Priority venues: " + str(priority_venue_names))
+for venue_name in priority_venue_names:
+    print("Looking for venue: " + venue_name)
+    for venue in venues:
+        if venue['venueInfo']['name'] == venue_name:
+            ordered_venues.append(venue)
+            print("Added venue: " + venue_name)
+
+# Add remaining venues that are not in the priority list
+remaining_venues = [venue for venue in venues if venue['venueInfo']['name'] not in priority_venue_names]
+ordered_venues.extend(remaining_venues)
+
+list_of_filepaths = []
+
+for venue in ordered_venues:
     cleaned_name = clean_filename(venue['venueInfo']['name'])
     # Save images associated with the venue
     images_folder = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues/img")
     os.makedirs(images_folder, exist_ok=True)
-    image_paths=save_images(venue['venueImages']['images'], images_folder, cleaned_name)
+    image_paths = save_images(venue['venueImages']['images'], images_folder, cleaned_name)
     list_of_filepaths.append(image_paths)
 
+
 context = {
-     'venues': venues,
-     'list_of_filepaths': list_of_filepaths  # Pass the filename prefix here
- }
-# Render the main template with the venues data
+    'venues': ordered_venues,  # Use the ordered venues list
+    'list_of_filepaths': list_of_filepaths  # Pass the filename prefix here
+}
+
+# Render the main template with the ordered venues data
 rendered_html = main_template.render(context=context)
 
 # Write the rendered HTML content to a new file

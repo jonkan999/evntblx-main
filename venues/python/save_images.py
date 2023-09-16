@@ -19,7 +19,7 @@ def save_images(images_data, output_folder, filename_prefix):
             # Append the image path to the list
             image_paths.append(f"/venues/img/{filename}")
             
-            print(f"Image {i} saved as {image_paths[-1]}")
+            """ print(f"Image {i} saved as {image_paths[-1]}") """
         except Exception as e:
             print(f"Error saving image {i}: {str(e)}")
     
