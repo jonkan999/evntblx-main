@@ -239,7 +239,7 @@ window.addEventListener("load", function () {
     description.classList.add("venue-description");
 
     // Replace "\\n" with actual line breaks
-    description.innerHTML = venueInfo.description.replace(/\n/g, "<br>");
+    description.innerHTML = venueInfo.description.replace(/\\n/g, "<br>");
 
     descriptionContainer.appendChild(descriptionHeader);
     descriptionContainer.appendChild(description);
