@@ -3,14 +3,16 @@
   padding-left: 1rem;
   width: 100%;
   height: var(--header-size);
-  display: flex;
   gap: 0.75rem;
   border-bottom: 1px solid #ccc;
 
+  font-size: 1.65rem;
+}
+.upper-filters {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1.65rem;
 }
 
 .filter-box {
@@ -36,6 +38,14 @@
 .filter-box:hover {
   background-color: #f7f7f7;
   cursor: pointer;
+}
+.filter-checkbox {
+  display: none;
+  width: 90%; /* Increased from 80% */
+  padding: 15px; /* Increased from 10px */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Increased from 3px */
+  font-family: "Inter", sans-serif;
 }
 /* .toggle-button {
   margin-left: auto;
