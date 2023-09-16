@@ -25,6 +25,8 @@ function venueApplyFilters() {
     if (
       (!constraints.eventType ||
         constraints.eventType === "na" ||
+        eventType ===
+          "" /* no data element for eventType, allowing all event types in venue  */ ||
         constraints.eventType.includes(eventType)) &&
       (!constraints.standing ||
         constraints.standing === "-1" ||
