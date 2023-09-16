@@ -35,6 +35,9 @@ fetch("/.netlify/functions/getFirebaseConfig")
       const venueImages = JSON.parse(venueImagesJSON);
       const mapboxCenter = JSON.parse(mapboxCenterJSON);
 
+      // Replace `\\n` in venueInfo.description with <br> tags
+      venueInfo.description = venueInfo.description.replace(/\\n/g, "<br>");
+
       // Reference to the "venues" collection
       const venuesCollection = collection(db, "venues");
 
