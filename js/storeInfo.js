@@ -20,10 +20,10 @@ continueButton.addEventListener("click", function () {
     contactMail: document.querySelector("#contactMail").value,
     startingPrice: document.querySelector("#startingPrice").value,
   };
-
+  console.log(venueInfo);
   // Convert venueInfo object to JSON
   const venueInfoJSON = JSON.stringify(venueInfo);
-
+  console.log(venueInfoJSON);
   // Store venueInfoJSON in local storage
   localStorage.setItem("venueInfo", venueInfoJSON);
 });
