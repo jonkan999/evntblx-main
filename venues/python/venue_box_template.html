@@ -198,8 +198,9 @@
                     <div class="venue-box-price">
                       <div class="from">fr.</div>
                       <div>
+                        {% if venue.venueInfo.startingPrice|format_thousands %}
                         {{ venue.venueInfo.startingPrice|format_thousands }}
-                        kr/dygn
+                        kr/dygn {% else %} Pris på förfrågan {% endif %}
                       </div>
                     </div>
                   </div>
