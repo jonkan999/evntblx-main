@@ -297,7 +297,7 @@
             <div class="description-container">
               <h2>Om lokalen</h2>
               <p class="venue-description">
-                {{ context.venue.venueInfo.description | replace('\n', '<br />')
+                {{ context.venue.venueInfo.description | replace('\\n', '<br />')
                 | safe }}
               </p>
               <h3>Detaljerad information:</h3>
