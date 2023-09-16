@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const venueInfo = JSON.parse(venueInfoJSON);
 
     document.querySelector("#name").value = venueInfo.name;
-    document.querySelector("#description").value = venueInfo.description;
+    document.querySelector("#description").value =
+      venueInfo.description.replace(/\\n/g, "\n"); // Replace "\\n" with actual line breaks
     document.querySelector("#address").value = venueInfo.address;
     document.querySelector("#size").value = venueInfo.size;
     document.querySelector("#seated").value = venueInfo.seated;
