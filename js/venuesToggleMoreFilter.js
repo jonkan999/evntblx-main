@@ -32,7 +32,7 @@ function toggleFilters() {
    */
   if (isMobile) {
     filterSection.style.height = isFiltersVisible
-      ? "calc(5 * (4.5rem + 2.5rem) + var(--header-size))"
+      ? "calc(5 * (4.5rem - 1.5rem) + var(--header-size))"
       : "calc(1 * (4.5rem + 2.5rem) + var(--header-size))";
   } else {
     filterSection.style.height = isFiltersVisible
