@@ -6,6 +6,8 @@ const showMoreIcon = document.querySelector(".show-more-icon");
 showMoreIcon.addEventListener("click", function () {
   // Toggle a CSS class to control the height
   messageSection.classList.toggle("expanded");
+  // Check if the screen width is less than 545 pixels
+  const isMobile = window.innerWidth < 545;
 
   // Check if the .message-section has the 'expanded' class
   if (messageSection.classList.contains("expanded")) {
@@ -14,8 +16,29 @@ showMoreIcon.addEventListener("click", function () {
     messageSection.style.minHeight = "13rem";
 
     // Set top position of showMoreIcon based on the height
-    /* const messageSectionHeight = messageSection.clientHeight; */
-    showMoreIcon.style.top = "37rem";
+    // Get references to the elements
+    const mainHeader = document.getElementById("mainHeader");
+    const mainText = document.getElementById("mainText");
+    const linkText = document.querySelector(".link-text");
+    const showMoreIcon = document.querySelector(".show-more-icon");
+
+    // Calculate the sum of heights
+    var heightsSum = 0;
+    if (isMobile) {
+      heightsSum =
+        mainHeader.clientHeight +
+        mainText.clientHeight +
+        linkText.clientHeight +
+        65;
+    } else {
+      heightsSum =
+        mainHeader.clientHeight +
+        mainText.clientHeight +
+        linkText.clientHeight +
+        60;
+    }
+
+    showMoreIcon.style.top = `${heightsSum}px`;
 
     // Change the icon name to chevron-up-outline when expanded
     showMoreIcon.setAttribute("name", "chevron-up-outline");
@@ -27,7 +50,7 @@ showMoreIcon.addEventListener("click", function () {
     messageSection.style.minHeight = "13rem";
 
     // Set top position of showMoreIcon to 0 when collapsed
-    showMoreIcon.style.top = "calc(12rem + var(--header-size))";
+    showMoreIcon.style.top = "calc(11.2rem + var(--header-size))";
 
     // Change the icon name to chevron-down-outline when collapsed
     showMoreIcon.setAttribute("name", "chevron-down-outline");

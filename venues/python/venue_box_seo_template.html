@@ -35,9 +35,6 @@
     <script defer="" src="/js/generateVenueMap.js"></script>
     <script defer="" src="/js/venueImageCarousel.js"></script>
     <script defer="" src="/js/venueToggleMap.js"></script>
-    <script defer="" src="/js/venueApplyFilters.js"></script>
-    <script defer="" src="/js/venuesSetConstraints.js"></script>
-    <script defer="" src="/js/venuesToggleMoreFilter.js"></script>
     <script defer="" src="/js/showMoreMessage.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
@@ -117,6 +114,12 @@
           class="show-more-icon ion-icon"
           name="chevron-down-outline"
         ></ion-icon>
+        <button class="toggle-button mobile" id="toggleMapButtonMobile">
+          <div class="icon-container">
+            <ion-icon name="map-outline"></ion-icon>
+          </div>
+          <p>karta</p>
+        </button>
         <div class="venue-selector">
           <div class="venues-section">
             {% for venue in context.venues %} {% set cleaned_name =
