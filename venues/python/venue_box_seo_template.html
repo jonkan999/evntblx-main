@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script defer="" src="/js/toggleButton.js"></script>
+    <script defer="" src="/js/generateVenueMap.js"></script>
+    <script defer="" src="/js/venueImageCarousel.js"></script>
+    <script defer="" src="/js/venueToggleMap.js"></script>
+    <script defer="" src="/js/venueApplyFilters.js"></script>
+    <script defer="" src="/js/venuesSetConstraints.js"></script>
+    <script defer="" src="/js/venuesToggleMoreFilter.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+
+    <link href="/css/hero-queries.css" rel="stylesheet" />
+    <link href="/css/seo-venues.css" rel="stylesheet" />
+    <link href="/css/venues-queries.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>{{ context.seed_additional_data['title'] }}</title>
+    <link rel="icon" href="img/favicon.png" />
+    <meta
+      name="description"
+      content="{{ context.seed_additional_data['description'] }}"
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header section header-black">
+      <div class="brand-box">
+        <a class="header-brand-name" href="index.html"
+          >Festlokal<span class="highlight">i</span>Stockholm.se</a
+        >
+      </div>
+      <div class="brand-box-small">
+        <img
+          class="brand-box-small-image"
+          src="img/logo.svg"
+          alt="Brand logo"
+        />
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a class="category-link" href="#">Hitta Lokal</a>
+          </li>
+          <li>
+            <a class="category-link" href="#">Logga In</a>
+          </li>
+          <li>
+            <a class="category-link cta" href="/add-space/add-start.html"
+              >Lägg till Din Lokal</a
+            >
+          </li>
+          <li>
+            <div class="menu-box">
+              <div class="icon-box">
+                <ion-icon
+                  class="ion-icon menu-icon"
+                  name="menu-outline"
+                ></ion-icon>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="section-container" id="venuesContainer">
+        <div class="message-section">
+          <h1 id="mainHeader">{{context.seed_additional_data['header']}}</h1>
+          <p id="mainText">{{context.seed_additional_data['text']}}</p>
+          <p class="link-text">
+            Det här är ett urval baserat på dina sökkriterier, vill du se alla
+            våra lokaler kan du gå vidare till vår huvudlista på:
+            <a class="message-link" href="festlokaler-stockholm.html">
+              FestlokaliStockholm.se</a
+            >
+          </p>
+        </div>
+        <div class="venue-selector">
+          <div class="venues-section">
+            {% for venue in context.venues %} {% set cleaned_name =
+            venue['venueInfo']['name']|replace('-', ' ')|replace('/',
+            '')|replace(' ', '-')|lower|replace('å', 'a')|replace('ä',
+            'a')|replace('ö', 'o')|replace('---', '-')|replace('--', '-') %} {%
+            set index = loop.index %}
+            <!-- data attributes used for filtering -->
+            <div
+              class="venue-box-container"
+              data-standing="{{ venue.venueInfo.standing }}"
+              data-checkout="{{ venue.venueInfo.checkout }}"
+              data-ownFoodF="{{ venue.venueInfo.ownFoodF }}"
+              data-ownDrinkF="{{ venue.venueInfo.ownDrinkF }}"
+              data-soundF="{{ venue.venueInfo.soundF }}"
+              data-micsF="{{ venue.venueInfo.micsF }}"
+              data-projectorF="{{ venue.venueInfo.projectorF }}"
+              data-discoLightsF="{{ venue.venueInfo.discoLightsF }}"
+              data-startingPrice="{{ venue.venueInfo.startingPrice }}"
+              data-name="{{ venue.venueInfo.name }}"
+            >
+              <a
+                target="_blank"
+                href="{{ '/venues/' + cleaned_name + '.html' }}"
+                class="venue-box"
+                data-geocenter="{{ venue.mapboxCenter }}"
+                data-name="{{ venue.venueInfo.name }}"
+              >
+                <!-- HTML structure for the carousel -->
+                <div class="image-carousel">
+                  <div class="image-carousel-container">
+                    {% for i in range(0, venue.venueImages.images|length) %}
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="{{ context.list_of_filepaths[index-1][i] }}"
+                        alt="bild {{ 0 + 1 }} tillhörande: {{ venue.venueInfo.name }}"
+                      />
+                    </div>
+                    {% endfor %}
+
+                    <div class="venue-box-price">
+                      <div class="from">fr.</div>
+                      <div>
+                        {% if venue.venueInfo.startingPrice|format_thousands %}
+                        {{ venue.venueInfo.startingPrice|format_thousands }}
+                        kr/dygn {% else %} Pris på förfrågan {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-navigation">
+                    <span id="counter"
+                      >1/{{ venue.venueImages.images|length }}</span
+                    >
+                  </div>
+                </div>
+
+                <div class="venue-box-info">
+                  <div class="venue-box-info-header">
+                    <h3 class="venue-box-info-header-title">
+                      {{ venue.venueInfo.name }}
+                    </h3>
+                  </div>
+                  <div class="venue-box-info-body">
+                    <p class="venue-box-info-short-text">
+                      {{ venue.venueInfo.description | extract_first_ten_words
+                      }}
+                    </p>
+                  </div>
+                  <div class="venue-box-info-footer">
+                    <div class="venue-box-info-footer-capacity">
+                      <ion-icon name="people-outline"></ion-icon>
+                      <p class="venue-box-info-footer-location-text">
+                        {{ venue.venueInfo.seated }} sittandes, {{
+                        venue.venueInfo.standing }} mingel
+                      </p>
+                    </div>
+                    <div class="highlight-stars">
+                      <ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star-half-outline"
+                        role="img"
+                        aria-label="star half outline"
+                      ></ion-icon>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <button
+                id="nextButton"
+                onclick="nextSlide()"
+                class="carousel-nav-icon next"
+              >
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+              </button>
+              <button
+                id="prevButton"
+                onclick="prevSlide()"
+                class="carousel-nav-icon prev"
+              >
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
+              </button>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="map-section desktop" id="mapSection"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
