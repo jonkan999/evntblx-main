@@ -38,6 +38,7 @@
     <script defer="" src="/js/venueApplyFilters.js"></script>
     <script defer="" src="/js/venuesSetConstraints.js"></script>
     <script defer="" src="/js/venuesToggleMoreFilter.js"></script>
+    <script defer="" src="/js/showMoreMessage.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/header.css" rel="stylesheet" />
@@ -112,6 +113,10 @@
             >
           </p>
         </div>
+        <ion-icon
+          class="show-more-icon ion-icon"
+          name="chevron-down-outline"
+        ></ion-icon>
         <div class="venue-selector">
           <div class="venues-section">
             {% for venue in context.venues %} {% set cleaned_name =

@@ -15,10 +15,10 @@ showMoreIcon.addEventListener("click", function () {
 
     // Set top position of showMoreIcon based on the height
     /* const messageSectionHeight = messageSection.clientHeight; */
-    showMoreIcon.style.top = "29rem";
+    showMoreIcon.style.top = "37rem";
 
     // Change the icon name to chevron-up-outline when expanded
-    showMoreIcon.textContent = "chevron-up-outline";
+    showMoreIcon.setAttribute("name", "chevron-up-outline");
     // Apply the mask gradient when expanded
     messageSection.style.webkitMaskImage = "none";
   } else {
@@ -30,7 +30,7 @@ showMoreIcon.addEventListener("click", function () {
     showMoreIcon.style.top = "calc(12rem + var(--header-size))";
 
     // Change the icon name to chevron-down-outline when collapsed
-    showMoreIcon.textContent = "chevron-down-outline";
+    showMoreIcon.setAttribute("name", "chevron-down-outline");
     // Remove the mask gradient when collapsed
     messageSection.style.webkitMaskImage =
       "linear-gradient(to bottom, black 50%, transparent 100%)";
