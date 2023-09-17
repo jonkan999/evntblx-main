@@ -35,6 +35,7 @@
     flex-direction: column-reverse;
     gap: 3rem;
     padding: 1rem;
+    margin-bottom: 15rem;
   }
 
   .split-image {
@@ -43,11 +44,16 @@
     overflow: hidden;
   }
 
+  .split-image p {
+    right: auto;
+    left: 1rem;
+  }
+
   .split-text {
     width: 100%;
     padding: 0 4rem;
     margin-bottom: 0;
-    text-align: center;
+    text-align: left;
   }
 }
 

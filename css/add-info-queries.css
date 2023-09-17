@@ -38,6 +38,16 @@
 /**************************/
 
 @media (max-width: 44em) {
+  .add-info-section {
+    padding-left: 1.5rem;
+  }
+  .add-info-box select,
+  .add-info-box textarea,
+  .add-info-box span,
+  .add-info-box input {
+    margin-left: 1rem;
+  }
+
   .uploaded-image-container {
     flex: 0 0 100%; /* 1 image per row on smaller screens */
     margin-right: 0;
@@ -54,6 +64,7 @@
   }
   .split-buttons {
     width: 45em;
+    gap: 2rem;
   }
   .search-button {
     width: 12em;
