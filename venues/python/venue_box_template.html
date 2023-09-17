@@ -158,12 +158,6 @@
                 Karta
               </button>
             </div>
-            <button class="toggle-button mobile" id="toggleMapButtonMobile">
-              <div class="icon-container">
-                <ion-icon name="map-outline"></ion-icon>
-              </div>
-              <p>karta</p>
-            </button>
           </div>
           <div class="lower-filters">
             <label class="filter-checkbox">
@@ -196,6 +190,12 @@
             </label>
           </div>
         </div>
+        <button class="toggle-button mobile" id="toggleMapButtonMobile">
+          <div class="icon-container">
+            <ion-icon name="map-outline"></ion-icon>
+          </div>
+          <p>karta</p>
+        </button>
         <div class="venue-selector">
           <div class="venues-section">
             {% for venue in context.venues %} {% set cleaned_name =
