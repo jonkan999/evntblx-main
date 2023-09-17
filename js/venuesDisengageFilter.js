@@ -5,7 +5,8 @@ const childElements = filtersSection.children;
 
 // Variable to store the last known scroll position
 let lastScrollPosition = venueSelector.scrollTop;
-let scrollThreshold = 20; // Adjust the threshold value as needed
+let TopScrollThreshold = 40; // Adjust the threshold value as needed
+let downScrollThreshold = 20;
 
 // Function to handle scroll events on the venue-selector element
 function handleScroll() {
@@ -15,11 +16,11 @@ function handleScroll() {
     const currentScrollPosition = venueSelector.scrollTop;
 
     // Check if the user is scrolling down with a threshold
-    if (currentScrollPosition > lastScrollPosition + scrollThreshold) {
+    if (currentScrollPosition > lastScrollPosition + downScrollThreshold) {
       // User is scrolling down, slide away the filters section
       hideFiltersSection();
     } else if (
-      currentScrollPosition < lastScrollPosition - scrollThreshold ||
+      currentScrollPosition < lastScrollPosition - TopScrollThreshold ||
       currentScrollPosition === 0
     ) {
       // User is scrolling up with a threshold or at the top, show the filters section
