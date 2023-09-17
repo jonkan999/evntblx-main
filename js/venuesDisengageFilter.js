@@ -5,7 +5,7 @@ const childElements = filtersSection.children;
 
 // Variable to store the last known scroll position
 let lastScrollPosition = venueSelector.scrollTop;
-let TopScrollThreshold = 40; // Adjust the threshold value as needed
+let TopScrollThreshold = 33; // Adjust the threshold value as needed
 let downScrollThreshold = 20;
 
 // Function to handle scroll events on the venue-selector element
