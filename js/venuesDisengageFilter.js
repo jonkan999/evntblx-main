@@ -33,6 +33,7 @@ function handleScroll() {
 
 // Function to slide away the filters section
 function hideFiltersSection() {
+  filtersSection.style.opacity = "0";
   filtersSection.style.height = "0";
 
   for (let i = 0; i < childElements.length; i++) {
@@ -42,6 +43,7 @@ function hideFiltersSection() {
 
 // Function to show the filters section
 function showFiltersSection() {
+  filtersSection.style.opacity = "1";
   filtersSection.style.height =
     "calc(1 * (4.5rem + 2.5rem) + 0.5rem + var(--header-size))";
   for (let i = 0; i < childElements.length; i++) {
