@@ -2,6 +2,7 @@
 const venueSelector = document.querySelector(".venues-section");
 const filtersSection = document.querySelector(".filters-section");
 const childElements = filtersSection.children;
+const header= document.querySelector(".header");
 
 // Variable to store the last known scroll position
 let lastScrollPosition = venueSelector.scrollTop;
@@ -35,7 +36,10 @@ function handleScroll() {
 // Function to slide away the filters section
 function hideFiltersSection() {
   filtersSection.style.opacity = "0";
+  filtersSection.style.marginTop = "0";
+  header.style.opacity = "0.4";
   filtersSection.style.height = "0";
+
 
   for (let i = 0; i < childElements.length; i++) {
     childElements[i].style.display = "none";
@@ -45,6 +49,8 @@ function hideFiltersSection() {
 // Function to show the filters section
 function showFiltersSection() {
   filtersSection.style.opacity = "1";
+  filtersSection.style.marginTop = "var(--header-size)";
+  header.style.opacity = "1";
   filtersSection.style.height =
     "calc(1 * (4.5rem + 2.5rem) + 0.5rem + var(--header-size))";
   for (let i = 0; i < childElements.length; i++) {

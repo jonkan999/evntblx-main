@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const map = new mapboxgl.Map({
     container: mapContainer,
     style: "mapbox://styles/mapbox/light-v10",
-    center: [18.0645, 59.3326], // Default center coordinates
+    center: [18.0645, 59.3126], // Default center coordinates
     zoom: 11,
   });
 
