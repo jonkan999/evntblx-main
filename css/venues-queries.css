@@ -120,7 +120,7 @@
     grid-template-columns: 1fr;
     width: 100%;
     overflow: auto;
-    height: calc(100vh - calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size)));
+    height: calc(100vh - var(--header-size));
  
   }
   .venue-box-container {
@@ -153,7 +153,7 @@
   }
   .toggle-button.mobile {
     position: fixed;
-    top:  calc(100vh - calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size))  - 8rem);
+    bottom: 2.5rem;
     left: 50%;
     transform: translate(-50%, 0);
     background-color: black;

@@ -24,7 +24,7 @@ function handleScroll() {
       hideFiltersSection();
     } else if (
       currentScrollPosition < lastScrollPosition - TopScrollThreshold ||
-      currentScrollPosition === 0
+      currentScrollPosition < 200
     ) {
       // User is scrolling up with a threshold or at the top, show the filters section
       showFiltersSection();
