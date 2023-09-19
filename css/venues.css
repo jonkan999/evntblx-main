@@ -113,6 +113,10 @@
 .venue-selector {
   display: flex;
 }
+.mobile-margin{
+  display: none;
+  height: var(--header-size);
+}
 .venues-section {
   max-width: 100%;
   /* .05 is enough to make x-scroll idssappear */
