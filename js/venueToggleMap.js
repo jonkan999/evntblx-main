@@ -6,6 +6,7 @@ const mapSection = document.querySelector(".map-section");
 
 //reset filter style on map open
 const filtersSection = document.querySelector(".filters-section");
+const childElements = filtersSection.children;
 const header= document.querySelector(".header");
  
 
@@ -28,10 +29,12 @@ toggleButtonMobile.addEventListener("click", function () {
     `;
     //reset filter style on map open
     if (isMobile) {
-      const mapCanvas = document.querySelector(".mapboxgl-canvas");
       filtersSection.style.opacity = "1";
       filtersSection.style.marginTop = "var(--header-size)";
       filtersSection.style.position = "fixed"
+      for (let i = 0; i < childElements.length; i++) {
+        childElements[i].style.display = "grid";
+      }
 
       header.style.opacity = "1";
      /*  mapSection.style.paddingTop = "calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size))" */

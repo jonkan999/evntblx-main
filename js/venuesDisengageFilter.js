@@ -1,9 +1,9 @@
 // Get a reference to the venue-selector and filters section elements
 const venueSelector = document.querySelector(".venues-section");
 /* const filtersSection = document.querySelector(".filters-section"); */
-const childElements = filtersSection.children;
+/* const childElements = filtersSection.children; */
 /* const header= document.querySelector(".header"); */
-const lowerFilters = document.querySelector(".lower-filters");
+
 
 
 // Variable to store the last known scroll position
