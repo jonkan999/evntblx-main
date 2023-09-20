@@ -96,6 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
     center: [18.0645, 59.3126], // Default center coordinates
     zoom: 11,
   });
+  // Resize the map when needed
+  function resizeMap() {
+    console.log("fire")
+    map.resize();
+  }
+
+  // Call the resizeMap function whenever you need to resize the map
+  // For example, you can call it when the window resizes
+  const toggleButtonMobile = document.getElementById("toggleMapButtonMobile");
+  toggleButtonMobile.addEventListener('click', resizeMap);
 
   map.on("load", () => {
     // Remove the Mapbox logo element
