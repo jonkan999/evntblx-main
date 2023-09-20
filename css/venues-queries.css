@@ -185,7 +185,7 @@
   }
   .map-section {
     position: fixed;
-    top: calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size));
+    top: calc(1 * (4.5rem + 2.5rem) + 2*var(--header-size));
     left:0;
     /* height: calc(100vh - (var(--header-size))); */
     height: calc(100vh - (1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size)));
