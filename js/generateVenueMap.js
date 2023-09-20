@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Create and open a popup
       const popup = new mapboxgl.Popup().setHTML(
         `
-        <a target=blank href=${venueLink} class="popup-container">
+        <a href=${venueLink} class="popup-container">
         <div class="popup-image" >
           <img class="image-inner-img" src=${imageUrl} alt="venue image" />
           </div>
