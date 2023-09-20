@@ -31,7 +31,7 @@ toggleButtonMobile.addEventListener("click", function () {
       filtersSection.style.marginTop = "var(--header-size)";
       filtersSection.style.position = "fixed"
       header.style.opacity = "1";
-      mapSection.style.paddingTop = "calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size))"
+     /*  mapSection.style.paddingTop = "calc(1 * (4.5rem + 2.5rem) + 0.5rem + 2*var(--header-size))" */
     }
     isMapClose = false;
   } else {
