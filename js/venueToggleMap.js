@@ -17,7 +17,8 @@ toggleButtonMobile.addEventListener("click", function () {
   // Toggle between the sections
   if (isMapClose) {
     venuesSection.style.display = "none";
-    mapSection.style.display = "block";
+    /* mapSection.style.display = "block"; */
+    mapSection.style.zIndex = "1";
     toggleButtonMobile.innerHTML = `
       <div class="icon-container">
         <ion-icon name="list-outline"></ion-icon>
@@ -35,7 +36,8 @@ toggleButtonMobile.addEventListener("click", function () {
     isMapClose = false;
   } else {
     venuesSection.style.display = "block";
-    mapSection.style.display = "none";
+    /* mapSection.style.display = "none"; */
+    mapSection.style.zIndex = "-1";
     toggleButtonMobile.innerHTML = `
       <div class="icon-container">
         <ion-icon name="map-outline"></ion-icon>

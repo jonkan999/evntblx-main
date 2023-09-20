@@ -115,7 +115,7 @@
 }
 .mobile-margin{
   display: none;
-  height: var(--header-size);
+  
 }
 .venues-section {
   max-width: 100%;
@@ -138,11 +138,11 @@
 /* VENUE BOXES */
 
 /* Apply a general reset to eliminate default margins and paddings */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 /* Style for the venue box container */
 .venue-box-container {
