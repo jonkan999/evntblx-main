@@ -95,7 +95,7 @@
   } */
 
   .venue-selector {
-    display: block;
+    display: flex;
   }
   .filters-section {
     position: fixed;
