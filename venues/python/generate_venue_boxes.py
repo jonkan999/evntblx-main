@@ -17,7 +17,7 @@ def format_thousands(value):
     except (ValueError, TypeError):
         return value
 
-env = Environment(loader=FileSystemLoader(searchpath="C:/Users/engjoe/festlokalerstockholm/venues/python"))
+env = Environment(loader=FileSystemLoader(searchpath="C:/Users/Joel/evntblx-main/venues/python"))
 env.filters['extract_first_ten_words'] = extract_first_ten_words
 env.filters['format_thousands'] = format_thousands
 main_template = env.get_template("venue_box_template.html")
@@ -30,7 +30,7 @@ def clean_filename(name):
     return '-'.join(name.split())
 
 # Read the seed file and extract priority venues
-seed_file_path = "C:/Users/engjoe/festlokalerstockholm/venues/python/venue_priority_seed.json"  # Update with the actual path
+seed_file_path = "C:/Users/Joel/evntblx-main/venues/python/venue_priority_seed.json"  # Update with the actual path
 try:
     with open(seed_file_path, 'r', encoding="utf-8") as seed_file:
         seed_data = json.load(seed_file)
@@ -57,7 +57,7 @@ list_of_filepaths = []
 for venue in ordered_venues:
     cleaned_name = clean_filename(venue['venueInfo']['name'])
     # Save images associated with the venue
-    images_folder = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues/img")
+    images_folder = os.path.join("C:/Users/Joel/evntblx-main/venues/img")
     os.makedirs(images_folder, exist_ok=True)
     image_paths = save_images(venue['venueImages']['images'], images_folder, cleaned_name)
     list_of_filepaths.append(image_paths)
@@ -72,7 +72,7 @@ context = {
 rendered_html = main_template.render(context=context)
 
 # Write the rendered HTML content to a new file
-output_path = os.path.join("C:/Users/engjoe/festlokalerstockholm/", "festlokaler-stockholm.html")
+output_path = os.path.join("C:/Users/Joel/evntblx-main/", "festlokaler-stockholm.html")
 with open(output_path, "w", encoding="utf-8") as output_file:
     output_file.write(rendered_html)
 

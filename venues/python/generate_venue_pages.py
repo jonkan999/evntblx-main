@@ -38,7 +38,13 @@ for venue in venues:
     cleaned_name = clean_filename(venue['venueInfo']['name'])
 
     # Save images associated with the venue
-    images_folder = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues/img")
+    # Define the relative path from the root directory to your images folder
+    relative_path = "festlokalerstockholm/venues/img"
+
+    # Combine the root directory and the relative path to create the full path
+    images_folder = os.path.join(os.sep, relative_path)
+
+    # Create the directory if it doesn't exist
     os.makedirs(images_folder, exist_ok=True)
     image_paths=save_images(venue['venueImages']['images'], images_folder, cleaned_name)
     context = {
@@ -50,7 +56,11 @@ for venue in venues:
     html_content = template.render(context=context)
 
     # Create a new HTML file
-    output_path = os.path.join("C:/Users/engjoe/festlokalerstockholm/venues", f"{cleaned_name}.html")
+    relative_path = "festlokalerstockholm/venues/img"
+
+    # Combine the root directory and the relative path to create the full path
+    os_relative_path = os.path.join(os.sep, relative_path)
+    output_path = os.path.join(relative_path, f"{cleaned_name}.html")
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as output_file:
