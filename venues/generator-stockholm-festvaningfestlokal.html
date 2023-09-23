@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script defer="" src="/js/venueScriptMapbox.js"></script>
+    <script defer="" src="/js/venueScriptCalendar.js"></script>
+    <script defer="" src="/js/showAllImages.js"></script>
+    <script
+      type="module"
+      defer=""
+      src="/js/firebaseProductionEmail.js"
+    ></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/add-space.css" rel="stylesheet" />
+    <link href="/css/add-info.css" rel="stylesheet" />
+    <link href="/css/add-submission.css" rel="stylesheet" />
+    <link href="/css/submission-queries.css" rel="stylesheet" />
+
+    <title>
+      Generator Stockholm - Festvåning/Festlokal - listning på FestlokaliStockholm.se
+    </title>
+    <link rel="icon" href="/img/favicon.png" />
+    <meta name="description" content="short_form_description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="show-all-overlay" id="showAllOverlay"></div>
+    <button class="hide-grid" id="hideGrid">
+      <ion-icon name="close-outline" class="close-icon"></ion-icon>
+    </button>
+    <header class="header header-black section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="/index.html"
+          >Festlokal<span class="highlight">i</span>Stockholm.se</a
+        >
+      </div>
+      <div class="brand-box-small">
+        <img
+          class="brand-box-small-image"
+          src="/img/logo.svg"
+          alt="Brand logo"
+        />
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <p class="category-link">
+              Lokalsida för: Generator Stockholm - Festvåning/Festlokal
+            </p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="venue-page" id="venuePage">
+        <div class="show-all-grid" id="showAllGrid">
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/generator-stockholm-festvaningfestlokal_0.webp"
+              alt="bild 1 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/generator-stockholm-festvaningfestlokal_1.webp"
+              alt="bild 2 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/generator-stockholm-festvaningfestlokal_2.webp"
+              alt="bild 3 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/generator-stockholm-festvaningfestlokal_3.webp"
+              alt="bild 4 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+        </div>
+        <div class="images-section section airy-margin" id="imageSection">
+          <div class="left-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/generator-stockholm-festvaningfestlokal_0.webp"
+              alt="bild 1 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+            />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="right-images-section">
+            <div class="top-right-image">
+              <img
+                class="image-inner-img"
+                src="/venues/img/generator-stockholm-festvaningfestlokal_1.webp"
+                alt="bild 2 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="bottom-right-images">
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="/venues/img/generator-stockholm-festvaningfestlokal_2.webp"
+                  alt="bild 3 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+                />
+                <div class="image-overlay"></div>
+              </div>
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="/venues/img/generator-stockholm-festvaningfestlokal_3.webp"
+                  alt="bild 4 tillhörande: Generator Stockholm - Festvåning/Festlokal"
+                />
+                <div class="show-all-container" id="showAll">
+                  <div class="square-icon-container-container">
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                  </div>
+                  <div class="show-all-images-text">Visa alla</div>
+                  <div class="image-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-container" id="infoContainer">
+          <!-- Venue Name -->
+          <h1 class="event-space-title">Generator Stockholm - Festvåning/Festlokal</h1>
+
+          <!-- Venue Address -->
+          <div class="adress-div">
+            <ion-icon
+              class="icon ion-ios-location-outline"
+              name="location-outline"
+            ></ion-icon>
+            <p class="event-space-address">
+              Torsgatan 10, 111 23 Stockholm
+            </p>
+          </div>
+
+          <!-- Highlights Container -->
+          <ul class="highlights-container">
+            <!-- Star Rating -->
+            <div class="highlight-stars">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star-half-outline"
+                role="img"
+                aria-label="star half outline"
+              ></ion-icon>
+            </div>
+
+            <!-- Guests and Size Info -->
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                70 sittandes, 150 minglandes
+              </p>
+            </li>
+            <li class="highlight-info mobile full-row">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                70 sittandes, 150 minglandes
+              </p>
+            </li>
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>206 m²</p>
+            </li>
+
+            <!-- Food and Drink Info -->
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-restaurant-outline"
+                name="restaurant-outline"
+              ></ion-icon>
+              <p>
+                Matservering tillhandahållen av lokalen
+              </p>
+            </li>
+            <li class="highlight-info second-col mobile">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>206 m²</p>
+            </li>
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-wine-outline"
+                name="wine-outline"
+              ></ion-icon>
+              <p>
+                Dryck tillhandahållen av lokalen
+              </p>
+            </li>
+            <div class="highlight-star-mobile second-col">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon>
+              <p>4.85</p>
+            </div>
+          </ul>
+
+          <!-- Calendar and Mail Template Containers -->
+          <div class="subsection-split-container">
+            <!-- Description Container -->
+            <div class="description-container">
+              <h2>Om lokalen</h2>
+              <p class="venue-description">
+                Nästa gång du planerar ett evenemang, oavsett om det är för företaget eller ren nöjes skull, så erbjuder våra flexibla och inspirerande lokaler den perfekta miljön. Oavsett om du behöver ett mötesrum för ett viktigt möte eller en plats att fira med kollegor eller vänner, så har vi vad du behöver.<br><br>För affärsändamål har vi mötesrum och arbetsplatser som är utformade för att möta dina krav. Våra mötesrum är idealiska för workshops, seminarier, utbildningsdagar och interna konferenser. Vi kan anpassa utrymmet efter dina behov, oavsett om det handlar om samarbetsövningar, kreativa sessioner eller teambuilding-aktiviteter.<br><br>Våra lokaler är även perfekta för nöjesevent, oavsett om det är en jobbfest, förlovningsfest eller födelsedagsfirande. Vi älskar att ha kul och skapa minnesvärda ögonblick. Oavsett om du befinner dig vid poolen eller på ett tak, kan du vara säker på att Generator-lokalerna kommer att göra evenemanget minnesvärt.<br><br>Vi har en festvåning på 206 kvadratmeter. Denna unika plats har en egen bar och fullständiga rättigheter, så vi kan servera mat och alkohol i lokalen. Dessutom finns det ljudsystem, belysning, mikrofon, projektor och WiFi för att säkerställa att ditt party är tekniskt välutrustat.<br><br>För att höja underhållningen har lokalen även pingisbord, fotbollsspel, olika arkadspel, 8-bitars tv-spel och beerpong-bord. Oavsett om du vill ha en produktiv arbetsmiljö eller en rolig festlokal, kan vi skräddarsy våra lokaler för att möta dina behov. Kontakta oss och berätta vad du behöver, så kommer vi att göra allt vi kan för att se till att ditt event blir en succé.
+              </p>
+              <h3>Detaljerad information:</h3>
+              <ul>
+                <li>Lokalens storlek: 206 m²</li>
+                <li>Antal sittande: 70</li>
+                <li>Antal stående: 150</li>
+                <li>
+                  Utcheckningstid senast: 01:00
+                </li>
+                <li>
+                  Egen mat tillåten: Tillhandahålls av lokalen
+                </li>
+
+                <li>
+                  Egen dryck tillåten: Tillhandahålls av lokalen
+                </li>
+
+                <li>
+                  Ljudsystem tillgängligt: Ja
+                </li>
+
+                <li>
+                  Mickar tillgängliga: Ja
+                </li>
+
+                <li>
+                  Projektor tillgänglig: Ja
+                </li>
+
+                <li>
+                  Discoljus tillgängligt: Ja
+                </li>
+
+                <li>
+                  Kontaktperson: Hanna Lindström
+                </li>
+                <li>
+                  Kontakttelefon: 
+                </li>
+                <li
+                  data-contact-mail="hanna.lindstrom@staygenerator.com"
+                  class="contact-mail"
+                >
+                  Kontaktmail: hanna.lindstrom@staygenerator.com
+                </li>
+              </ul>
+              <h3>Lokalhyra:</h3>
+              <p class="venue-price">
+                fr. 13,000
+                kr/dygn
+              </p>
+            </div>
+
+            <div class="subsection-right-split-container">
+              <div
+                data-mapboxCenter="[18.049435, 59.335757]"
+                class="map-container mapboxgl-map"
+                id="mapboxContainer"
+              ></div>
+              <div class="calendar-container">
+                <div class="calendar">
+                  <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth">augusti 2023</h2>
+                    <button id="nextMonth">&gt;</button>
+                  </div>
+                  <div class="calendar-days">
+                    <div class="day">Mån</div>
+                    <div class="day">Tis</div>
+                    <div class="day">Ons</div>
+                    <div class="day">Tor</div>
+                    <div class="day">Fre</div>
+                    <div class="day">Lör</div>
+                    <div class="day">Sön</div>
+                  </div>
+                  <div class="calendar-grid" id="calendarGrid">
+                    <div></div>
+                    <div></div>
+                    <div class="day-cell">1</div>
+                    <div class="day-cell">2</div>
+                    <div class="day-cell">3</div>
+                    <div class="day-cell">4</div>
+                    <div class="day-cell">5</div>
+                    <div class="day-cell">6</div>
+                    <div class="day-cell">7</div>
+                    <div class="day-cell">8</div>
+                    <div class="day-cell">9</div>
+                    <div class="day-cell">10</div>
+                    <div class="day-cell">11</div>
+                    <div class="day-cell">12</div>
+                    <div class="day-cell">13</div>
+                    <div class="day-cell">14</div>
+                    <div class="day-cell">15</div>
+                    <div class="day-cell">16</div>
+                    <div class="day-cell">17</div>
+                    <div class="day-cell">18</div>
+                    <div class="day-cell">19</div>
+                    <div class="day-cell">20</div>
+                    <div class="day-cell">21</div>
+                    <div class="day-cell">22</div>
+                    <div class="day-cell">23</div>
+                    <div class="day-cell">24</div>
+                    <div class="day-cell">25</div>
+                    <div class="day-cell">26</div>
+                    <div class="day-cell">27</div>
+                    <div class="day-cell">28</div>
+                    <div class="day-cell">29</div>
+                    <div class="day-cell">30</div>
+                    <div class="day-cell">31</div>
+                  </div>
+                  <input
+                    type="text"
+                    id="selectedDate"
+                    placeholder="Selected Date"
+                    readonly=""
+                  />
+                </div>
+              </div>
+              <div class="mail-template-container">
+                <textarea placeholder="Meddelande till lokalvärd"></textarea>
+                <div class="add-info-box">
+                  <p class="input-header">Namn:</p>
+                  <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Kontaktpersonens namn"
+                  />
+                  <p class="input-header">Telefon:</p>
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    placeholder="Kontaktpersonens telefonnummer"
+                  />
+                  <p class="input-header">Mail:</p>
+                  <input
+                    id="contactMail"
+                    type="email"
+                    placeholder="Kontaktpersonens e-postadress"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="search-button continue-button">
+            Skicka förfrågan
+          </button>
+        </div>
+
+        <!-- Rest of your HTML content -->
+      </section>
+      <div id="errorMessage" class="error-message"></div>
+    </main>
+  </body>
+</html>

@@ -14,6 +14,6 @@ subprocess.run([sys.executable, generate_venue_pages_script])
 subprocess.run([sys.executable, generate_seo_venue_box_pages_script])
 
 # Run Git commands
-subprocess.run(["git", "add", "."])
+subprocess.run(["git", "add", "--all"])
 subprocess.run(["git", "commit", "-m", "autocommit"])
 subprocess.run(["git", "push"])
