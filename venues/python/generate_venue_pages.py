@@ -56,7 +56,7 @@ for venue in venues:
     html_content = template.render(context=context)
 
     # Create a new HTML file
-    relative_path = "festlokalerstockholm/venues/img"
+    relative_path = "../"
 
     # Combine the root directory and the relative path to create the full path
     os_relative_path = os.path.join(os.sep, relative_path)
