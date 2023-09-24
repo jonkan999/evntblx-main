@@ -19,11 +19,11 @@ def format_thousands(value):
         return value
 
 # Update the path to the template directory to use the /app directory within the container
-env = Environment(loader=FileSystemLoader(searchpath="/app"))
+env = Environment(loader=FileSystemLoader(searchpath="/app/repo"))
 
 env.filters['extract_first_ten_words'] = extract_first_ten_words
 env.filters['format_thousands'] = format_thousands
-main_template = env.get_template("/app/repo/venues/python/venue_box_template.html")
+main_template = env.get_template("/venues/python/venue_box_template.html")
 
 # Get venues data from Firebase (you should replace this with your actual method)
 venues = read_all_from_venues()
