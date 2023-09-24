@@ -8,3 +8,8 @@ git pull
 
 # Run your Python script
 python "venues/docker_scripts/update_site_docker.py"
+
+# Add, commit, and push changes made by the script
+git add .
+git commit -m "autocommit"
+git push
