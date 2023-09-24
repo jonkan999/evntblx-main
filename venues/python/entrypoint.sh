@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Set the repository directory
-repo_dir="/app"
-
-# Change directory to the repository directory
-cd "$repo_dir"
-
 # Pull from the Git repository to update it
 git pull
 
