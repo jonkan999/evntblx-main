@@ -9,8 +9,10 @@ mkdir -p /app
 # Change directory to the /app directory
 cd /app
 
-# Initialize the Git repository if it doesn't exist
+# Initialize the Git repository
+git init
 git remote add origin "$repo_url"
+
 
 # Pull from the Git repository to update it
 git pull origin main
