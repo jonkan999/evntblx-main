@@ -1,6 +1,6 @@
 import os
 import json
-from firebase.firebase_functions import read_all_from_venues
+from ..firebase.firebase_functions import read_all_from_venues
 from jinja2 import Environment, FileSystemLoader
 from save_images import save_images
 

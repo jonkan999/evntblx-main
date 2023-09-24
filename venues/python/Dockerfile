@@ -7,11 +7,14 @@ WORKDIR /app
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
-# Clone your Git repository
-RUN git clone https://github.com/jonkan999/evntblx-main.git /app
+# Create a temporary directory, clone the repository into it, and then move its contents to /app
+RUN mkdir /tmp/evntblx-main && \
+    git clone https://github.com/jonkan999/evntblx-main.git /tmp/evntblx-main && \
+    mv /tmp/evntblx-main/* /app/ && \
+    rm -rf /tmp/evntblx-main
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r venues/python/requirements.txt  # If you have any dependencies
 
-# Run your Python script when the container launches
-CMD ["python", "venues/python/docker_scripts/generate_venue_boxes.py"]
+# Run your Python script from its location within the repository
+CMD ["python", "venues/docker_scripts/generate_venue_boxes.py"]
