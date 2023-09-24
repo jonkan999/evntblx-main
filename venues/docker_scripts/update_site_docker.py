@@ -12,6 +12,6 @@ subprocess.run([python_exe, generate_venue_boxes_script])
 subprocess.run([python_exe, generate_seo_venue_box_pages_script])
  """
 # Run Git commands within the Docker container
-subprocess.run(["git", "add", "."], cwd="/app/repo")
+""" subprocess.run(["git", "add", "."], cwd="/app/repo")
 subprocess.run(["git", "commit", "-m", "autocommit"], cwd="/app/repo")
-subprocess.run(["git", "push"], cwd="/app/repo")
+subprocess.run(["git", "push"], cwd="/app/repo") """
