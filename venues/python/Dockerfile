@@ -16,8 +16,8 @@ RUN chmod 600 /root/.ssh/id_rsa
 # Configure Git to use SSH
 RUN git config --global core.sshCommand "ssh -i /root/.ssh/id_rsa"
 
-# Clone your Git repository or update it if it exists
-RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /app/repo && git pull)
+# Clone your Git repository or update it if it exists using SSH
+RUN git clone git@github.com:jonkan999/evntblx-main.git /app/repo || (cd /app/repo && git pull)
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r /app/repo/venues/python/requirements.txt
