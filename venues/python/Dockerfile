@@ -13,6 +13,10 @@ RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /ap
 # Install any needed packages specified in requirements.txt
 RUN pip install -r /app/repo/venues/python/requirements.txt
 
+# Copying in the account key for firebase
+COPY /app/repo/venues/python/firebase/service-account-key.json /app/repo/venues/python/firebase/service-account-key.json
+
+
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh
 
