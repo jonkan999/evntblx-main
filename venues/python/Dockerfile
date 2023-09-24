@@ -4,11 +4,17 @@ FROM python:3.8-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the .gitconfig file into the Docker image
-COPY .gitconfig /root/.gitconfig
-
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
+
+# Copy your SSH private key into the Docker image
+COPY C:/Users/Joel/ssh-folder /root/.ssh/id_rsa
+
+# Ensure correct permissions on the private key
+RUN chmod 600 /root/.ssh/id_rsa
+
+# Configure Git to use SSH
+RUN git config --global core.sshCommand "ssh -i /root/.ssh/id_rsa"
 
 # Clone your Git repository or update it if it exists
 RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /app/repo && git pull)
