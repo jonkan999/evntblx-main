@@ -25,7 +25,7 @@ def format_thousands(value):
 env = Environment(loader=FileSystemLoader(searchpath="/app/repo"))
 env.filters['extract_first_ten_words'] = extract_first_ten_words
 env.filters['format_thousands'] = format_thousands
-main_template = env.get_template("venue_box_seo_template.html")
+main_template = env.get_template("/venue_box_seo_template.html")
 
 # Get venues data from Firebase (you should replace this with your actual method)
 venues = read_all_from_venues()
