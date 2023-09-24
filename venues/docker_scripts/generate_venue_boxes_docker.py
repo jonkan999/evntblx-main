@@ -5,8 +5,8 @@ import json
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),  '..'))
 sys.path.append(parent_dir)
 from python.firebase.firebase_functions import read_all_from_venues
+from python.save_images import save_images
 from jinja2 import Environment, FileSystemLoader
-from save_images import save_images
 
 # Set up Jinja2 environment
 def extract_first_ten_words(description):
