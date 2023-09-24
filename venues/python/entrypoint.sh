@@ -3,9 +3,8 @@
 # Change directory to the repository directory
 cd /app/repo
 
-# Set Git user name and email from environment variables
-git config --global user.email "$GIT_EMAIL"
-git config --global user.name "$GIT_USERNAME"
+# Copy the .gitconfig file into the Docker image
+COPY .gitconfig /root/.gitconfig
 
 # Pull from the Git repository to update it (in case you're running it manually)
 git pull
