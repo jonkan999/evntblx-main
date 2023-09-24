@@ -2,3 +2,4 @@ js/config.js
 __pycache__/
 venv/
 venues/python/firebase/service-account-key.json
+token
