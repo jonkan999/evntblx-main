@@ -10,10 +10,7 @@ mkdir -p /app
 cd /app
 
 # Initialize the Git repository if it doesn't exist
-if [ ! -d .git ]; then
-    git init
-    git remote add origin "$repo_url"
-fi
+git remote add origin "$repo_url"
 
 # Pull from the Git repository to update it
 git pull origin main
