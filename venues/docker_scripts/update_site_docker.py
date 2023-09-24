@@ -2,7 +2,7 @@ import subprocess
 
 # Define the paths to Python executables and script files within the Docker container
 python_exe = "/usr/local/bin/python"  # Update this path if needed
-generate_venue_boxes_script = "/app/repo/venues/python/generate_venue_boxes_docker.py"
+generate_venue_boxes_script = "/app/repo/venues/docker_scripts/generate_venue_boxes_docker.py"
 """ generate_venue_pages_script = "/app/repo/venues/python/generate_venue_pages.py"
 generate_seo_venue_box_pages_script = "/app/repo/venues/python/generate_seo_venue_box_page.py"
  """
