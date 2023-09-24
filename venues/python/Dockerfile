@@ -14,8 +14,8 @@ RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /ap
 RUN pip install -r /app/repo/venues/python/requirements.txt
 
 # Copy the local service-account-key.json into the Docker image
-COPY C:/Users/Joel/evntblx-main/venues/python/firebase/service-account-key.json /app/repo/venues/python/firebase/service-account-key.json
-
+# Copy the local service-account-key.json into the Docker image
+COPY ./firebase/service-account-key.json /app/repo/venues/python/firebase/service-account-key.json
 
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh

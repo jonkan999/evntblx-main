@@ -34,7 +34,7 @@ def clean_filename(name):
     return '-'.join(name.split())
 
 # Update the path to the seed file to use the /app directory within the container
-seed_file_path = "/app/venues/python/venue_priority_seed.json"
+seed_file_path = "/app/repo/venues/python/venue_priority_seed.json"
 
 try:
     with open(seed_file_path, 'r', encoding="utf-8") as seed_file:
@@ -62,7 +62,7 @@ list_of_filepaths = []
 for venue in ordered_venues:
     cleaned_name = clean_filename(venue['venueInfo']['name'])
     # Save images associated with the venue
-    images_folder = "/app/venues/img"
+    images_folder = "/app/repo/venues/img"
     os.makedirs(images_folder, exist_ok=True)
     image_paths = save_images(venue['venueImages']['images'], images_folder, cleaned_name)
     list_of_filepaths.append(image_paths)
@@ -73,7 +73,7 @@ context = {
 }
 
 # Update the output path to use the /app directory within the container
-output_path = "/app/festlokaler-stockholm.html"
+output_path = "/app/repo/festlokaler-stockholm.html"
 
 # Render the main template with the ordered venues data
 rendered_html = main_template.render(context=context)
