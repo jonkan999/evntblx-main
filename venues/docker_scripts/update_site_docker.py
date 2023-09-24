@@ -4,13 +4,13 @@ import subprocess
 python_exe = "/usr/local/bin/python"  # Update this path if needed
 generate_venue_boxes_script = "/app/repo/venues/docker_scripts/generate_venue_boxes_docker.py"
 generate_venue_pages_script = "/app/repo/venues/docker_scripts/generate_venue_pages_docker.py"
-""" generate_seo_venue_box_pages_script = "/app/repo/venues/docker_scripts/generate_seo_venue_box_page.py"
- """
+generate_seo_venue_box_pages_script = "/app/repo/venues/docker_scripts/generate_seo_venue_box_page_docker.py"
+
 # Run the Python scripts using subprocess within the Docker container
 subprocess.run([python_exe, generate_venue_boxes_script])
 subprocess.run([python_exe, generate_venue_pages_script])
-""" subprocess.run([python_exe, generate_seo_venue_box_pages_script])
- """
+subprocess.run([python_exe, generate_seo_venue_box_pages_script])
+
 # Run Git commands within the Docker container
 """ subprocess.run(["git", "add", "."], cwd="/app/repo")
 subprocess.run(["git", "commit", "-m", "autocommit"], cwd="/app/repo")
