@@ -1,8 +1,6 @@
 # Use an official Python runtime as a parent image
 FROM python:3.8-slim
 
-COPY C:/Users/Joel/evntblx-main/github_token.txt /app/repo/github_token.txt
-
 # Set the working directory in the container
 WORKDIR /app
 
@@ -10,7 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Copy your PAT into the Docker image
-# Copy your PAT into the Docker image
+COPY ../../Users/Joel/evntblx-main/github_token.txt /app/repo/github_token.txt
 
 
 # Clone your Git repository or update it if it exists
