@@ -20,7 +20,7 @@ def format_thousands(value):
 
 # Update the path to the template directory to use the /app directory within the container
 env = Environment(loader=FileSystemLoader(searchpath="/app"))
-
+test
 env.filters['extract_first_ten_words'] = extract_first_ten_words
 env.filters['format_thousands'] = format_thousands
 main_template = env.get_template("/evntblx-main/venues/python/venue_box_template.html")
