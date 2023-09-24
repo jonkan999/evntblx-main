@@ -4,6 +4,9 @@ FROM python:3.8-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy the .gitconfig file into the Docker image
+COPY .gitconfig /root/.gitconfig
+
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
