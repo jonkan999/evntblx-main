@@ -3,9 +3,7 @@
 # Change directory to the repository directory
 cd /app/repo
 
-# Set Git authentication using the GitHub password
-git config --global credential.helper '!f() { echo "password=$GITHUB_PASSWORD"; }; f'
-
+git config --global credential.helper '!f() { echo "password=$GIT_PAT"; }; f'
 
 # Pull from the Git repository to update it (in case you're running it manually)
 git pull
