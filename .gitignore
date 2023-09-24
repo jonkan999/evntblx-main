@@ -3,3 +3,5 @@ __pycache__/
 venv/
 venues/python/firebase/service-account-key.json
 token
+id_rsa
+id_rsa.pub

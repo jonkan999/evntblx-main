@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Copy your SSH private key into the Docker image
-COPY ssh-folder/id_rsa /root/.ssh/id_rsa
+COPY id_rsa /root/.ssh/id_rsa
 
 # Ensure correct permissions on the private key
 RUN chmod 600 /root/.ssh/id_rsa
