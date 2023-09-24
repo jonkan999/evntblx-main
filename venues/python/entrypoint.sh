@@ -7,4 +7,4 @@ cd /app/repo
 git pull
 
 # Run your Python script
-python "venues/python/generate_venue_boxes_docker.py"
+python "venues/docker_scripts/generate_venue_boxes_docker.py"
