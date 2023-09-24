@@ -7,14 +7,11 @@ WORKDIR /app
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
-# Create a temporary directory, clone the repository into it, and then move its contents to /app
-RUN mkdir /tmp/evntblx-main && \
-    git clone https://github.com/jonkan999/evntblx-main.git /tmp/evntblx-main && \
-    mv /tmp/evntblx-main/* /app/ && \
-    rm -rf /tmp/evntblx-main
+# Clone your Git repository or update it if it exists
+RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /app/repo && git pull)
 
 # Install any needed packages specified in requirements.txt
-RUN pip install -r venues/python/requirements.txt  # If you have any dependencies
+RUN pip install -r /app/repo/venues/python/requirements.txt
 
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh
