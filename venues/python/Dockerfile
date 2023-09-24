@@ -8,7 +8,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Copy your PAT into the Docker image
-COPY ../../Users/Joel/evntblx-main/github_token.txt /app/repo/github_token.txt
+# Copy your PAT into the Docker image
+COPY github_token.txt /app/repo/github_token.txt
 
 
 # Clone your Git repository or update it if it exists
