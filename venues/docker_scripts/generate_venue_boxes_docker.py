@@ -4,7 +4,7 @@ import json
 # Add the parent folder of firebase_functions to the Python path
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),  '..'))
 sys.path.append(parent_dir)
-from firebase.firebase_functions import read_all_from_venues
+from python.firebase.firebase_functions import read_all_from_venues
 from jinja2 import Environment, FileSystemLoader
 from save_images import save_images
 
