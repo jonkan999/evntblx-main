@@ -1,8 +1,12 @@
 import os
+import sys
 import json
-from firebase.firebase_functions import read_all_from_venues
+# Add the parent folder of firebase_functions to the Python path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),  '..'))
+sys.path.append(parent_dir)
+from python.firebase.firebase_functions import read_all_from_venues
+from python.save_images import save_images
 from jinja2 import Environment, FileSystemLoader
-from save_images import save_images
 
 # Define the base directory where your repository is located
 base_dir = "/app/repo"
