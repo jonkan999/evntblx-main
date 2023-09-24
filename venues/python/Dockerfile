@@ -17,4 +17,4 @@ RUN mkdir /tmp/evntblx-main && \
 RUN pip install -r venues/python/requirements.txt  # If you have any dependencies
 
 # Run your Python script from its location within the repository
-CMD ["python", "venues/docker_scripts/generate_venue_boxes.py"]
+CMD ["python", "venues/python/generate_venue_boxes_docker.py"]
