@@ -42,3 +42,27 @@ def read_all_from_venues():
         venues_data.append(venue_doc.to_dict())
 
     return venues_data
+
+def toggle_initial_on():
+    # Update the 'trigger_initial' field to True
+    db = get_db()
+    doc_ref = db.collection('venues').document('trigger_initial')
+    doc_ref.update({'trigger_initial': True})
+
+    return 'Trigger initial set to True'
+
+def toggle_initial_off():
+    # Update the 'trigger_initial' field to False
+    db = get_db()
+    doc_ref = db.collection('venues').document('trigger_initial')
+    doc_ref.update({'trigger_initial': False})
+
+    return 'Trigger initial set to False'
+
+def check_initial():
+    db = get_db()
+    doc_ref = db.collection('venues').document('trigger_initial')
+    doc = doc_ref.get()
+    data = doc.to_dict()
+
+    return data['trigger_initial']

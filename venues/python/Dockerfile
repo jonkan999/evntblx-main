@@ -7,6 +7,8 @@ WORKDIR /app
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
+#ADD token arg = github personal access token to build command with:
+# docker build --build-arg TOKEN_ARG=personalized-access-token -t update_site .
 ARG TOKEN_ARG
 ENV TOKEN=$TOKEN_ARG
 

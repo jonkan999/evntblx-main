@@ -9,6 +9,7 @@ import {
   query,
   where,
   getDocs,
+  updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
 
 // Fetch the Firebase config from the serverless function
@@ -72,6 +73,10 @@ fetch("/.netlify/functions/getFirebaseConfig")
         });
         console.log("Venue data added to Firestore");
         // You can perform further actions or show a success message here
+        // Update the document to set trigger_initial to true
+        await updateDoc("trigger_initial", {
+          trigger_initial: true,
+        });
         // Show the popup
         const popup = document.getElementById("popupAdded");
         popup.style.display = "block";
