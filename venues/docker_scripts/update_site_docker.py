@@ -1,4 +1,6 @@
 import subprocess
+import os
+import sys
 # Add the parent folder of firebase_functions to the Python path
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),  '..'))
 sys.path.append(parent_dir)
