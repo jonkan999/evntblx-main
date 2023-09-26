@@ -8,7 +8,6 @@ from python.firebase.firebase_functions import read_all_from_venues
 from python.save_images import save_images
 from jinja2 import Environment, FileSystemLoader
 
-# Set up Jinja2 environment
 def extract_first_ten_words(description):
     words = description.split()
     return_string = ' '.join(words[:14])
@@ -21,6 +20,8 @@ def format_thousands(value):
         return "{:,.0f}".format(numeric_value)
     except (ValueError, TypeError):
         return value
+    
+# Set up Jinja2 environment
 
 # Update the path to the template directory to use the /app directory within the container
 env = Environment(loader=FileSystemLoader(searchpath="/app/repo"))
