@@ -8,7 +8,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Copy your PAT into the Docker image
-# Copy your PAT into the Docker image
 COPY github_token.txt /app/repo/github_token.txt
 
 # Remove the existing /app/repo directory if it exists
@@ -20,7 +19,6 @@ RUN git clone https://github.com/jonkan999/evntblx-main.git /app/repo || (cd /ap
 # Install any needed packages specified in requirements.txt
 RUN pip install -r /app/repo/venues/python/requirements.txt
 
-# Copy the local service-account-key.json into the Docker image
 # Copy the local service-account-key.json into the Docker image
 COPY ./firebase/service-account-key.json /app/repo/venues/python/firebase/service-account-key.json
 
