@@ -1,4 +1,7 @@
 import subprocess
+# Add the parent folder of firebase_functions to the Python path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),  '..'))
+sys.path.append(parent_dir)
 from python.firebase.firebase_functions import check_initial, toggle_initial_off
 
 if check_initial():
