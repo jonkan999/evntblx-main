@@ -39,9 +39,12 @@ def read_all_from_venues():
     venues_data = []
 
     for venue_doc in venues_docs:
-        venues_data.append(venue_doc.to_dict())
+        # Check if the document ID is not "trigger_initial" before adding it to the list
+        if venue_doc.id != "trigger_initial":
+            venues_data.append(venue_doc.to_dict())
 
     return venues_data
+
 
 def toggle_initial_on():
     # Update the 'trigger_initial' field to True
