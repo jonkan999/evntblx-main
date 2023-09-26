@@ -74,7 +74,8 @@ fetch("/.netlify/functions/getFirebaseConfig")
         console.log("Venue data added to Firestore");
         // You can perform further actions or show a success message here
         // Update the document to set trigger_initial to true
-        await updateDoc("trigger_initial", {
+        const triggerInitialDocRef = doc(db, "venues", "trigger_initial");
+        await updateDoc(triggerInitialDocRef, {
           trigger_initial: true,
         });
         // Show the popup
