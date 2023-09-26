@@ -6,6 +6,7 @@ from save_images import save_images
 
 # Set up Jinja2 environment
 def extract_first_ten_words(description):
+    description = description.replace("<br>", " ")
     words = description.split()
     return_string = ' '.join(words[:14])
     return_string += '...'
