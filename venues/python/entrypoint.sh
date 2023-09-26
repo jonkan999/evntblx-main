@@ -11,7 +11,7 @@ USERNAME="jonkan999"
 REPO="https://${USERNAME}:${TOKEN}@github.com/jonkan999/evntblx-main.git"
 
 # Authenticate with GitHub using the PAT from github_token.txt
-TOKEN=$(cat /app/repo/github_token.txt)
+TOKEN=$TOKEN
 git config --global user.name $USERNAME
 git config --global user.email "${USERNAME}@users.noreply.github.com"
 git config --global credential.helper store

@@ -7,8 +7,8 @@ WORKDIR /app
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
-# Copy your PAT into the Docker image
-COPY github_token.txt /app/repo/github_token.txt
+ARG TOKEN_ARG
+ENV TOKEN=$TOKEN_ARG
 
 # Remove the existing /app/repo directory if it exists
 RUN rm -rf /app/repo
