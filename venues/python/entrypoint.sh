@@ -8,7 +8,7 @@ cd /app/repo
 USERNAME="jonkan999"
 
 # Replace 'your-github-repo' with your GitHub repository name
-REPO="https://github.com/jonkan999/evntblx-main.git"
+REPO="https://${USERNAME}:${TOKEN}@github.com/jonkan999/evntblx-main.git"
 
 # Authenticate with GitHub using the PAT from github_token.txt
 TOKEN=$(cat /app/repo/github_token.txt)
@@ -27,4 +27,5 @@ python "venues/docker_scripts/update_site_docker.py"
 # Add, commit, and push changes made by the script
 git add --all
 git commit -m "autocommit"
-git push
+git push https://${USERNAME}:${TOKEN}@github.com/jonkan999/evntblx-main.git
+
