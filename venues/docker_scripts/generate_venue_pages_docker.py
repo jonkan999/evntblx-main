@@ -22,7 +22,7 @@ env = Environment(loader=FileSystemLoader(searchpath="/app/repo"))
 
 # Register the filter function with the Jinja2 environment
 env.filters['format_thousands'] = format_thousands
-template = env.get_template("/venues/python/venue_box_template.html")
+template = env.get_template("/venues/python/venue_template.html")
 
 venues = read_all_from_venues()
 
