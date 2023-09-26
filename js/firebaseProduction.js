@@ -10,6 +10,7 @@ import {
   where,
   getDocs,
   updateDoc,
+  setDoc,
 } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
 
 // Fetch the Firebase config from the serverless function
@@ -64,7 +65,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
 
       // Add a new document to the "venues" collection with the submitted data
       try {
-        await addDoc(venuesCollection, {
+        await setDoc(doc(venuesCollection, venueInfo.name), {
           venueInfo,
           venueImages,
           mapboxCenter,
@@ -73,11 +74,9 @@ fetch("/.netlify/functions/getFirebaseConfig")
         });
         console.log("Venue data added to Firestore");
         // You can perform further actions or show a success message here
-        // Update the document to set trigger_initial to true
-        const triggerInitialDocRef = doc(venuesCollection, "trigger_initial");
 
         // Update the document to set trigger_initial to true
-        await updateDoc(triggerInitialDocRef, {
+        await updateDoc(doc(venuesCollection, "trigger_initial"), {
           trigger_initial: true,
         });
         // Show the popup
