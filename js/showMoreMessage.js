@@ -29,7 +29,7 @@ showMoreIcon.addEventListener("click", function () {
         mainHeader.clientHeight +
         mainText.clientHeight +
         linkText.clientHeight +
-        65;
+        69;
     } else {
       heightsSum =
         mainHeader.clientHeight +

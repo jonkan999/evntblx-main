@@ -98,14 +98,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // Resize the map when needed
   function resizeMap() {
-    console.log("fire")
+    console.log("fire");
     map.resize();
   }
 
   // Call the resizeMap function whenever you need to resize the map
   // For example, you can call it when the window resizes
   const toggleButtonMobile = document.getElementById("toggleMapButtonMobile");
-  toggleButtonMobile.addEventListener('click', resizeMap);
+  const toggleMapButton = document.getElementById("toggleMapButton");
+  toggleButtonMobile.addEventListener("click", resizeMap);
+  toggleMapButton.addEventListener("click", resizeMap);
 
   map.on("load", () => {
     // Remove the Mapbox logo element

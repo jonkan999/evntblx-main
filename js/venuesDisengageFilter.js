@@ -1,13 +1,11 @@
 // Get a reference to the venue-selector and filters section elements
-const venueSelector = document.querySelector(".venues-section");
+const disengVenueSelector = document.querySelector(".venues-section");
 /* const filtersSection = document.querySelector(".filters-section"); */
 /* const childElements = filtersSection.children; */
 /* const header= document.querySelector(".header"); */
 
-
-
 // Variable to store the last known scroll position
-let lastScrollPosition = venueSelector.scrollTop;
+let lastScrollPosition = disengVenueSelector.scrollTop;
 let TopScrollThreshold = 33; // Adjust the threshold value as needed
 let downScrollThreshold = 20;
 
@@ -16,7 +14,7 @@ function handleScroll() {
   const isMobile = window.innerWidth < 545;
   if (isMobile) {
     // Get the current scroll position of the venue-selector
-    const currentScrollPosition = venueSelector.scrollTop;
+    const currentScrollPosition = disengVenueSelector.scrollTop;
 
     // Check if the user is scrolling down with a threshold
     if (currentScrollPosition > lastScrollPosition + downScrollThreshold) {
@@ -42,7 +40,6 @@ function hideFiltersSection() {
   header.style.opacity = "0.4";
   filtersSection.style.height = "0";
 
-
   for (let i = 0; i < childElements.length; i++) {
     childElements[i].style.display = "none";
   }
@@ -61,4 +58,4 @@ function showFiltersSection() {
 }
 
 // Add a scroll event listener to the venue-selector element
-venueSelector.addEventListener("scroll", handleScroll);
+disengVenueSelector.addEventListener("scroll", handleScroll);
