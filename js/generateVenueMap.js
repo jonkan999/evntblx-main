@@ -106,8 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // For example, you can call it when the window resizes
   const toggleButtonMobile = document.getElementById("toggleMapButtonMobile");
   const toggleMapButton = document.getElementById("toggleMapButton");
-  toggleButtonMobile.addEventListener("click", resizeMap);
-  toggleMapButton.addEventListener("click", resizeMap);
+  if (toggleButtonMobile) {
+    toggleButtonMobile.addEventListener("click", resizeMap);
+  }
+  if (toggleMapButton) {
+    toggleMapButton.addEventListener("click", resizeMap);
+  }
 
   map.on("load", () => {
     // Remove the Mapbox logo element
