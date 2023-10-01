@@ -1,7 +1,7 @@
 // Get a reference to the venue-selector and filters section elements
 const disengVenueSelector = document.querySelector(".venues-section");
-/* const filtersSection = document.querySelector(".filters-section"); */
-/* const childElements = filtersSection.children; */
+const disengageFiltersSection = document.querySelector(".filters-section");
+const disengageChildElements = disengageFiltersSection.children;
 /* const header= document.querySelector(".header"); */
 
 // Variable to store the last known scroll position
@@ -35,25 +35,25 @@ function handleScroll() {
 
 // Function to slide away the filters section
 function hideFiltersSection() {
-  filtersSection.style.opacity = "0";
-  filtersSection.style.marginTop = "0";
+  disengageFiltersSection.style.opacity = "0";
+  disengageFiltersSection.style.marginTop = "0";
   header.style.opacity = "0.4";
-  filtersSection.style.height = "0";
+  disengageFiltersSection.style.height = "0";
 
-  for (let i = 0; i < childElements.length; i++) {
-    childElements[i].style.display = "none";
+  for (let i = 0; i < disengageChildElements.length; i++) {
+    disengageChildElements[i].style.display = "none";
   }
 }
 
 // Function to show the filters section
 function showFiltersSection() {
-  filtersSection.style.opacity = "1";
-  filtersSection.style.marginTop = "var(--header-size)";
+  disengageFiltersSection.style.opacity = "1";
+  disengageFiltersSection.style.marginTop = "var(--header-size)";
   header.style.opacity = "1";
-  filtersSection.style.height =
+  disengageFiltersSection.style.height =
     "calc(1 * (4.5rem + 2.5rem) + 0.5rem + var(--header-size))";
-  for (let i = 0; i < childElements.length; i++) {
-    childElements[i].style.display = "grid";
+  for (let i = 0; i < disengageChildElements.length; i++) {
+    disengageChildElements[i].style.display = "grid";
   }
 }
 

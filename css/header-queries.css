@@ -47,12 +47,17 @@
   .menu-box {
     display: block;
   }
-  .brand-box {
+  /*  .brand-box {
     display: none;
-  }
-  .brand-box-small {
+  } */
+  /*   .brand-box-small {
     display: flex;
     margin: 0 0 0 3.75rem;
+  } */
+  .brand-box-small-image {
+    height: 85%;
+    width: 85%;
+    object-fit: contain;
   }
 
   /* Style for the sliding menu */

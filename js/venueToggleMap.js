@@ -5,9 +5,7 @@ const mapSection = document.querySelector(".map-section");
 
 //reset filter style on map open
 const filtersSection = document.querySelector(".filters-section");
-if (filtersSection) {
-  const childElements = filtersSection.children;
-}
+const childElements = filtersSection.children;
 
 const header = document.querySelector(".header");
 
@@ -29,7 +27,7 @@ toggleButtonMobile.addEventListener("click", function () {
       <p>lista</p>
     `;
     //reset filter style on map open
-    if (isMobile & filtersSection) {
+    if (isMobile) {
       filtersSection.style.opacity = "1";
       filtersSection.style.marginTop = "var(--header-size)";
       filtersSection.style.position = "fixed";
