@@ -317,7 +317,6 @@ label[for="imageUpload"]:hover {
 
 .dragging-over {
   border: 2px dashed var(--highlight-color);
-  background-color: #f0f0f0;
   z-index: 2;
   transition: transform 0.3s ease-in-out;
 }
@@ -330,5 +329,5 @@ label[for="imageUpload"]:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: -1;
 }
