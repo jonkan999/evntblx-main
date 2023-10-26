@@ -228,7 +228,7 @@
                 name="people-outline"
               ></ion-icon>
               <p>
-                {% if context.venue['venueInfo']['venueType'] == 'yoga' %} plats
+                {% if context.venue['venueInfo']['venueType'] == 'yoga' %} Plats
                 för {{ context.venue.venueInfo.seated }} {% else %}{{
                 context.venue.venueInfo.seated }} sittandes, {{
                 context.venue.venueInfo.standing }} minglandes {% endif %}
@@ -240,8 +240,10 @@
                 name="people-outline"
               ></ion-icon>
               <p>
-                {{ context.venue.venueInfo.seated }} sittandes, {{
-                context.venue.venueInfo.standing }} minglandes
+                {% if context.venue['venueInfo']['venueType'] == 'yoga' %} Plats
+                för {{ context.venue.venueInfo.seated }} {% else %}{{
+                context.venue.venueInfo.seated }} sittandes, {{
+                context.venue.venueInfo.standing }} minglandes {% endif %}
               </p>
             </li>
             <li class="highlight-info desktop">
@@ -252,6 +254,21 @@
               <p>{{ context.venue.venueInfo.size }} m²</p>
             </li>
 
+            {% if context.venue['venueInfo']['venueType'] == 'yoga' %}
+            <!-- Matts Info -->
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-tablet-portrait-outline"
+                name="tablet-portrait-outline"
+              ></ion-icon>
+              <p>
+                {{ "Yoga-mattor tillgängliga" if
+                context.venue.venueInfo.yogamattsF else "Medtag egna
+                Yoga-mattor" }}
+              </p>
+            </li>
+
+            {% else %}{{
             <!-- Food and Drink Info -->
             <li class="highlight-info">
               <ion-icon
@@ -263,6 +280,7 @@
                 "Matservering tillhandahållen av lokalen" }}
               </p>
             </li>
+            }}{% endif %}
             <li class="highlight-info second-col mobile">
               <ion-icon
                 class="highlight-icon ion-ios-crop-outline"
@@ -270,16 +288,29 @@
               ></ion-icon>
               <p>{{ context.venue.venueInfo.size }} m²</p>
             </li>
+            {% if context.venue['venueInfo']['venueType'] == 'yoga' %}
             <li class="highlight-info">
               <ion-icon
-                class="highlight-icon ion-ios-wine-outline"
-                name="wine-outline"
+                class="highlight-icon ion-ios-water-outline"
+                name="water-outline"
+              ></ion-icon>
+              <p>
+                {{ "Dusch på plats" if context.venue.venueInfo.showerF else
+                "Ingen dusch i lokalen" }}
+              </p>
+            </li>
+            {% else %}{{
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-water-outline"
+                name="water-outline"
               ></ion-icon>
               <p>
                 {{ "Egen dryck tillåten" if context.venue.venueInfo.ownDrinkF
                 else "Dryck tillhandahållen av lokalen" }}
               </p>
             </li>
+            }}{% endif %}
             <div class="highlight-star-mobile second-col">
               <ion-icon
                 class="star-icon ion-ios-star-outline md hydrated"
@@ -304,6 +335,41 @@
               <ul>
                 <li>Lokalens storlek: {{ context.venue.venueInfo.size }} m²</li>
                 <li>Antal sittande: {{ context.venue.venueInfo.seated }}</li>
+                {% if context.venue['venueInfo']['venueType'] == 'yoga' %}
+                <li>
+                  Egen mat tillåten: {% if context.venue.venueInfo.ownFoodF
+                  %}Ja{% else %}Tillhandahålls av lokalen{% endif %}
+                </li>
+
+                <li>
+                  Egen dryck tillåten: {% if context.venue.venueInfo.ownDrinkF
+                  %}Ja{% else %}Tillhandahålls av lokalen{% endif %}
+                </li>
+
+                <li>
+                  Yoga-mattor tillgängligt: {% if
+                  context.venue.venueInfo.yogamattsF %}Ja{% else %}Hyras in på
+                  förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Dusch tillgängligt: {% if context.venue.venueInfo.schowerF
+                  %}Ja{% else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Ombytesrum tillgängligt: {% if
+                  context.venue.venueInfo.dressingroomF %}Ja{% else %}Hyras in
+                  på förfrågan{% endif %}
+                </li>
+
+                <li>
+                  Kök tillgängligt: {% if context.venue.venueInfo.kitchenF
+                  %}Ja{% else %}Hyras in på förfrågan{% endif %}
+                </li>
+
+                {% else %}
+
                 <li>Antal stående: {{ context.venue.venueInfo.standing }}</li>
                 <li>
                   Utcheckningstid senast: {% if context.venue.venueInfo.checkout
@@ -341,7 +407,7 @@
                   context.venue.venueInfo.discoLightsF %}Ja{% else %}Hyras in på
                   förfrågan{% endif %}
                 </li>
-
+                {% endif %}
                 <li>
                   Kontaktperson: {{ context.venue.venueInfo.contactName }}
                 </li>
