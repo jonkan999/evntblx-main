@@ -4,5 +4,11 @@
   "description": "Hitta den perfekta platsen för dina yogasessioner, yogaklasser och mindfulnesskurser på Södermalm. Upptäck unika och rogivande yogastudios. Boka nu för din nästa yogaklass.",
   "header": "Yogastudios på Södermalm",
   "text": "Här hittar du Yoga Studios på Södermalm som passar alla typer av yoga sessioner. Lokalerna är noga utvalda och lämpar sig väl för till exempel dina yogasessioner, yogaklasser och mindfulnesskurser. Boka nu för minnesvärda sessions på Södermalm i Stockholm.",
-  "includedVenues": ["Inbalance Yoga Hornstull"]
+  "includedVenues": [
+    "Inbalance Yoga Hornstull",
+    "samadhi-yoga-i-gamla-stan",
+    "varldens-resor-kurslokal",
+    "rasayana-wellness-klinik",
+    "andrum-yoga"
+  ]
 }
