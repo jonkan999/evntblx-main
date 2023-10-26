@@ -78,13 +78,27 @@ context = {
     'list_of_filepaths': list_of_filepaths  # Pass the filename prefix here
 }
 
-# Update the output path to use the /app directory within the container
-output_path = "/app/repo/festlokaler-stockholm.html"
+# Pop venues with special types, e.g yoga studios
+# Split the context based on venue type
+festlokaler_context = {
+    'venues': [venue for venue in ordered_venues if venue['venueInfo']['venueType'] != 'yoga'],
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i]['venueInfo']['venueType'] != 'yoga']
+}
 
-# Render the main template with the ordered venues data
-rendered_html = main_template.render(context=context)
+yoga_studios_context = {
+    'venues': [venue for venue in ordered_venues if venue['venueInfo']['venueType'] == 'yoga'],
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i]['venueInfo']['venueType'] == 'yoga']
+}
 
-# Write the rendered HTML content to a new file within the /app directory
-with open(output_path, "w", encoding="utf-8") as output_file:
-    output_file.write(rendered_html)
+def render_and_write_html(output_path, context, template):
+    # Render the template with the provided context
+    rendered_html = template.render(context=context)
+
+    # Write the rendered HTML content to the specified output file
+    with open(output_path, "w", encoding="utf-8") as output_file:
+        output_file.write(rendered_html)
+
+render_and_write_html("/app/repo/festlokaler-stockholm.html", festlokaler_context, main_template)
+render_and_write_html("/app/repo/yoga-studios-stockholm.html", yoga_studios_context, main_template)
+
 
