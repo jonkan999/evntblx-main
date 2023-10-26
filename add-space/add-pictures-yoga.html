@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script defer="" src="/js/handleImages.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/add-space.css" rel="stylesheet" />
+    <link href="/css/add-info.css" rel="stylesheet" />
+    <link href="/css/add-info-queries.css" rel="stylesheet" />
+
+    <title>Festlokaler.se - Lägg till din lokal</title>
+    <link rel="icon" href="/img/favicon.png" />
+    <meta
+      name="description"
+      content="Lägg till din egen lokal och nå tusentals användare som letar efter den perfekta platsen att fira. Registrera dig nu och börja få bokningar."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header header-black section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="/index.html">
+          <img
+            class="brand-box-small-image"
+            src="/img/logo_trans.svg"
+            alt="Brand logo"
+        /></a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <p class="category-link">Bilder på lokalen</p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="add-info-section">
+        <div class="add-info-box">
+          <h3>Lägg till bilder på din lokal<span class="mandatory">*</span></h3>
+          <p>
+            Här kan du lägga till bilder som visar din lokal från olika vinklar.
+          </p>
+          <p>
+            Dra och släpp dina bilder här eller använd knappen för att ladda upp
+            bilder från din enhet.
+          </p>
+          <div class="image-container">
+            <!-- Images will be displayed here -->
+          </div>
+
+          <button id="clearImagesButton">Rensa alla bilder</button>
+          <label for="imageUpload">Välj bilder att ladda upp</label>
+          <input type="file" id="imageUpload" multiple accept="image/*" />
+          <!-- Add this HTML to your page -->
+          <div id="loadingOverlay" class="loading-overlay">
+            <div class="spinner">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+              <div class="dot4"></div>
+              <div class="dot5"></div>
+            </div>
+            <div class="loading-text">Laddar upp bilder...</div>
+          </div>
+          <span class="file-upload-status" id="fileUploadStatus"
+            >Inga bilder valda</span
+          >
+          <div class="drag-drop-container">
+            <div class="drag-drop-area" id="dragDropArea"></div>
+            <p>Eller släpp dina bilder här</p>
+          </div>
+        </div>
+
+        <div class="split-buttons">
+          <a
+            href="/add-space/add-info-yoga.html"
+            class="back-button search-button"
+          >
+            Tillbaka
+          </a>
+          <a
+            href="/add-space/add-submission-yoga.html"
+            class="continue-button search-button"
+            id="continueButton"
+          >
+            Vidare
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

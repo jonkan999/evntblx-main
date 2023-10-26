@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script defer="" src="/js/menu.js"></script>
+    <script defer="" src="/js/backgroudCarousel.js"></script>
+    <script defer="" src="/js/eventDate.js"></script>
+    <script defer="" src="/js/heroSetContraints.js"></script>
+    <script defer="" src="/js/headerBackground.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/menu.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/hero-queries.css" rel="stylesheet" />
+    <link href="/css/about.css" rel="stylesheet" />
+    <link href="/css/about-queries.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>
+      Hyr lokal för yoga studio och sessions i Stockholm - Bröllop, Födelsedag &
+      Företagsevent
+    </title>
+    <link rel="icon" href="/img/favicon.png" />
+    <meta
+      name="description"
+      content="Letar du efter lokal för din yoga studio i Stockholm? Vi hjälper dig hitta den perfekta platsen för dina yoga sessions, yogaklasser och kurser i mindfulness. Upptäck unika och rogivande yoga studios. Boka nu för nästa yogaklass i Stockholm."
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="index.html">
+          <img
+            class="brand-box-small-image"
+            src="img/logo_trans.svg"
+            alt="Brand logo"
+        /></a>
+      </div>
+      <!-- Sliding menu -->
+      <div class="menu-box">
+        <div class="icon-box">
+          <ion-icon class="ion-icon menu-icon" name="menu-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a class="category-link" href="yoga-studios-stockholm.html"
+              >Visa alla Yoga-studios</a
+            >
+          </li>
+          <li>
+            <a class="category-link" href="#">Logga In</a>
+          </li>
+          <li>
+            <a class="category-link cta" href="/add-space/add-start.html"
+              >Lägg till Din Studio</a
+            >
+          </li>
+        </ul>
+        <div class="icon-box close-button">
+          <ion-icon class="ion-icon close-icon" name="close-outline"></ion-icon>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-hero" id="hero">
+        <div class="carousel-container">
+          <div class="carousel-gradient-overlay"></div>
+          <img
+            src="img/hero-carousel/img-1.webp"
+            alt="Venue carousel Image 1"
+            class="carousel-image"
+          />
+          <img
+            src="img/hero-carousel/img-2.jpg"
+            alt="Venue carousel Image 2"
+            class="carousel-image"
+          />
+          <img
+            src="img/hero-carousel/img-3.webp"
+            alt="Venue carousel Image 3"
+            class="carousel-image position-down"
+          />
+        </div>
+        <div class="search-box">
+          <h1 class="main-heading">Hitta studio till din nästa yogaklass</h1>
+          <h2 class="main-heading-sub-heading">i Stockholm</h2>
+          <div class="input-group">
+            <label for="eventType">Typ av lokal?</label>
+            <div class="select-box">
+              <select id="eventType" name="eventType">
+                <option value="na">Lokal för Yoga</option>
+                <option value="fest">Fest</option>
+                <option value="fest">Födelsedagsfest</option>
+                <option value="bröllop">Bröllop</option>
+                <option value="kickoff">Företags Kick-off</option>
+                <option value="julfest">Julfest</option>
+                <option value="fest">Halloweenfest</option>
+                <option value="fest">Babyshower</option>
+                <option value="fest">Möhippa</option>
+                <option value="fest">Dopfest</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="border-div"></div>
+          <div class="input-group">
+            <label for="numberOfPeople">Antal personer</label>
+            <div class="select-box">
+              <select id="numberOfPeople" name="numberOfPeople">
+                <option value="-1">Visa alla storlekar</option>
+                <option value="20">0-20</option>
+                <option value="50">20-60</option>
+                <option value="100">60-120</option>
+                <option value="200">120-250</option>
+                <option value="300">250-500</option>
+                <option value="600">500+</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="border-div"></div>
+          <div class="input-group">
+            <label for="eventDate">När?</label>
+            <div class="select-box">
+              <input
+                type="date"
+                id="eventDate"
+                name="eventDate"
+                placeholder="yyy-MM-dd"
+              />
+              <ion-icon name="calendar-clear-outline"></ion-icon>
+            </div>
+          </div>
+
+          <a class="search-button" href="yoga-studios-stockholm.html">
+            Hitta studio
+            <ion-icon
+              class="arrow-icon"
+              name="arrow-forward-outline"
+            ></ion-icon>
+          </a>
+        </div>
+      </section>
+      <section class="section-about" id="about">
+        <div class="about-container">
+          <div class="about-split about-list-venue">
+            <svg class="circle circle1" width="150" height="150">
+              <circle cx="75" cy="75" r="60" fill="green" opacity="0.4" />
+            </svg>
+            <svg class="circle circle2" width="100" height="100">
+              <circle cx="55" cy="55" r="40" fill="orange" opacity="0.2" />
+            </svg>
+            <h2 class="about-heading">Hyr ut ditt space</h2>
+            <p class="about-text">
+              Nyttja din lokal till fullo och hyr ut den genom oss när den inte
+              används. Våra yogalärare och besökare letar alltid nya platser att
+              hålla klasser på.
+            </p>
+            <a
+              class="about-button search-button"
+              href="/add-space/add-info.html"
+            >
+              Börja onboarding av din lokal
+              <ion-icon
+                class="arrow-icon"
+                name="arrow-forward-outline"
+              ></ion-icon>
+            </a>
+          </div>
+          <div class="about-split about-find-venue">
+            <svg class="circle circle1" width="50" height="50">
+              <circle cx="25" cy="25" r="20" fill="blue" opacity="0.4" />
+            </svg>
+            <svg class="circle circle2" width="200" height="200">
+              <circle cx="100" cy="100" r="100" fill="red" opacity="0.2" />
+            </svg>
+            <svg class="circle circle3" width="180" height="180">
+              <circle cx="90" cy="90" r="60" fill="purple" opacity="0.4" />
+            </svg>
+
+            <h2 class="about-heading">Hitta din lokal</h2>
+            <p class="about-text">
+              Hitta den perfekta platsen för dina yoga sessions, yogaklasser och
+              kurser i mindfulness. Upptäck unika och rogivande yoga studios som
+              passar din stil.
+            </p>
+            <a
+              class="about-button search-button"
+              href="/festlokaler-stockholm.html"
+            >
+              Visa alla listade lokaler
+              <ion-icon
+                class="arrow-icon"
+                name="arrow-forward-outline"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section-area-links" id="areaLinks">
+        <div class="area-link-container">
+          <!--        <svg class="circle circle1" width="150" height="150">
+              <circle cx="75" cy="75" r="60" fill="green" opacity="0.4" />
+            </svg>
+            <svg class="circle circle2" width="100" height="100">
+              <circle cx="55" cy="55" r="40" fill="orange" opacity="0.2" />
+            </svg> -->
+          <h2 class="about-heading">Sök lokaler i ditt närområde</h2>
+          <p class="about-text">
+            Vi har noggrannt valt ut lokaler baserat på geografiska områden i
+            Stockholm och listat dom här. Följ länken till just ditt närområde
+            för att hitta rätt lokal till dina yoga sessions, yogaklasser. Och
+            dessutom inom promenadavstånd!
+          </p>
+          <ul class="area-link-list">
+            <li class="area-link">
+              <a
+                class="about-button search-button area-link-link"
+                href="yoga-studios-sodermalm.html"
+              >
+                <span>Yoga-studios Södermalm</span>
+                <ion-icon
+                  class="arrow-icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </a>
+            </li>
+            <!--
+            <li class="area-link">
+              <a
+                class="about-button search-button area-link-link"
+                href="festlokaler-vasastan.html"
+              >
+                Festlokaler Vasastan
+                <ion-icon
+                  class="arrow-icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </a>
+            </li>
+            <li class="area-link">
+              <a
+                class="about-button search-button area-link-link"
+                href="festlokaler-solna.html"
+              >
+                Festlokaler Solna
+                <ion-icon
+                  class="arrow-icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </a>
+            </li>
+            <li class="area-link">
+              <a
+                class="about-button search-button area-link-link"
+                href="festlokaler-nacka.html"
+              >
+                Festlokaler Nacka
+                <ion-icon
+                  class="arrow-icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </a>
+            </li>
+            <li class="area-link">
+              <a
+                class="about-button search-button area-link-link"
+                href="festlokaler-enskede.html"
+              >
+                Festlokaler Enskede
+                <ion-icon
+                  class="arrow-icon"
+                  name="arrow-forward-outline"
+                ></ion-icon>
+              </a>
+            </li>
+            -->
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

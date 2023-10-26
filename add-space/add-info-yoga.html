@@ -81,8 +81,12 @@
           </ul>
           <p class="example">Exempelvis:</p>
           <ul class="no-bullets">
-            <li>"Skyddsrummet - Rymlig industriell lokal på Södermalm"</li>
-            <li>"Matron at Cow Pow - Gömd pärla i Vasastan"</li>
+            <li>
+              "Mariatorget Studio - Rogivande källarlokal för yoga på Södermalm"
+            </li>
+            <li>
+              "Mosebacke Yogastudio - Rymlig yogastudio för större klasser"
+            </li>
           </ul>
           <input id="name" type="text" placeholder="Lokalens namn" />
         </div>
@@ -96,11 +100,13 @@
           </p>
           <p class="strong">Tänk på att försöka få med:</p>
           <ul>
-            <li>Vilka typer av event som lokalen lämpar sig väl för</li>
+            <li>
+              Vilka typer av sessions som lokalen lämpar sig väl för och vad som
+              ingår i lokalhyran
+            </li>
             <li>
               Hur planlösningen ser ut och om det är vissa delar som är extra
-              väl lämpade för olika aktiviteter, exempelvis dansgolv, DJ-bås,
-              kök.
+              väl lämpade för olika aktiviteter, spegelväggar, avslappningsrum
             </li>
             <li>
               Stick ut! Vi har många listningar och våga framhäva det som gör
@@ -131,15 +137,8 @@
 
         <div class="add-info-box">
           <h3>Hur många ryms?<span class="mandatory">*</span></h3>
-          <p class="input-header">Sittande:</p>
+          <p class="input-header">Personer:</p>
           <input id="seated" type="number" placeholder="60" />
-          <p class="input-header">Stående:</p>
-          <input id="standing" type="number" placeholder="150" />
-        </div>
-
-        <div class="add-info-box">
-          <h3>Hur länge får gästerna stanna?</h3>
-          <input id="checkout" type="text" placeholder="01:00" />
         </div>
 
         <div class="add-info-box">
@@ -156,16 +155,16 @@
           <h3>Något annat som ingår?</h3>
           <div class="add-info-box">
             <label>
-              <span>Ljudsystem</span><input id="soundF" type="checkbox"
+              <span>Yoga-mattor</span><input id="yogamattsF" type="checkbox"
             /></label>
             <label>
-              <span>Mikrofoner</span><input id="micsF" type="checkbox"
+              <span>Dusch</span><input id="showerF" type="checkbox"
             /></label>
             <label>
-              <span>Projektor</span><input id="projectorF" type="checkbox"
+              <span>Kök</span><input id="kitchenF" type="checkbox"
             /></label>
             <label>
-              <span>Diskoljus</span><input id="discoLightsF" type="checkbox"
+              <span>Ombytesrum</span><input id="dressingroomF" type="checkbox"
             /></label>
           </div>
         </div>
@@ -195,7 +194,7 @@
           <input
             id="startingPrice"
             type="number"
-            placeholder="Pris (SEK / dygn)"
+            placeholder="Pris (SEK / timme)"
           />
         </div>
         <div class="split-buttons">
@@ -204,7 +203,7 @@
           </a>
           <a
             id="continueButton"
-            href="/add-space/add-pictures.html"
+            href="/add-space/add-pictures-yoga.html"
             class="continue-button search-button"
           >
             Vidare

@@ -28,6 +28,7 @@
     <script defer="" src="/js/menu.js"></script>
     <script defer="" src="/js/backgroudCarousel.js"></script>
     <script defer="" src="/js/eventDate.js"></script>
+    <script defer="" src="/js/addVenueType.js"></script>
 
     <link href="/css/general.css" rel="stylesheet" />
     <link href="/css/menu.css" rel="stylesheet" />
@@ -37,7 +38,7 @@
     <link href="/css/add-space.css" rel="stylesheet" />
     <link href="/css/add-space-queries.css" rel="stylesheet" />
 
-    <title>FestlokaliStockholm.se - Lägg till din lokal</title>
+    <title>Spaco.se - Lägg till din lokal</title>
     <link rel="icon" href="/img/favicon.png" />
     <meta
       name="description"
@@ -93,7 +94,20 @@
             används. Våra eventkreatörer letar alltid nya platser att hålla
             events på.
           </p>
-          <a href="/add-space/add-info.html" class="cta-button search-button">
+          <div class="input-group">
+            <label for="eventType">Typ av lokal?</label>
+            <div class="select-box">
+              <select id="eventType" name="eventType">
+                <option value="fest">Välj lokal</option>
+                <option value="fest">Fest</option>
+                <option value="fest">Födelsedagsfest</option>
+                <option value="yoga">Lokal för Yoga</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+          </div>
+          <a class="cta-button search-button" id="onboardingButton">
             Börja onboarding av din lokal
           </a>
         </div>

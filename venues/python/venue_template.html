@@ -228,8 +228,10 @@
                 name="people-outline"
               ></ion-icon>
               <p>
-                {{ context.venue.venueInfo.seated }} sittandes, {{
-                context.venue.venueInfo.standing }} minglandes
+                {% if context.venue['venueInfo']['venueType'] == 'yoga' %} plats
+                för {{ context.venue.venueInfo.seated }} {% else %}{{
+                context.venue.venueInfo.seated }} sittandes, {{
+                context.venue.venueInfo.standing }} minglandes {% endif %}
               </p>
             </li>
             <li class="highlight-info mobile full-row">
