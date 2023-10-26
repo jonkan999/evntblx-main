@@ -80,15 +80,19 @@ context = {
 
 # Pop venues with special types, e.g yoga studios
 # Split the context based on venue type
+
+# festlokaler_context
 festlokaler_context = {
-    'venues': [venue for venue in ordered_venues if venue['venueInfo']['venueType'] != 'yoga'],
-    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i]['venueInfo']['venueType'] != 'yoga']
+    'venues': [venue for venue in ordered_venues if venue.get('venueInfo', {}).get('venueType') != 'yoga'],
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') != 'yoga']
 }
 
+# yoga_studios_context
 yoga_studios_context = {
-    'venues': [venue for venue in ordered_venues if venue['venueInfo']['venueType'] == 'yoga'],
-    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i]['venueInfo']['venueType'] == 'yoga']
+    'venues': [venue for venue in ordered_venues if venue.get('venueInfo', {}).get('venueType') == 'yoga'],
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') == 'yoga']
 }
+
 
 def render_and_write_html(output_path, context, template):
     # Render the template with the provided context
