@@ -93,7 +93,7 @@ for seed_file_path in seed_file_paths:
   rendered_html = main_template.render(context=context)
 
   # Write the rendered HTML content to a new file
-  output_filename = f"festlokaler-{seed_additional_data['path_suffix']}.html"
+  output_filename = f"{seed_additional_data['path_suffix']}.html"
   output_path = os.path.join("/app/repo/", output_filename)
   with open(output_path, "w", encoding="utf-8") as output_file:
       output_file.write(rendered_html)
