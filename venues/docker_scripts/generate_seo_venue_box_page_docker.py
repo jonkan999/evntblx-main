@@ -43,6 +43,7 @@ seed_file_path_suffixes = [
     "enskede_seed.json",
     "nacka_seed.json",
     "solna_seed.json",    
+    "yoga_sodermalm_seed.json",
 ]
 seed_file_paths = [os.path.join("/app/repo/venues/python/seo_seeds/", suffix) for suffix in seed_file_path_suffixes]
 for seed_file_path in seed_file_paths:
