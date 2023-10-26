@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script defer="" src="/js/toggleButton.js"></script>
+    <script defer="" src="/js/generateVenueMap.js"></script>
+    <script defer="" src="/js/venueImageCarousel.js"></script>
+    <script defer="" src="/js/venueToggleMap.js"></script>
+    <script defer="" src="/js/venueApplyFilters.js"></script>
+    <script defer="" src="/js/venuesSetConstraints.js"></script>
+    <script defer="" src="/js/venuesToggleMoreFilter.js"></script>
+    <script defer="" src="/js/venuesDisengageFilter.js"></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+
+    <link href="/css/hero-queries.css" rel="stylesheet" />
+    <link href="/css/venues.css" rel="stylesheet" />
+    <link href="/css/venues-queries.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>
+      Boka Festlokaler i Stockholm - Bröllop, Födelsedag & Företagsevent
+    </title>
+    <link rel="icon" href="img/favicon.png" />
+    <meta
+      name="description"
+      content="Letar du efter festlokaler i Stockholm? Vi hjälper dig hitta den perfekta platsen för ditt bröllop, födelsedagsfest, företagsevent eller andra speciella tillfällen. Upptäck unika och eleganta festlokaler som passar din feststil. Boka nu för minnesvärda evenemang i Stockholm."
+    />
+  </head>
+
+  <body>
+    <div class="menu-overlay"></div>
+    <header class="header section header-black">
+      <div class="brand-box">
+        <a class="header-brand-name" href="index.html">
+          <img
+            class="brand-box-small-image"
+            src="img/logo_trans.svg"
+            alt="Brand logo"
+        /></a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a class="category-link" href="#">Hitta Lokal</a>
+          </li>
+          <li>
+            <a class="category-link" href="#">Logga In</a>
+          </li>
+          <li>
+            <a class="category-link cta" href="/add-space/add-start.html"
+              >Lägg till Din Lokal</a
+            >
+          </li>
+          <li>
+            <div class="menu-box">
+              <div class="icon-box">
+                <ion-icon
+                  class="ion-icon menu-icon"
+                  name="menu-outline"
+                ></ion-icon>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="section-container" id="venuesContainer">
+        <div class="filters-section">
+          <div class="upper-filters">
+            <div class="filter-box">
+              <select id="eventType" name="eventType">
+                <option value="na">Typ av fest</option>
+                <option value="fest">Fest</option>
+                <option value="födelsedagsfest">Födelsedagsfest</option>
+                <option value="bröllop">Bröllop</option>
+                <option value="kickoff">Företags Kick-off</option>
+                <option value="julfest">Julfest</option>
+                <option value="halloweenfest">Halloweenfest</option>
+                <option value="babyshower">Babyshower</option>
+                <option value="möhippa">Möhippa</option>
+                <option value="dopfest">Dopfest</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <div class="filter-box">
+              <select id="numberOfPeople" name="numberOfPeople">
+                <option value="-1">Deltagare</option>
+                <option value="20">0-20</option>
+                <option value="50">20-60</option>
+                <option value="100">60-120</option>
+                <option value="200">120-250</option>
+                <option value="300">250-500</option>
+                <option value="600">500+</option>
+                <!-- Add other options here -->
+              </select>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <div class="filter-box">
+              <input
+                type="date"
+                id="eventDate"
+                name="eventDate"
+                placeholder="yyyy-MM-dd"
+              />
+              <ion-icon name="calendar-clear-outline"></ion-icon>
+            </div>
+            <div class="filter-box" id="moreFilter">
+              <ion-icon name="options-outline"></ion-icon>
+              <p>Fler filter</p>
+            </div>
+            <div class="toggle-button desktop" id="toggleMapButton">
+              <button>
+                <ion-icon
+                  name="radio-button-off-outline"
+                  id="offIcon"
+                ></ion-icon>
+                <ion-icon name="radio-button-on-outline" id="onIcon"></ion-icon>
+                Karta
+              </button>
+            </div>
+          </div>
+          <div class="lower-filters">
+            <label class="filter-checkbox">
+              <input id="ownFoodF" type="checkbox" />
+              <span>Egen mat</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="ownDrinkF" type="checkbox" />
+              <span>Egen dryck</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="soundF" type="checkbox" />
+              <span>Ljudutrustning</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="micsF" type="checkbox" />
+              <span>Mikrofoner</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="projectorF" type="checkbox" />
+              <span>Projektor</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="discolightsF" type="checkbox" />
+              <span>Discoljus</span>
+            </label>
+            <label class="filter-checkbox">
+              <input id="checkout" type="checkbox" />
+              <span>Sen utcheckning</span>
+            </label>
+          </div>
+        </div>
+        <button class="toggle-button mobile" id="toggleMapButtonMobile">
+          <div class="icon-container">
+            <ion-icon name="map-outline"></ion-icon>
+          </div>
+          <p>karta</p>
+        </button>
+        <div class="venue-selector">
+          <div class="mobile-margin"></div>
+          <div class="venues-section">
+              
+            <!-- data attributes used for filtering -->
+            <div
+              class="venue-box-container"
+              data-standing=""
+              data-checkout=""
+              data-ownFoodF="True"
+              data-ownDrinkF="True"
+              data-soundF=""
+              data-micsF=""
+              data-projectorF=""
+              data-discoLightsF=""
+              data-startingPrice=""
+              data-name="Inbalance Yoga Hornstull"
+            >
+              <a
+                href="/venues/inbalance-yoga-hornstull.html"
+                class="venue-box"
+                data-geocenter="[18.032584, 59.314593]"
+                data-name="Inbalance Yoga Hornstull"
+              >
+                <!-- HTML structure for the carousel -->
+                <div class="image-carousel">
+                  <div class="image-carousel-container">
+                    
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="/venues/img/inbalance-yoga-hornstull_0.webp"
+                        alt="bild 1 tillhörande: Inbalance Yoga Hornstull"
+                      />
+                    </div>
+                    
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="/venues/img/inbalance-yoga-hornstull_1.webp"
+                        alt="bild 1 tillhörande: Inbalance Yoga Hornstull"
+                      />
+                    </div>
+                    
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="/venues/img/inbalance-yoga-hornstull_2.webp"
+                        alt="bild 1 tillhörande: Inbalance Yoga Hornstull"
+                      />
+                    </div>
+                    
+                    <div class="image-carousel-item">
+                      <img
+                        class="image-inner-img"
+                        src="/venues/img/inbalance-yoga-hornstull_3.webp"
+                        alt="bild 1 tillhörande: Inbalance Yoga Hornstull"
+                      />
+                    </div>
+                    
+
+                    <div class="venue-box-price">
+                      <div class="from">fr.</div>
+                      <div>
+                         Pris på förfrågan 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-navigation">
+                    <span id="counter"
+                      >1/4</span
+                    >
+                  </div>
+                </div>
+
+                <div class="venue-box-info">
+                  <div class="venue-box-info-header">
+                    <h3 class="venue-box-info-header-title">
+                      Inbalance Yoga Hornstull
+                    </h3>
+                  </div>
+                  <div class="venue-box-info-body">
+                    <p class="venue-box-info-short-text">
+                      Perfekt Yogastudio för grupper upp till 30 personer, precis intill Hornstulls tunnelbanestation. Inbalance Yoga...
+                    </p>
+                  </div>
+                  <div class="venue-box-info-footer">
+                    <div class="venue-box-info-footer-capacity">
+                      <ion-icon name="people-outline"></ion-icon>
+                      <p class="venue-box-info-footer-location-text">
+                        30 sittandes,  mingel
+                      </p>
+                    </div>
+                    <div class="highlight-stars">
+                      <ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star"
+                        role="img"
+                        aria-label="star"
+                      ></ion-icon
+                      ><ion-icon
+                        class="star-icon ion-ios-star-outline md hydrated"
+                        name="star-half-outline"
+                        role="img"
+                        aria-label="star half outline"
+                      ></ion-icon>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <button
+                id="nextButton"
+                onclick="nextSlide()"
+                class="carousel-nav-icon next"
+              >
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </div>
+              </button>
+              <button
+                id="prevButton"
+                onclick="prevSlide()"
+                class="carousel-nav-icon prev"
+              >
+                <div class="nav-icon-container">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
+              </button>
+            </div>
+            
+          </div>
+          <div class="map-section desktop" id="mapSection"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
