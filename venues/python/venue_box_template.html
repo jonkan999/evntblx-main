@@ -51,12 +51,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>
-      {% if context.venue_type == 'festlokaler' %} Boka Festlokaler i Stockholm
-      - Bröllop, Födelsedag & Företagsevent {% elif context.venue_type == 'yoga'
-      %} Boka Yoga Studio i Stockholm - Yoga, Meditation & Mindfulness {% endif
-      %}
-    </title>
+    <title>{% context.venue_type%}</title>
     <link rel="icon" href="img/favicon.png" />
     {% if context.venue_type == "festlokaler" %}
     <meta
