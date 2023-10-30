@@ -99,9 +99,7 @@ def render_and_write_html(output_path, context, template):
     with open(output_path, "w", encoding="utf-8") as output_file:
         output_file.write(rendered_html)
 
-print("Rendering and writing HTML files..." +yoga_studios_context['venue_type'])
 render_and_write_html("/app/repo/festlokaler-stockholm.html", festlokaler_context, main_template)
-
 render_and_write_html("/app/repo/yoga-studios-stockholm.html", yoga_studios_context, main_template)
 
 
