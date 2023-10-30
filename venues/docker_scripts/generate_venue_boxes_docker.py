@@ -84,13 +84,15 @@ context = {
 # festlokaler_context
 festlokaler_context = {
     'venues': [venue for venue in ordered_venues if venue.get('venueInfo', {}).get('venueType') != 'yoga'],
-    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') != 'yoga']
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') != 'yoga'],
+    'venue_type': 'festlokaler'
 }
 
 # yoga_studios_context
 yoga_studios_context = {
     'venues': [venue for venue in ordered_venues if venue.get('venueInfo', {}).get('venueType') == 'yoga'],
-    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') == 'yoga']
+    'list_of_filepaths': [filepaths for i, filepaths in enumerate(list_of_filepaths) if ordered_venues[i].get('venueInfo', {}).get('venueType') == 'yoga'],
+    'venue_type': 'yoga'
 }
 
 
