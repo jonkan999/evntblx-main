@@ -73,11 +73,6 @@ for venue in ordered_venues:
     image_paths = save_images(venue['venueImages']['images'], images_folder, cleaned_name)
     list_of_filepaths.append(image_paths)
 
-context = {
-    'venues': ordered_venues,  # Use the ordered venues list
-    'list_of_filepaths': list_of_filepaths  # Pass the filename prefix here
-}
-
 # Pop venues with special types, e.g yoga studios
 # Split the context based on venue type
 
@@ -104,7 +99,9 @@ def render_and_write_html(output_path, context, template):
     with open(output_path, "w", encoding="utf-8") as output_file:
         output_file.write(rendered_html)
 
+print("Rendering and writing HTML files..." +yoga_studios_context['venue_type'])
 render_and_write_html("/app/repo/festlokaler-stockholm.html", festlokaler_context, main_template)
+
 render_and_write_html("/app/repo/yoga-studios-stockholm.html", yoga_studios_context, main_template)
 
 
