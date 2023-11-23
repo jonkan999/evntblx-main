@@ -5,7 +5,7 @@ continueButton.addEventListener("click", function () {
   if (document.querySelector("#soundF")) {
     /* party */
     venueInfo = {
-      name: document.querySelector("#name").value,
+      name: document.querySelector("#name").value.replace(/\//g, "-"),
       description: document
         .querySelector("#description")
         .value.replace(/\n/g, "\\n"), // Replace line breaks with "\\n"
@@ -30,7 +30,7 @@ continueButton.addEventListener("click", function () {
     /* yoga */
     venueInfo = {
       venueType: "yoga",
-      name: document.querySelector("#name").value,
+      name: document.querySelector("#name").value.replace(/\//g, "-"),
       description: document
         .querySelector("#description")
         .value.replace(/\n/g, "\\n"), // Replace line breaks with "\\n"

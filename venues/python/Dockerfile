@@ -8,6 +8,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 #ADD token arg = github personal access token tokens(classic) to build command with:
+# aktivera venv
+#starta dockker desktop
 # docker build --build-arg TOKEN_ARG=personalized-access-token -t update_site .
 # docker tag update_site gcr.io/lokaler-3300/update_site
 # docker push gcr.io/lokaler-3300/update_site
