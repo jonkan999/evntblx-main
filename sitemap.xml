@@ -153,7 +153,17 @@
   <priority>0.8</priority>
 </url>
 <url>
-  <loc>https://spaco.se/venues/sidenkallaren-festvaninng</loc>
+  <loc>https://spaco.se/venues/sidenkallaren-festvaning</loc>
+  <lastmod>2023-10-18T19:08:43+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://spaco.se/venues/stora-henriksvik-festvaning</loc>
+  <lastmod>2023-10-18T19:08:43+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://spaco.se/venues/kristinehovs-malmgard</loc>
   <lastmod>2023-10-18T19:08:43+00:00</lastmod>
   <priority>0.8</priority>
 </url>
