@@ -9,6 +9,9 @@ import {
   query,
   where,
   getDocs,
+  updateDoc,
+  doc,
+  setDoc,
 } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
 
 // Fetch the Firebase config from the serverless function
@@ -69,8 +72,11 @@ fetch("/.netlify/functions/getFirebaseConfig")
       const requestEmailsCollection = collection(db, "venue_request_emails");
       console.log("Trying to add request email to Firestore");
       try {
-        // Add a new document to the "venue_request_emails" collection
-        await addDoc(requestEmailsCollection, {
+        // Concatenate the name with the timestamp to form the document ID
+        const documentId = `${name}_${timestamp}`;
+
+        // Add a new document to the "venue_request_emails" collection with the concatenated document ID
+        await setDoc(doc(requestEmailsCollection, documentId), {
           name,
           hostEmail,
           requesterInfo,
