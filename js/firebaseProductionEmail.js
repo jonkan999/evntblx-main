@@ -74,7 +74,8 @@ fetch("/.netlify/functions/getFirebaseConfig")
       try {
         // Concatenate the name with the timestamp to form the document ID
         const timestampJS = new Date(); // Convert timestamp to string
-        const documentId = `${requesterInfo.name}_${name}_${timestampJS}`;
+        const timestampString = timestampJS.toISOString().substring(0, 19); // Date and time in seconds as a string
+        const documentId = `${requesterInfo.name}_${name}_${timestampString}`;
 
         // Add a new document to the "venue_request_emails" collection with the concatenated document ID
         await setDoc(doc(requestEmailsCollection, documentId), {
