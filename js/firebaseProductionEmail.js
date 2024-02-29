@@ -73,7 +73,7 @@ fetch("/.netlify/functions/getFirebaseConfig")
       console.log("Trying to add request email to Firestore");
       try {
         // Concatenate the name with the timestamp to form the document ID
-        const timestampJS = Date.now(); // Convert timestamp to string
+        const timestampJS = new Date().getTime().toString(36); // Convert timestamp to string
         const documentId = `${requesterInfo.name}_${name}_${timestampJS}`;
 
         // Add a new document to the "venue_request_emails" collection with the concatenated document ID
