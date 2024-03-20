@@ -9,10 +9,12 @@ RUN apt-get update && apt-get install -y git
 
 #ADD token arg = github personal access token tokens(classic) to build command with:
 # aktivera venv
-#starta dockker desktop
+# cd venues/python
+#starta dockker desktop 
 # docker build --build-arg TOKEN_ARG=personalized-access-token -t update_site .
-# docker tag update_site gcr.io/lokaler-3300/update_site
-# docker push gcr.io/lokaler-3300/update_site
+# docker tag update_site europe-central2-docker.pkg.dev/lokaler-3300/spaco/update_site
+# docker push europe-central2-docker.pkg.dev/lokaler-3300/spaco/update_site
+# IF YOU NEED TO ADD AUTHENTICATION TO THE DOCKER config to push images to gcloud: gcloud auth configure-docker europe-central2-docker.pkg.dev
 # sen cloud console > cloud run > update_site job > edit byt till senaste imagen
 ARG TOKEN_ARG
 ENV TOKEN=$TOKEN_ARG
