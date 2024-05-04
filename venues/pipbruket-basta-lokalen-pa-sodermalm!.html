@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script defer="" src="/js/venueScriptMapbox.js"></script>
+    <script defer="" src="/js/venueScriptCalendar.js"></script>
+    <script defer="" src="/js/showAllImages.js"></script>
+    <script
+      type="module"
+      defer=""
+      src="/js/firebaseProductionEmail.js"
+    ></script>
+
+    <link href="/css/general.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/header-queries.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/add-space.css" rel="stylesheet" />
+    <link href="/css/add-info.css" rel="stylesheet" />
+    <link href="/css/add-submission.css" rel="stylesheet" />
+    <link href="/css/submission-queries.css" rel="stylesheet" />
+
+    <title>
+      Pipbruket - Bästa lokalen på Södermalm! - listning på FestlokaliStockholm.se
+    </title>
+    <link rel="icon" href="/img/favicon.png" />
+    <meta name="description" content="short_form_description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="show-all-overlay" id="showAllOverlay"></div>
+    <button class="hide-grid" id="hideGrid">
+      <ion-icon name="close-outline" class="close-icon"></ion-icon>
+    </button>
+    <header class="header header-black section">
+      <div class="brand-box">
+        <a class="header-brand-name" href="/index.html">
+          <img
+            class="brand-box-small-image"
+            src="/img/logo_trans.svg"
+            alt="Brand logo"
+        /></a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <p class="category-link">
+              Lokalsida för: Pipbruket - Bästa lokalen på Södermalm!
+            </p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="venue-page" id="venuePage">
+        <div class="show-all-grid" id="showAllGrid">
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_0.png"
+              alt="bild 1 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_1.png"
+              alt="bild 2 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_2.png"
+              alt="bild 3 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_3.png"
+              alt="bild 4 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_4.png"
+              alt="bild 5 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+          <div class="gallery-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_5.png"
+              alt="bild 6 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="gallery-overlay"></div>
+          </div>
+          
+        </div>
+        <div class="images-section section airy-margin" id="imageSection">
+          <div class="left-image">
+            <img
+              class="image-inner-img"
+              src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_0.png"
+              alt="bild 1 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+            />
+            <div class="image-overlay"></div>
+          </div>
+          <div class="right-images-section">
+            <div class="top-right-image">
+              <img
+                class="image-inner-img"
+                src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_1.png"
+                alt="bild 2 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="bottom-right-images">
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_2.png"
+                  alt="bild 3 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+                />
+                <div class="image-overlay"></div>
+              </div>
+              <div class="bottom-right-image">
+                <img
+                  class="image-inner-img"
+                  src="/venues/img/pipbruket-basta-lokalen-pa-sodermalm!_3.png"
+                  alt="bild 4 tillhörande: Pipbruket - Bästa lokalen på Södermalm!"
+                />
+                <div class="show-all-container" id="showAll">
+                  <div class="square-icon-container-container">
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                    <div class="square-icon-container">
+                      <ion-icon
+                        class="icon ion-ios-square-outline md hydrated"
+                        name="square-outline"
+                        role="img"
+                        aria-label="square outline"
+                      ></ion-icon>
+                    </div>
+                  </div>
+                  <div class="show-all-images-text">Visa alla</div>
+                  <div class="image-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-container" id="infoContainer">
+          <!-- Venue Name -->
+          <h1 class="event-space-title">Pipbruket - Bästa lokalen på Södermalm!</h1>
+
+          <!-- Venue Address -->
+          <div class="adress-div">
+            <ion-icon
+              class="icon ion-ios-location-outline"
+              name="location-outline"
+            ></ion-icon>
+            <p class="event-space-address">
+              Varvsgatan 14 117 29 Stockholm
+            </p>
+          </div>
+
+          <!-- Highlights Container -->
+          <ul class="highlights-container">
+            <!-- Star Rating -->
+            <div class="highlight-stars">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon
+              ><ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star-half-outline"
+                role="img"
+                aria-label="star half outline"
+              ></ion-icon>
+            </div>
+
+            <!-- Guests and Size Info -->
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                130 sittandes, 150 minglandes 
+              </p>
+            </li>
+            <li class="highlight-info mobile full-row">
+              <ion-icon
+                class="highlight-icon ion-ios-people-outline"
+                name="people-outline"
+              ></ion-icon>
+              <p>
+                130 sittandes, 150 minglandes 
+              </p>
+            </li>
+            <li class="highlight-info desktop">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>400 m²</p>
+            </li>
+
+            
+            <!-- Food and Drink Info -->
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-restaurant-outline"
+                name="restaurant-outline"
+              ></ion-icon>
+              <p>
+                Egen mat tillåten
+              </p>
+            </li>
+            
+            <li class="highlight-info second-col mobile">
+              <ion-icon
+                class="highlight-icon ion-ios-crop-outline"
+                name="crop-outline"
+              ></ion-icon>
+              <p>400 m²</p>
+            </li>
+            
+            <li class="highlight-info">
+              <ion-icon
+                class="highlight-icon ion-ios-water-outline"
+                name="water-outline"
+              ></ion-icon>
+              <p>
+                Egen dryck tillåten
+              </p>
+            </li>
+            
+            <div class="highlight-star-mobile second-col">
+              <ion-icon
+                class="star-icon ion-ios-star-outline md hydrated"
+                name="star"
+                role="img"
+                aria-label="star"
+              ></ion-icon>
+              <p>4.85</p>
+            </div>
+          </ul>
+
+          <!-- Calendar and Mail Template Containers -->
+          <div class="subsection-split-container">
+            <!-- Description Container -->
+            <div class="description-container">
+              <h2>Om lokalen</h2>
+              <p class="venue-description">
+                Välkommen till Pipbruket, din ultimata festplats i Stockholm! En charmig festlokal som kan husera upp till 150 personer. Hyr den för ditt nästa födelsedagskalas, företagsfest eller när du känner för att festa! På övre plan finns en trevlig foajé med garderob och toaletter. På nedervåningen finns gott om plats att äta, dansa och konferera, samt en välutrustad bar. Oavsett vilken typ av tillställning du planerar, kan du vara säker på att du alltid hyr hela Pipbruket med exklusivitet.<br><br>Pipbruket är mycket bra anslutet till kollektivtrafik. T-bana Hornstull ligger bara 150 meter bort och det tar sju minuter att komma till Centralen. För bilburna gäster finns Högalidsgaraget intill med plats för 200 bilar.<br><br>Våra charmiga och rustika lokaler är inredda i ljusa färger och har ett perfekt läge vid Hornstull på Södermalm. Pipbruket är perfekt för grupper mellan 30 och 150 personer. Vår härliga lokal rymmer upp till 150 gäster vid mingel och 130 vid sittande bord, alla i samma rum.<br><br>Vi har tre toaletter, varav en herrtoalett, och det finns wifi i hela lokalen. Utöver lokalen kan vi ordna alla typer av lyxiga buffé<br><br>TID🕘: På Pipbruket kan du fira fram till kl. 02.00. Musiken stängs av kl. 01.30, och lokalen ska vara tom kl. 02.00.<br><br><br>MAT: Vi har färdiga meny förslag i form av buffé, snittar m.m. där allt  men är väldigt flexibla att skräddarsy efter kundens önskemål! Det går även att ta med egen mat eller beställa annan catering.<br><br>DRYCK🥂: Egen dryck ska tas med!<br><br>Vi har en bar i källaren och utrustning som inkluderar ett dansgolv på 60 kvadratmeter, ljudutrustning av hög kvalitet som du kan använda med din egen DJ-utrustning, DMX-styrda ljus som kan anpassas efter dina önskemål, lounge-ytor i baren och foajén, samt totalt tre toaletter. Trådlöst internet finns i hela lokalen.<br><br>På Pipbruket är det alltid kul att festa!
+              </p>
+              <h3>Detaljerad information:</h3>
+              <ul>
+                <li>Lokalens storlek: 400 m²</li>
+                <li>Antal sittande: 130</li>
+                
+
+                <li>Antal stående: 150</li>
+                <li>
+                  Utcheckningstid senast: 2:00
+                </li>
+                <li>
+                  Egen mat tillåten: Ja
+                </li>
+
+                <li>
+                  Egen dryck tillåten: Ja
+                </li>
+
+                <li>
+                  Ljudsystem tillgängligt: Ja
+                </li>
+
+                <li>
+                  Mickar tillgängliga: Ja
+                </li>
+
+                <li>
+                  Projektor tillgänglig: Ja
+                </li>
+
+                <li>
+                  Discoljus tillgängligt: Ja
+                </li>
+                
+                <li>
+                  Kontaktperson: Iliya Vasiliev
+                </li>
+                <li>
+                  Kontakttelefon: +46763108706
+                </li>
+                <li
+                  data-contact-mail="kontakt.umbraevent@gmail.com"
+                  class="contact-mail"
+                >
+                  Kontaktmail: kontakt.umbraevent@gmail.com
+                </li>
+              </ul>
+              <h3>Lokalhyra:</h3>
+              <p class="venue-price">
+                fr. 10,000
+                kr/dygn
+              </p>
+            </div>
+
+            <div class="subsection-right-split-container">
+              <div
+                data-mapboxCenter="[18.040512, 59.316346]"
+                class="map-container mapboxgl-map"
+                id="mapboxContainer"
+              ></div>
+              <div class="calendar-container">
+                <div class="calendar">
+                  <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth">augusti 2023</h2>
+                    <button id="nextMonth">&gt;</button>
+                  </div>
+                  <div class="calendar-days">
+                    <div class="day">Mån</div>
+                    <div class="day">Tis</div>
+                    <div class="day">Ons</div>
+                    <div class="day">Tor</div>
+                    <div class="day">Fre</div>
+                    <div class="day">Lör</div>
+                    <div class="day">Sön</div>
+                  </div>
+                  <div class="calendar-grid" id="calendarGrid">
+                    <div></div>
+                    <div></div>
+                    <div class="day-cell">1</div>
+                    <div class="day-cell">2</div>
+                    <div class="day-cell">3</div>
+                    <div class="day-cell">4</div>
+                    <div class="day-cell">5</div>
+                    <div class="day-cell">6</div>
+                    <div class="day-cell">7</div>
+                    <div class="day-cell">8</div>
+                    <div class="day-cell">9</div>
+                    <div class="day-cell">10</div>
+                    <div class="day-cell">11</div>
+                    <div class="day-cell">12</div>
+                    <div class="day-cell">13</div>
+                    <div class="day-cell">14</div>
+                    <div class="day-cell">15</div>
+                    <div class="day-cell">16</div>
+                    <div class="day-cell">17</div>
+                    <div class="day-cell">18</div>
+                    <div class="day-cell">19</div>
+                    <div class="day-cell">20</div>
+                    <div class="day-cell">21</div>
+                    <div class="day-cell">22</div>
+                    <div class="day-cell">23</div>
+                    <div class="day-cell">24</div>
+                    <div class="day-cell">25</div>
+                    <div class="day-cell">26</div>
+                    <div class="day-cell">27</div>
+                    <div class="day-cell">28</div>
+                    <div class="day-cell">29</div>
+                    <div class="day-cell">30</div>
+                    <div class="day-cell">31</div>
+                  </div>
+                  <input
+                    type="text"
+                    id="selectedDate"
+                    placeholder="Selected Date"
+                    readonly=""
+                  />
+                </div>
+              </div>
+              <div class="mail-template-container">
+                <textarea placeholder="Meddelande till lokalvärd"></textarea>
+                <div class="add-info-box">
+                  <p class="input-header">Namn:</p>
+                  <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Kontaktpersonens namn"
+                  />
+                  <p class="input-header">Telefon:</p>
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    placeholder="Kontaktpersonens telefonnummer"
+                  />
+                  <p class="input-header">Mail:</p>
+                  <input
+                    id="contactMail"
+                    type="email"
+                    placeholder="Kontaktpersonens e-postadress"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="search-button continue-button">
+            Skicka förfrågan
+          </button>
+        </div>
+
+        <!-- Rest of your HTML content -->
+      </section>
+      <div id="errorMessage" class="error-message"></div>
+    </main>
+  </body>
+</html>
